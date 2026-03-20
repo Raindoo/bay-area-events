@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bay Area Event Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>🌉 Bay Area Event Tracker</h1>
+            <span class="subtitle">Vendor Application Manager</span>
+        </div>
+        <div class="header-right">
+            <button id="exportBtn" class="btn btn-secondary" title="Export CSV">📤 Export CSV</button>
+            <button id="addEventBtn" class="btn btn-primary">+ Add Event</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dashboard Stats -->
+        <section class="dashboard">
+            <div class="stat-card">
+                <div class="stat-number" id="statTotal">0</div>
+                <div class="stat-label">Total Events</div>
+            </div>
+            <div class="stat-card stat-upcoming">
+                <div class="stat-number" id="statUpcoming">0</div>
+                <div class="stat-label">This Month</div>
+            </div>
+            <div class="stat-card stat-pending">
+                <div class="stat-number" id="statPending">0</div>
+                <div class="stat-label">Pending Apps</div>
+            </div>
+            <div class="stat-card stat-accepted">
+                <div class="stat-number" id="statAccepted">0</div>
+                <div class="stat-label">Accepted</div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search events or locations...">
+                </div>
+                <div class="view-toggle">
+                    <button id="listViewBtn" class="view-btn active" title="List View">☰</button>
+                    <button id="calendarViewBtn" class="view-btn" title="Calendar View">📅</button>
+                </div>
+            </div>
+            <div class="filters-row">
+                <select id="filterMonth">
+                    <option value="">All Months</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select id="filterSize">
+                    <option value="">All Sizes</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Massive">Massive</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">All Statuses</option>
+                    <option value="Not Applied">Not Applied</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Waitlisted">Waitlisted</option>
+                </select>
+                <select id="filterCategory">
+                    <option value="">All Categories</option>
+                </select>
+                <select id="sortBy">
+                    <option value="date">Sort by Date</option>
+                    <option value="name">Sort by Name</option>
+                    <option value="size">Sort by Size</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- List View -->
+        <section id="listView" class="events-list"></section>
+
+        <!-- Calendar View -->
+        <section id="calendarView" class="calendar-view" style="display:none;">
+            <div class="calendar-nav">
+                <button id="calPrev" class="btn btn-secondary">◀</button>
+                <h2 id="calTitle"></h2>
+                <button id="calNext" class="btn btn-secondary">▶</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="cal-header">Sun</div>
+                <div class="cal-header">Mon</div>
+                <div class="cal-header">Tue</div>
+                <div class="cal-header">Wed</div>
+                <div class="cal-header">Thu</div>
+                <div class="cal-header">Fri</div>
+                <div class="cal-header">Sat</div>
+            </div>
+            <div id="calDays" class="calendar-days"></div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Event</h2>
+                <button id="modalClose" class="modal-close">&times;</button>
+            </div>
+            <form id="eventForm" class="modal-body">
+                <input type="hidden" id="eventId">
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label>Event Name *</label>
+                        <input type="text" id="formName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Start Date *</label>
+                        <input type="date" id="formStartDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" id="formEndDate">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label>Location *</label>
+                        <input type="text" id="formLocation" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Size</label>
+                        <select id="formSize">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="Massive">Massive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Vendor Status</label>
+                        <select id="formStatus">
+                            <option value="Not Applied">Not Applied</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Waitlisted">Waitlisted</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Application Deadline</label>
+                        <input type="date" id="formDeadline">
+                    </div>
+                    <div class="form-group">
+                        <label>Vendor Fee Estimate</label>
+                        <input type="text" id="formFee" placeholder="e.g. $500-$1000">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label>Website URL</label>
+                        <input type="url" id="formUrl" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label>Category Tags (comma-separated)</label>
+                        <input type="text" id="formTags" placeholder="e.g. Music, Food, Outdoor">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label>Notes</label>
+                        <textarea id="formNotes" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="deleteBtn" class="btn btn-danger" style="display:none;">Delete</button>
+                    <div class="form-actions-right">
+                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Event</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="events-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
