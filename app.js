@@ -10,6 +10,21 @@ function init() {
     updateDashboard();
     renderList();
     bindEvents();
+    loadLastUpdated();
+}
+
+// === Last Updated ===
+function loadLastUpdated() {
+    fetch('last-updated.json?' + Date.now())
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+            if (data && data.timestamp) {
+                const d = new Date(data.timestamp);
+                const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                document.getElementById('lastUpdated').innerHTML = '🔄 Events updated<br>' + fmt;
+            }
+        })
+        .catch(() => {});
 }
 
 // === Data Management ===
