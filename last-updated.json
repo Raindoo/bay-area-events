@@ -1,4 +1,7 @@
 {
-  "timestamp": "2026-03-19T22:46:00-07:00",
-  "summary": "Initial build with 24 pre-loaded Bay Area events"
+  "lastUpdated": "2026-03-30T09:00:00-07:00",
+  "summary": "Added 6 new events: SF Cherry Blossom Festival (Apr 12-13), EAT ME! Artisan Food Fest (Apr 4-5), Bay Area Brew Fest (Apr 18), Carnaval San Francisco (May 23-24), BottleRock Napa Valley (May 22-24), Castro Street Fair (Oct 4). Total events: 30.",
+  "eventsAdded": 6,
+  "eventsRemoved": 0,
+  "totalEvents": 30
 }
