@@ -1133,6 +1133,259 @@
         "status": "unverified",
         "lastVerifiedAt": null
       }
+    },
+    {
+      "id": "evt-031",
+      "name": "Pistahan Parade & Festival",
+      "location": "Yerba Buena Gardens, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Cultural",
+        "Food",
+        "Festival",
+        "Outdoor"
+      ],
+      "description": "33rd Annual (2026). Largest Filipino festival on the West Coast. Free 2-day outdoor event with 8 cultural pavilions including a Culinary pavilion. Strong food-vendor program — great fit for coffee & Filipino-inspired pastries. Deadline estimate likely PASSED; verify vendor portal and apply immediately if still open.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-031@2026-08-08",
+          "startDate": "2026-08-08",
+          "endDate": "2026-08-09",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.pistahan.net",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
+    },
+    {
+      "id": "evt-032",
+      "name": "Half Moon Bay Art & Pumpkin Festival",
+      "location": "Main Street, Half Moon Bay",
+      "size": "Massive",
+      "categories": [
+        "Food",
+        "Festival",
+        "Outdoor",
+        "Family"
+      ],
+      "description": "54th Annual (2026). One of the largest pumpkin festivals in the world; massive foot traffic (tens of thousands). Food vendors highly sought. Weigh-Off kicks off Oct 12. Apply early — competitive booth selection.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-032@2026-10-17",
+          "startDate": "2026-10-17",
+          "endDate": "2026-10-18",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.hmbpumpkinfest.com",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
+    },
+    {
+      "id": "evt-033",
+      "name": "Great Dickens Christmas Fair",
+      "location": "Cow Palace, Daly City (San Francisco)",
+      "size": "Large",
+      "categories": [
+        "Food",
+        "Holiday",
+        "Indoor",
+        "Family"
+      ],
+      "description": "5 weekends (Nov 21–Dec 20, 2026), including the Friday after Thanksgiving. Indoor Victorian London-themed holiday fair with 'Delicacies & Libations' food vendors. Strong fit for holiday bakery, roasted coffee, and hot cocoa. Long commitment but high seasonal revenue.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-033@2026-11-21",
+          "startDate": "2026-11-21",
+          "endDate": "2026-12-20",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.dickensfair.com",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
+    },
+    {
+      "id": "evt-034",
+      "name": "Renegade Craft Fair SF (Holiday)",
+      "location": "Fort Mason Center Festival Pavilion, San Francisco",
+      "size": "Medium",
+      "categories": [
+        "Art",
+        "Food",
+        "Drink",
+        "Holiday",
+        "Indoor"
+      ],
+      "description": "Holiday/Winter edition of Renegade's SF fairs (a Summer fair also runs Aug 1-2). Bayside at Fort Mason. 'Great food and drinks' vendors featured alongside makers — ideal for artisan coffee and holiday cookie/gift sets. Apply via renegadecraft.com/apply.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-034@2026-11-14",
+          "startDate": "2026-11-14",
+          "endDate": "2026-11-15",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.renegadecraft.com/san-francisco",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
+    },
+    {
+      "id": "evt-035",
+      "name": "SF Coffee Festival",
+      "location": "Fort Mason Center Festival Pavilion, San Francisco",
+      "size": "Medium",
+      "categories": [
+        "Coffee",
+        "Food",
+        "Drink",
+        "Indoor"
+      ],
+      "description": "Nov 7-8, 2026 at Fort Mason. Specialty roasters, coffee shops, beans, snacks, and live entertainment. DIRECT perfect-fit event for a coffee & bakery vendor — exhibitor/retailer booth. Apply early; limited exhibitor spots.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-035@2026-11-07",
+          "startDate": "2026-11-07",
+          "endDate": "2026-11-08",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.sfcoffeefestival.com",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
+    },
+    {
+      "id": "evt-036",
+      "name": "Winter Fancy Food Show (Winter FancyFaire)",
+      "location": "Moscone Center, San Francisco",
+      "size": "Massive",
+      "categories": [
+        "TradeShow",
+        "Food",
+        "Drink",
+        "B2B"
+      ],
+      "description": "B2B trade show (Specialty Food Association), NOT public vending. Wholesale exhibitor opportunity for coffee/bakery brands to reach buyers/distributors. VERIFY 2027 dates & location — show rebranded to 'Winter FancyFaire' and dates shift yearly (typically mid-January at Moscone). Exhibitor applications open months ahead.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-036@2027-01-17",
+          "startDate": "2027-01-17",
+          "endDate": "2027-01-19",
+          "verification": {
+            "status": "unverified",
+            "lastVerifiedAt": null
+          }
+        }
+      ],
+      "opportunity": {
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": null,
+        "verification": {
+          "status": "unverified",
+          "lastVerifiedAt": null
+        },
+        "applicationStatus": "unknown"
+      },
+      "source": {
+        "officialUrl": "https://www.specialtyfood.com/fancy-food-shows/winter",
+        "publisher": null,
+        "status": "unverified",
+        "lastVerifiedAt": null
+      }
     }
   ],
   "sources": [
@@ -1401,6 +1654,66 @@
       "occurrenceId": "evt-030@2026-04-18",
       "url": "https://www.eventbrite.com/e/2026-bay-area-brew-fest-tickets-1977549873907",
       "enabled": true,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-031",
+      "occurrenceId": "evt-031@2026-08-08",
+      "url": "https://www.pistahan.net",
+      "enabled": false,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-032",
+      "occurrenceId": "evt-032@2026-10-17",
+      "url": "https://www.hmbpumpkinfest.com",
+      "enabled": false,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-033",
+      "occurrenceId": "evt-033@2026-11-21",
+      "url": "https://www.dickensfair.com",
+      "enabled": false,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-034",
+      "occurrenceId": "evt-034@2026-11-14",
+      "url": "https://www.renegadecraft.com/san-francisco",
+      "enabled": false,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-035",
+      "occurrenceId": "evt-035@2026-11-07",
+      "url": "https://www.sfcoffeefestival.com",
+      "enabled": false,
+      "autopublish": false,
+      "parser": {
+        "type": "manual"
+      }
+    },
+    {
+      "eventId": "evt-036",
+      "occurrenceId": "evt-036@2027-01-17",
+      "url": "https://www.specialtyfood.com/fancy-food-shows/winter",
+      "enabled": false,
       "autopublish": false,
       "parser": {
         "type": "manual"

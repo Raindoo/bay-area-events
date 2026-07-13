@@ -10,7 +10,7 @@ are not deleted — they are **quarantined**.
   **61 expanded occurrences** (recurrence included).
 - **Source registry (`data/sources.json`):** 5 source entries the daily refresh
   checks.
-- **Quarantine (`research/quarantined-legacy-events.json`):** **27 legacy records**
+- **Quarantine (`research/quarantined-legacy-events.json`):** **33 legacy records**
   preserved out of the published catalog.
 
 These numbers reflect the current data files; re-run `npm run check:data` for the
@@ -39,7 +39,7 @@ belong in quarantine, not in the shipped catalog.
 | `quarantinedAt` | Date the quarantine was created (e.g. `2026-07-13`). |
 | `reason` | Why these records were moved out of the published catalog. |
 | `promotionRule` | The exact condition for returning a record to the catalog. |
-| `events[]` | The 27 legacy events, using the **same event schema** as `data/events.json`. |
+| `events[]` | The 33 legacy events, using the **same event schema** as `data/events.json`. |
 
 Because the events keep the catalog schema, promotion is a move (with updates),
 not a rewrite from scratch.

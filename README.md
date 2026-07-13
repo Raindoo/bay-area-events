@@ -17,7 +17,7 @@ plausible-looking event cards.
 - The browser stores only personal application status, notes, deadline, and fee in
   a versioned local overlay. Backup and Restore use JSON.
 
-The old 30-event hand-written catalog was quarantined in
+The old 36-event hand-written catalog was quarantined in
 `research/quarantined-legacy-events.json`. The live interface does not load it.
 
 ## Run locally
@@ -66,7 +66,7 @@ Published events must pass these rules:
 The published catalog is intentionally narrow: it holds only events with current
 primary-source verification and an actionable vendor path. As of now that is **3
 verified/actionable events** with **61 expanded occurrences** (recurrence
-included), refreshed by **5 source entries**. The other **27 legacy records** are
+included), refreshed by **5 source entries**. The other **33 legacy records** are
 preserved — not deleted — in `research/quarantined-legacy-events.json`. They were
 moved out because they lack current primary-source verification or an actionable
 application path.
