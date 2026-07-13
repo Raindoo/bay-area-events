@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-13T07:43:38.018Z",
+  "checkedAt": "2026-07-13T21:55:13.374Z",
   "confirmed": [
     {
       "eventId": "evt-008",
@@ -50,51 +50,7 @@
       "url": "https://castrostreetfair.org/fair/exhibitors/"
     }
   ],
-  "changed": [
-    {
-      "eventId": "evt-008",
-      "action": "refresh-verification",
-      "targets": [
-        "identity",
-        "recurrence",
-        "opportunity"
-      ],
-      "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal"
-    },
-    {
-      "eventId": "evt-012",
-      "action": "refresh-verification",
-      "targets": [
-        "identity",
-        "recurrence"
-      ],
-      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
-    },
-    {
-      "eventId": "evt-012",
-      "action": "refresh-verification",
-      "targets": [
-        "opportunity"
-      ],
-      "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
-    },
-    {
-      "eventId": "evt-028",
-      "action": "refresh-verification",
-      "targets": [
-        "occurrence"
-      ],
-      "url": "https://castrostreetfair.org/"
-    },
-    {
-      "eventId": "evt-028",
-      "action": "refresh-verification",
-      "targets": [
-        "opportunity"
-      ],
-      "url": "https://castrostreetfair.org/fair/exhibitors/"
-    }
-  ],
+  "changed": [],
   "needsReview": [],
   "failures": []
 }

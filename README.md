@@ -9,7 +9,7 @@ plausible-looking event cards.
 ## How it works
 
 - `data/events.json` is the published, read-only catalog used by the browser.
-- `data/sources.json` registers official pages that the weekly refresh checks.
+- `data/sources.json` registers official pages that the daily refresh checks.
 - `scripts/refresh-events.mjs` uses deterministic date/evidence adapters. It never
   invents a fact and never changes a differing official date without review.
 - `.github/workflows/refresh-events.yml` proposes catalog changes on a branch and
@@ -61,9 +61,34 @@ Published events must pass these rules:
   review.
 - CI validates every pull request and every push to `main`.
 
-## Weekly refresh
+## Scope and quarantine
 
-The scheduled workflow runs Mondays at 15:17 UTC:
+The published catalog is intentionally narrow: it holds only events with current
+primary-source verification and an actionable vendor path. As of now that is **3
+verified/actionable events** with **61 expanded occurrences** (recurrence
+included), refreshed by **5 source entries**. The other **27 legacy records** are
+preserved — not deleted — in `research/quarantined-legacy-events.json`. They were
+moved out because they lack current primary-source verification or an actionable
+application path.
+
+`validateDataset` keeps `unverified` records out of the published catalog, so a
+record must be promoted before it can ship. The quarantine file's `promotionRule`
+is: *verify the official event occurrence and vendor opportunity independently,
+add deterministic monitoring, and pass `npm run verify`.* In short: independently
+confirm the facts, add a `data/sources.json` monitor, move the event into
+`data/events.json` with `verified`/`partial` status, then pass `npm run verify`.
+`autopublish` is unsupported — any new date difference is a `needsReview`
+candidate, never a machine write.
+
+The refresh is idempotent: a second run over an unchanged catalog yields **0
+changes, 0 reviews, and 0 failures** (the live `data/refresh-report.json`
+currently shows empty `changed`/`needsReview`/`failures`). See
+[docs/quarantine.md](docs/quarantine.md) for the full quarantine schema and
+promotion workflow.
+
+## Daily refresh
+
+The scheduled workflow runs every day at 15:17 UTC (8:17 AM PDT / 7:17 AM PST):
 
 1. Fetch enabled official sources with retries and timeouts.
 2. Confirm configured evidence or extract a date with a deterministic parser.
@@ -112,7 +137,7 @@ data/sources.json                  official-source registry
 data/refresh-report.json           latest refresh outcome
 scripts/                           validation and refresh pipeline
 test/                              deterministic tests
-.github/workflows/                 quality gate and weekly refresh
+.github/workflows/                 quality gate and daily refresh
 research/                          quarantined legacy records
 docs/                              schema and operating details
 ```

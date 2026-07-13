@@ -2,7 +2,7 @@
 
 ## Scheduled workflow
 
-`.github/workflows/refresh-events.yml` runs every Monday at 15:17 UTC and on
+`.github/workflows/refresh-events.yml` runs every day at 15:17 UTC and on
 manual dispatch. It checks out full history, uses Node 22, runs the refresh with
 `--write`, validates the result, and proposes changed catalog data on branch
 `automation/event-refresh`.
