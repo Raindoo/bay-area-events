@@ -1,0 +1,15 @@
+{
+  "name": "bay-area-events",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check:data": "node scripts/check-data.mjs",
+    "refresh": "node scripts/refresh-events.mjs",
+    "test": "node --test",
+    "verify": "npm run check:data && npm test"
+  }
+}

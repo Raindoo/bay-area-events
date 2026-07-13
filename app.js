@@ -1,418 +1,614 @@
+// app.js — Bay Area Event Tracker (UI)
+// The UI fetches the published, read-only catalog at data/events.json. Personal vendor
+// state is kept in a separate versioned localStorage overlay (see app-state.js).
+import {
+  loadPersonalState,
+  savePersonalState,
+  getEventState,
+  setEventState,
+  importPersonalBackup,
+  PERSONAL_SCHEMA_VERSION,
+} from './app-state.js';
+import {
+  formatDate,
+  parseDate,
+  startOfDay,
+  getDeadlineInfo,
+  summarizeOccurrences,
+  occurrenceState,
+  verificationBadge,
+  safeUrl,
+  applicationWindowLabel,
+  el,
+  expandRecurringOccurrences,
+} from './app-logic.js';
+
 // === State ===
-const STORAGE_KEY = 'bayAreaEvents';
-let events = [];
+let catalog = [];
+let personal = { version: PERSONAL_SCHEMA_VERSION, events: {} };
 let calendarDate = new Date();
+let lastFocused = null;
 
 // === Init ===
-function init() {
-    events = loadEvents();
-    populateCategoryFilter();
-    updateDashboard();
-    renderList();
-    bindEvents();
-    loadLastUpdated();
-}
+async function init() {
+  // Load any pre-existing personal state (no catalog filtering yet).
+  personal = loadPersonalState(null);
 
-// === Last Updated ===
-function loadLastUpdated() {
-    fetch('last-updated.json?' + Date.now())
-        .then(r => r.ok ? r.json() : null)
-        .then(data => {
-            if (data && data.timestamp) {
-                const d = new Date(data.timestamp);
-                const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                document.getElementById('lastUpdated').innerHTML = '🔄 Events updated<br>' + fmt;
-            }
-        })
-        .catch(() => {});
-}
+  // Fetch the read-only catalog.
+  try {
+    const res = await fetch('data/events.json?cb=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    catalog = Array.isArray(data.events) ? data.events : [];
+  } catch (err) {
+    console.error('Failed to load event catalog:', err);
+    showBanner('Could not load the event catalog (data/events.json).', 'error');
+    catalog = [];
+  }
 
-// === Data Management ===
-function loadEvents() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return JSON.parse(JSON.stringify(DEFAULT_EVENTS));
-    const saved = JSON.parse(stored);
-    // Merge: keep saved versions, add any new defaults not yet in saved
-    const savedIds = new Set(saved.map(e => e.id));
-    const merged = [...saved];
-    for (const def of DEFAULT_EVENTS) {
-        if (!savedIds.has(def.id)) merged.push(JSON.parse(JSON.stringify(def)));
+  // Expand recurring events forward from today (in-memory copy only).
+  for (const e of catalog) {
+    try {
+      expandRecurringOccurrences(e, new Date());
+    } catch (err) {
+      console.warn('Recurrence expansion failed for', e && e.id, err);
     }
-    return merged;
+  }
+
+  // Re-load in case legacy data needs migration. Personal records for events that are
+  // currently quarantined remain preserved; rendering is naturally limited by catalog.
+  personal = loadPersonalState(null);
+  if (personal.migrated) {
+    savePersonalState(personal);
+    showBanner('Restored your previous vendor notes from local storage.', 'ok');
+  }
+
+  populateCategoryFilter();
+  updateDashboard();
+  renderList();
+  bindEvents();
+  showCatalogFreshness();
 }
 
-function saveEvents() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
+// === Last updated indicator ===
+function showCatalogFreshness() {
+  const dates = [];
+  for (const event of catalog) {
+    dates.push(event.source && event.source.lastVerifiedAt);
+    dates.push(event.opportunity && event.opportunity.verification && event.opportunity.verification.lastVerifiedAt);
+    dates.push(event.recurrence && event.recurrence.verification && event.recurrence.verification.lastVerifiedAt);
+    for (const occurrence of event.occurrences || []) {
+      dates.push(occurrence.verification && occurrence.verification.lastVerifiedAt);
+    }
+  }
+  const latest = dates.filter(Boolean).sort().at(-1);
+  if (!latest) return;
+  const d = parseDate(latest);
+  if (!d) return;
+  const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  document.getElementById('lastUpdated').textContent = 'Sources checked ' + fmt;
 }
 
-function generateId() {
-    return 'evt-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7);
-}
-
-// === Filters & Search ===
+// === Filters & search ===
 function getFiltered() {
-    const search = document.getElementById('searchInput').value.toLowerCase();
-    const month = document.getElementById('filterMonth').value;
-    const size = document.getElementById('filterSize').value;
-    const status = document.getElementById('filterStatus').value;
-    const category = document.getElementById('filterCategory').value;
-    const sortBy = document.getElementById('sortBy').value;
+  const search = document.getElementById('searchInput').value.trim().toLowerCase();
+  const month = document.getElementById('filterMonth').value;
+  const size = document.getElementById('filterSize').value;
+  const status = document.getElementById('filterStatus').value;
+  const category = document.getElementById('filterCategory').value;
+  const sortBy = document.getElementById('sortBy').value;
+  const now = new Date();
 
-    let filtered = events.filter(e => {
-        if (search && !e.name.toLowerCase().includes(search) && !e.location.toLowerCase().includes(search)) return false;
-        if (month) {
-            const m = new Date(e.startDate + 'T00:00:00').getMonth() + 1;
-            if (m !== parseInt(month)) return false;
-        }
-        if (size && e.size !== size) return false;
-        if (status && e.vendorStatus !== status) return false;
-        if (category && !(e.tags || []).includes(category)) return false;
-        return true;
-    });
+  let filtered = catalog.filter((e) => {
+    if (search) {
+      const hay = (e.name + ' ' + e.location + ' ' + (e.categories || []).join(' ')).toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    if (size && e.size !== size) return false;
+    if (status && (getEventState(personal, e.id).status || 'Not Applied') !== status) return false;
+    if (category && !(e.categories || []).includes(category)) return false;
+    if (month) {
+      const m = parseInt(month, 10);
+      const inMonth = (e.occurrences || []).some((o) => {
+        const d = parseDate(o.startDate) || parseDate(o.endDate);
+        return d && d.getMonth() + 1 === m;
+      });
+      if (!inMonth) return false;
+    }
+    return true;
+  });
 
-    const sizeOrder = { Small: 1, Medium: 2, Large: 3, Massive: 4 };
-    filtered.sort((a, b) => {
-        if (sortBy === 'date') return a.startDate.localeCompare(b.startDate);
-        if (sortBy === 'name') return a.name.localeCompare(b.name);
-        if (sortBy === 'size') return (sizeOrder[b.size] || 0) - (sizeOrder[a.size] || 0);
-        return 0;
-    });
+  const sizeOrder = { Small: 1, Medium: 2, Large: 3, Massive: 4 };
+  filtered.sort((a, b) => {
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    if (sortBy === 'size') return (sizeOrder[b.size] || 0) - (sizeOrder[a.size] || 0);
+    const sa = (summarizeOccurrences(a.occurrences, now).next || {}).startDate || '9999-12-31';
+    const sb = (summarizeOccurrences(b.occurrences, now).next || {}).startDate || '9999-12-31';
+    return sa.localeCompare(sb);
+  });
 
-    return filtered;
+  return filtered;
 }
 
 // === Dashboard ===
 function updateDashboard() {
-    const now = new Date();
-    const currentMonth = now.getMonth();
-    const currentYear = now.getFullYear();
-
-    document.getElementById('statTotal').textContent = events.length;
-    document.getElementById('statUpcoming').textContent = events.filter(e => {
-        const d = new Date(e.startDate + 'T00:00:00');
-        return d.getMonth() === currentMonth && d.getFullYear() === currentYear && d >= now;
-    }).length;
-    document.getElementById('statPending').textContent = events.filter(e => e.vendorStatus === 'Applied' || e.vendorStatus === 'Waitlisted').length;
-    document.getElementById('statAccepted').textContent = events.filter(e => e.vendorStatus === 'Accepted').length;
+  const now = new Date();
+  document.getElementById('statTotal').textContent = catalog.length;
+  document.getElementById('statUpcoming').textContent = catalog.filter((e) => {
+    const s = summarizeOccurrences(e.occurrences, now).state;
+    return s === 'upcoming' || s === 'ongoing';
+  }).length;
+  document.getElementById('statPending').textContent = catalog.filter((e) => {
+    const s = getEventState(personal, e.id).status || 'Not Applied';
+    return s === 'Applied' || s === 'Waitlisted';
+  }).length;
+  document.getElementById('statAccepted').textContent = catalog.filter((e) => {
+    return (getEventState(personal, e.id).status || 'Not Applied') === 'Accepted';
+  }).length;
 }
 
-// === Category Filter ===
+// === Category filter ===
 function populateCategoryFilter() {
-    const cats = new Set();
-    events.forEach(e => (e.tags || []).forEach(t => cats.add(t)));
-    const select = document.getElementById('filterCategory');
-    const current = select.value;
-    select.innerHTML = '<option value="">All Categories</option>';
-    [...cats].sort().forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c; opt.textContent = c;
-        select.appendChild(opt);
-    });
-    select.value = current;
+  const cats = new Set();
+  catalog.forEach((e) => (e.categories || []).forEach((t) => cats.add(t)));
+  const select = document.getElementById('filterCategory');
+  const current = select.value;
+  select.textContent = '';
+  select.appendChild(el('option', { value: '' }, ['All Categories']));
+  [...cats].sort().forEach((c) => select.appendChild(el('option', { value: c }, [c])));
+  select.value = current;
+}
+
+// === Badge helpers ===
+function stateBadge(state) {
+  const map = {
+    upcoming: ['Upcoming', 'badge-upcoming'],
+    ongoing: ['Happening now', 'badge-ongoing'],
+    expired: ['Expired', 'badge-expired'],
+    unknown: ['Unknown', 'badge-unknown'],
+  };
+  const [label, cls] = map[state] || map.unknown;
+  return el('span', { class: `badge ${cls}` }, [label]);
+}
+function appWindowBadge(status) {
+  const cls = { open: 'badge-open', rolling: 'badge-rolling', closed: 'badge-closed', unknown: 'badge-unknown' }[status] || 'badge-unknown';
+  return el('span', { class: `badge ${cls}`, title: 'Application window' }, [applicationWindowLabel(status)]);
+}
+function verifiedBadge(v) {
+  const cls = { verified: 'badge-verified', partial: 'badge-partial', unverified: 'badge-unverified', stale: 'badge-stale' }[v.kind];
+  return el('span', { class: `badge ${cls}`, title: 'Source verification' }, [v.label]);
+}
+function statusBadge(status) {
+  const cls = 'badge-' + status.toLowerCase().replace(/\s+/g, '-');
+  return el('span', { class: `badge ${cls}` }, [status]);
 }
 
 // === Rendering: List ===
+function buildCard(event) {
+  const now = new Date();
+  const ps = getEventState(personal, event.id);
+  const occ = summarizeOccurrences(event.occurrences, now);
+  const opp = event.opportunity || {};
+  const appStatus = opp.applicationStatus || 'unknown';
+  const vBadge = verificationBadge(event.source, now);
+  const myStatus = ps.status || 'Not Applied';
+  const deadlineStr = ps.deadline || opp.deadline || null;
+  const deadlineInfo = getDeadlineInfo(deadlineStr, now);
+  const fee = ps.fee || opp.fee || null;
+  const officialUrl = safeUrl(event.source && event.source.officialUrl);
+  const applyUrl = safeUrl(opp.applicationUrl);
+  const recurrence = event.recurrence;
+
+  const badges = el('div', { class: 'event-badges' }, [
+    stateBadge(occ.state),
+    appWindowBadge(appStatus),
+    verifiedBadge(vBadge),
+    statusBadge(myStatus),
+  ]);
+
+  const meta = el('div', { class: 'event-meta' });
+  if (occ.next) {
+    const extra = occ.futureCount > 1 ? ` (+${occ.futureCount - 1} more)` : '';
+    meta.appendChild(el('span', {}, [`📅 ${formatDate(occ.next.startDate)}${extra}`]));
+  } else {
+    meta.appendChild(el('span', {}, ['📅 No upcoming dates']));
+  }
+  meta.appendChild(el('span', {}, [`📍 ${event.location}`]));
+  meta.appendChild(el('span', { class: 'size-badge' }, [event.size]));
+
+  const main = el('div', { class: 'event-card-main' }, [
+    el('div', { class: 'event-name' }, [event.name]),
+    meta,
+    badges,
+  ]);
+
+  if (event.categories && event.categories.length) {
+    main.appendChild(
+      el('div', { class: 'event-tags' }, event.categories.map((c) => el('span', { class: 'tag' }, [c])))
+    );
+  }
+
+  const preview = ps.notes || event.description;
+  if (preview) main.appendChild(el('div', { class: 'event-notes-preview' }, [preview]));
+
+  if (recurrence && recurrence.summary) {
+    main.appendChild(el('div', { class: 'event-recurrence' }, [`🔁 ${recurrence.summary}`]));
+  }
+
+  const right = el('div', { class: 'event-card-right' });
+  if (fee) right.appendChild(el('span', { class: 'event-fee' }, [fee]));
+  if (deadlineInfo) {
+    right.appendChild(
+      el('span', { class: 'event-deadline' + (deadlineInfo.urgent ? ' urgent' : '') }, [deadlineInfo.text])
+    );
+  }
+  const links = el('div', { class: 'event-links' });
+  if (officialUrl) {
+    links.appendChild(
+      el('a', { class: 'event-link', href: officialUrl, target: '_blank', rel: 'noopener noreferrer', onclick: (e) => e.stopPropagation() }, ['Official site'])
+    );
+  }
+  if (applyUrl) {
+    links.appendChild(
+      el('a', { class: 'event-link event-link-apply', href: applyUrl, target: '_blank', rel: 'noopener noreferrer', onclick: (e) => e.stopPropagation() }, ['Apply'])
+    );
+  }
+  if (links.childNodes.length) right.appendChild(links);
+
+  const card = el(
+    'div',
+    {
+      class: 'event-card',
+      role: 'button',
+      tabindex: '0',
+      dataset: { id: event.id },
+      'aria-label': `${event.name}. ${occ.next ? 'Next: ' + formatDate(occ.next.startDate) : 'No upcoming dates'}. Your status: ${myStatus}.`,
+      onclick: () => openDialog(event),
+      onkeydown: (ev) => {
+        if (ev.target !== card) return;
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          openDialog(event);
+        }
+      },
+    },
+    [main, right]
+  );
+  return card;
+}
+
 function renderList() {
-    const container = document.getElementById('listView');
-    const filtered = getFiltered();
-
-    if (filtered.length === 0) {
-        container.innerHTML = '<div class="no-events">No events match your filters</div>';
-        return;
-    }
-
-    container.innerHTML = filtered.map(e => {
-        const statusClass = 'badge-' + e.vendorStatus.toLowerCase().replace(/\s+/g, '-');
-        const startDate = formatDate(e.startDate);
-        const endDate = e.endDate && e.endDate !== e.startDate ? ' – ' + formatDate(e.endDate) : '';
-        const deadlineInfo = getDeadlineInfo(e.applicationDeadline);
-        const tags = (e.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
-
-        return `
-        <div class="event-card" data-id="${e.id}">
-            <div class="event-card-main">
-                <div class="event-name">${esc(e.name)}</div>
-                <div class="event-meta">
-                    <span>📅 ${startDate}${endDate}</span>
-                    <span>📍 ${esc(e.location)}</span>
-                    <span class="size-badge">${e.size}</span>
-                </div>
-                ${tags ? `<div class="event-tags">${tags}</div>` : ''}
-                ${e.notes ? `<div class="event-notes-preview">${esc(e.notes)}</div>` : ''}
-            </div>
-            <div class="event-card-right">
-                <span class="badge ${statusClass}">${e.vendorStatus}</span>
-                ${e.vendorFee ? `<span class="event-fee">${esc(e.vendorFee)}</span>` : ''}
-                ${deadlineInfo ? `<span class="event-deadline ${deadlineInfo.urgent ? 'urgent' : ''}">${deadlineInfo.text}</span>` : ''}
-            </div>
-        </div>`;
-    }).join('');
+  const container = document.getElementById('listView');
+  container.textContent = '';
+  const filtered = getFiltered();
+  if (!filtered.length) {
+    container.appendChild(el('div', { class: 'no-events' }, ['No events match your filters']));
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  for (const e of filtered) frag.appendChild(buildCard(e));
+  container.appendChild(frag);
 }
 
 // === Rendering: Calendar ===
+function pad(n) {
+  return String(n).padStart(2, '0');
+}
+
 function renderCalendar() {
-    const year = calendarDate.getFullYear();
-    const month = calendarDate.getMonth();
-    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const year = calendarDate.getFullYear();
+  const month = calendarDate.getMonth();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    document.getElementById('calTitle').textContent = `${monthNames[month]} ${year}`;
+  document.getElementById('calTitle').textContent = `${monthNames[month]} ${year}`;
 
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const daysInPrev = new Date(year, month, 0).getDate();
-    const today = new Date();
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrev = new Date(year, month, 0).getDate();
+  const today = new Date();
+  const now = new Date();
 
-    const eventsInRange = events.filter(e => {
-        const start = new Date(e.startDate + 'T00:00:00');
-        const end = e.endDate ? new Date(e.endDate + 'T00:00:00') : start;
-        const monthStart = new Date(year, month, 1);
-        const monthEnd = new Date(year, month + 1, 0);
-        return start <= monthEnd && end >= monthStart;
-    });
+  const eventsInRange = catalog.filter((e) =>
+    (e.occurrences || []).some((o) => {
+      const start = parseDate(o.startDate) || parseDate(o.endDate);
+      const end = parseDate(o.endDate) || start;
+      if (!start) return false;
+      const monthStart = new Date(year, month, 1);
+      const monthEnd = new Date(year, month + 1, 0);
+      return start <= monthEnd && end >= monthStart;
+    })
+  );
 
-    let html = '';
-    const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  const calDays = document.getElementById('calDays');
+  calDays.textContent = '';
+  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  const frag = document.createDocumentFragment();
 
-    for (let i = 0; i < totalCells; i++) {
-        let day, isOther = false, dateStr;
-        if (i < firstDay) {
-            day = daysInPrev - firstDay + i + 1;
-            isOther = true;
-            dateStr = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-        } else if (i - firstDay >= daysInMonth) {
-            day = i - firstDay - daysInMonth + 1;
-            isOther = true;
-            dateStr = `${year}-${String(month + 2).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-        } else {
-            day = i - firstDay + 1;
-            dateStr = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-        }
-
-        const isToday = !isOther && day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-        const classes = ['cal-day'];
-        if (isOther) classes.push('other-month');
-        if (isToday) classes.push('today');
-
-        // Find events on this day
-        let dayEvents = '';
-        if (!isOther) {
-            const cellDate = new Date(year, month, day);
-            const matching = eventsInRange.filter(e => {
-                const start = new Date(e.startDate + 'T00:00:00');
-                const end = e.endDate ? new Date(e.endDate + 'T00:00:00') : start;
-                return cellDate >= start && cellDate <= end;
-            });
-            dayEvents = matching.slice(0, 3).map(e => {
-                const sc = 'status-' + e.vendorStatus.toLowerCase().replace(/\s+/g, '-');
-                return `<div class="cal-event ${sc}" data-id="${e.id}" title="${esc(e.name)}">${esc(e.name)}</div>`;
-            }).join('');
-            if (matching.length > 3) dayEvents += `<div class="cal-event" style="color:var(--text-dim)">+${matching.length - 3} more</div>`;
-        }
-
-        html += `<div class="${classes.join(' ')}"><div class="cal-day-number">${day}</div>${dayEvents}</div>`;
-    }
-
-    document.getElementById('calDays').innerHTML = html;
-}
-
-// === Modal ===
-function openModal(eventData) {
-    const modal = document.getElementById('modal');
-    const title = document.getElementById('modalTitle');
-    const deleteBtn = document.getElementById('deleteBtn');
-
-    if (eventData) {
-        title.textContent = 'Edit Event';
-        deleteBtn.style.display = 'block';
-        document.getElementById('eventId').value = eventData.id;
-        document.getElementById('formName').value = eventData.name;
-        document.getElementById('formStartDate').value = eventData.startDate;
-        document.getElementById('formEndDate').value = eventData.endDate || '';
-        document.getElementById('formLocation').value = eventData.location;
-        document.getElementById('formSize').value = eventData.size;
-        document.getElementById('formStatus').value = eventData.vendorStatus;
-        document.getElementById('formDeadline').value = eventData.applicationDeadline || '';
-        document.getElementById('formFee').value = eventData.vendorFee || '';
-        document.getElementById('formUrl').value = eventData.website || '';
-        document.getElementById('formTags').value = (eventData.tags || []).join(', ');
-        document.getElementById('formNotes').value = eventData.notes || '';
+  for (let i = 0; i < totalCells; i++) {
+    let day, isOther = false, cellDate;
+    if (i < firstDay) {
+      day = daysInPrev - firstDay + i + 1;
+      isOther = true;
+      cellDate = new Date(year, month - 1, day);
+    } else if (i - firstDay >= daysInMonth) {
+      day = i - firstDay - daysInMonth + 1;
+      isOther = true;
+      cellDate = new Date(year, month + 1, day);
     } else {
-        title.textContent = 'Add Event';
-        deleteBtn.style.display = 'none';
-        document.getElementById('eventForm').reset();
-        document.getElementById('eventId').value = '';
+      day = i - firstDay + 1;
+      cellDate = new Date(year, month, day);
     }
 
-    modal.style.display = 'flex';
-    document.getElementById('formName').focus();
-}
-
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-function saveEvent(e) {
-    e.preventDefault();
-    const id = document.getElementById('eventId').value;
-    const data = {
-        id: id || generateId(),
-        name: document.getElementById('formName').value.trim(),
-        startDate: document.getElementById('formStartDate').value,
-        endDate: document.getElementById('formEndDate').value || document.getElementById('formStartDate').value,
-        location: document.getElementById('formLocation').value.trim(),
-        size: document.getElementById('formSize').value,
-        vendorStatus: document.getElementById('formStatus').value,
-        applicationDeadline: document.getElementById('formDeadline').value,
-        vendorFee: document.getElementById('formFee').value.trim(),
-        website: document.getElementById('formUrl').value.trim(),
-        tags: document.getElementById('formTags').value.split(',').map(t => t.trim()).filter(Boolean),
-        notes: document.getElementById('formNotes').value.trim()
-    };
-
-    if (id) {
-        const idx = events.findIndex(ev => ev.id === id);
-        if (idx !== -1) events[idx] = data;
-    } else {
-        events.push(data);
+    const classes = ['cal-day'];
+    if (isOther) classes.push('other-month');
+    if (!isOther && day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+      classes.push('today');
     }
 
-    saveEvents();
-    closeModal();
-    refresh();
+    const dayEl = el('div', { class: classes.join(' ') }, [el('div', { class: 'cal-day-number' }, [String(day)])]);
+
+    if (!isOther) {
+      const cd = startOfDay(cellDate);
+      const matching = eventsInRange.filter((e) =>
+        (e.occurrences || []).some((o) => {
+          const start = parseDate(o.startDate) || parseDate(o.endDate);
+          const end = parseDate(o.endDate) || start;
+          return cd >= startOfDay(start) && cd <= startOfDay(end);
+        })
+      );
+      matching.slice(0, 3).forEach((e) => {
+        const myStatus = getEventState(personal, e.id).status || 'Not Applied';
+        const sc = 'status-' + myStatus.toLowerCase().replace(/\s+/g, '-');
+        const node = el(
+          'div',
+          {
+            class: `cal-event ${sc}`,
+            role: 'button',
+            tabindex: '0',
+            dataset: { id: e.id },
+            title: e.name,
+            onclick: () => openDialog(e),
+            onkeydown: (ev) => {
+              if (ev.target !== node) return;
+              if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                openDialog(e);
+              }
+            },
+          },
+          [e.name]
+        );
+        dayEl.appendChild(node);
+      });
+      if (matching.length > 3) {
+        dayEl.appendChild(el('div', { class: 'cal-event', style: 'color:var(--text-dim)' }, [`+${matching.length - 3} more`]));
+      }
+    }
+    frag.appendChild(dayEl);
+  }
+  calDays.appendChild(frag);
 }
 
-function deleteEvent() {
-    const id = document.getElementById('eventId').value;
-    if (!id) return;
-    if (!confirm('Delete this event?')) return;
-    events = events.filter(e => e.id !== id);
-    saveEvents();
-    closeModal();
-    refresh();
+// === Dialog (details + personal state) ===
+function detailRow(label, valueNode) {
+  return el('div', { class: 'detail-row' }, [
+    el('span', { class: 'detail-label' }, [label]),
+    el('span', { class: 'detail-value' }, [valueNode]),
+  ]);
 }
 
-// === Export CSV ===
-function exportCSV() {
-    const filtered = getFiltered();
-    const headers = ['Name','Start Date','End Date','Location','Size','Vendor Status','Application Deadline','Vendor Fee','Website','Tags','Notes'];
-    const rows = filtered.map(e => [
-        e.name, e.startDate, e.endDate || '', e.location, e.size, e.vendorStatus,
-        e.applicationDeadline || '', e.vendorFee || '', e.website || '',
-        (e.tags || []).join('; '), e.notes || ''
-    ]);
+function openDialog(event) {
+  lastFocused = document.activeElement;
+  const now = new Date();
+  const ps = getEventState(personal, event.id);
+  const occ = summarizeOccurrences(event.occurrences, now);
+  const opp = event.opportunity || {};
+  const vBadge = verificationBadge(event.source, now);
+  const officialUrl = safeUrl(event.source && event.source.officialUrl);
+  const applyUrl = safeUrl(opp.applicationUrl);
+  const appStatus = opp.applicationStatus || 'unknown';
 
-    const csv = [headers, ...rows].map(row =>
-        row.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(',')
-    ).join('\n');
+  document.getElementById('modalTitle').textContent = event.name;
+  document.getElementById('eventId').value = event.id;
 
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'bay-area-events.csv';
-    a.click();
-    URL.revokeObjectURL(url);
+  const details = document.getElementById('modalDetails');
+  details.textContent = '';
+  details.appendChild(detailRow('Location', event.location));
+  details.appendChild(detailRow('Size', event.size));
+  if (occ.next) {
+    const range = `${formatDate(occ.next.startDate)}${occ.next.endDate && occ.next.endDate !== occ.next.startDate ? ' – ' + formatDate(occ.next.endDate) : ''}${occ.futureCount > 1 ? ` (+${occ.futureCount - 1} more)` : ''}`;
+    details.appendChild(detailRow('Next occurrence', range));
+  } else {
+    details.appendChild(detailRow('Occurrences', 'No upcoming dates'));
+  }
+  if (event.recurrence && event.recurrence.summary) {
+    details.appendChild(detailRow('Recurrence', event.recurrence.summary));
+  }
+  details.appendChild(detailRow('Verification', vBadge.label));
+  details.appendChild(detailRow('Applications', applicationWindowLabel(appStatus)));
+  if (opp.fee) details.appendChild(detailRow('Fee', opp.fee));
+  if (event.description) details.appendChild(detailRow('Description', event.description));
+
+  if (occ.sorted.length) {
+    const list = el(
+      'ul',
+      { class: 'occ-list' },
+      occ.sorted.slice(0, 8).map((o) => el('li', {}, [`${formatDate(o.startDate)} — ${occurrenceState(o, now)}`]))
+    );
+    details.appendChild(detailRow('Upcoming dates', list));
+  }
+
+  const links = el('div', { class: 'detail-links' });
+  if (officialUrl) {
+    links.appendChild(el('a', { class: 'event-link', href: officialUrl, target: '_blank', rel: 'noopener noreferrer' }, ['Official site']));
+  }
+  if (applyUrl) {
+    links.appendChild(el('a', { class: 'event-link event-link-apply', href: applyUrl, target: '_blank', rel: 'noopener noreferrer' }, ['Apply / Info']));
+  }
+  if (links.childNodes.length) details.appendChild(detailRow('Links', links));
+
+  // Editable personal fields (prefill with personal state, fall back to catalog defaults).
+  document.getElementById('formStatus').value = ps.status || 'Not Applied';
+  document.getElementById('formDeadline').value = ps.deadline || '';
+  document.getElementById('formFee').value = ps.fee || opp.fee || '';
+  document.getElementById('formNotes').value = ps.notes || '';
+
+  const modal = document.getElementById('modal');
+  modal.style.display = 'flex';
+  document.getElementById('formStatus').focus();
+}
+
+function closeDialog() {
+  document.getElementById('modal').style.display = 'none';
+  if (lastFocused && lastFocused.focus) lastFocused.focus();
+  lastFocused = null;
+}
+
+function savePersonal(e) {
+  e.preventDefault();
+  const id = document.getElementById('eventId').value;
+  if (!id) return;
+  const patch = {
+    status: document.getElementById('formStatus').value,
+    deadline: document.getElementById('formDeadline').value || null,
+    fee: document.getElementById('formFee').value.trim(),
+    notes: document.getElementById('formNotes').value.trim(),
+  };
+  setEventState(personal, id, patch);
+  savePersonalState(personal);
+  closeDialog();
+  refresh();
+  showBanner('Saved your details for this event.', 'ok');
+}
+
+// === Backup export / import (personal state only) ===
+function exportBackup() {
+  const payload = {
+    version: PERSONAL_SCHEMA_VERSION,
+    exportedAt: new Date().toISOString(),
+    events: personal.events || {},
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `bay-area-events-backup-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function importBackup(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const res = importPersonalBackup(String(reader.result), null);
+    if (!res.ok) {
+      showBanner('Import failed: ' + res.error, 'error');
+      return;
+    }
+    personal.events = { ...personal.events, ...res.events };
+    savePersonalState(personal);
+    refresh();
+    const n = Object.keys(res.events).length;
+    showBanner(`Imported ${n} event${n === 1 ? '' : 's'} from backup.`, 'ok');
+  };
+  reader.onerror = () => showBanner('Could not read the backup file.', 'error');
+  reader.readAsText(file);
+}
+
+// === Banner ===
+function showBanner(msg, kind) {
+  const b = document.getElementById('banner');
+  if (!b) return;
+  b.textContent = msg;
+  b.className = 'banner banner-' + (kind || 'ok');
+  b.hidden = false;
+  clearTimeout(showBanner._t);
+  showBanner._t = setTimeout(() => {
+    b.hidden = true;
+  }, 4000);
 }
 
 // === Helpers ===
-function formatDate(dateStr) {
-    if (!dateStr) return '';
-    const d = new Date(dateStr + 'T00:00:00');
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
-
-function getDeadlineInfo(deadline) {
-    if (!deadline) return null;
-    const d = new Date(deadline + 'T00:00:00');
-    const now = new Date();
-    const diff = Math.ceil((d - now) / (1000 * 60 * 60 * 24));
-    if (diff < 0) return { text: 'Deadline passed', urgent: false };
-    if (diff <= 14) return { text: `⚠️ ${diff}d left to apply`, urgent: true };
-    if (diff <= 30) return { text: `${diff}d to deadline`, urgent: false };
-    return { text: `Due ${formatDate(deadline)}`, urgent: false };
-}
-
-function esc(str) {
-    const div = document.createElement('div');
-    div.textContent = str || '';
-    return div.innerHTML;
-}
-
 function refresh() {
-    updateDashboard();
-    populateCategoryFilter();
-    renderList();
-    if (document.getElementById('calendarView').style.display !== 'none') renderCalendar();
+  updateDashboard();
+  populateCategoryFilter();
+  renderList();
+  if (document.getElementById('calendarView').style.display !== 'none') renderCalendar();
 }
 
-// === Event Bindings ===
+// === Event bindings ===
 function bindEvents() {
-    // Search & filters
-    document.getElementById('searchInput').addEventListener('input', renderList);
-    ['filterMonth', 'filterSize', 'filterStatus', 'filterCategory', 'sortBy'].forEach(id => {
-        document.getElementById(id).addEventListener('change', renderList);
-    });
+  document.getElementById('searchInput').addEventListener('input', renderList);
+  ['filterMonth', 'filterSize', 'filterStatus', 'filterCategory', 'sortBy'].forEach((id) => {
+    document.getElementById(id).addEventListener('change', renderList);
+  });
 
-    // View toggle
-    document.getElementById('listViewBtn').addEventListener('click', () => {
-        document.getElementById('listView').style.display = '';
-        document.getElementById('calendarView').style.display = 'none';
-        document.getElementById('listViewBtn').classList.add('active');
-        document.getElementById('calendarViewBtn').classList.remove('active');
-    });
-    document.getElementById('calendarViewBtn').addEventListener('click', () => {
-        document.getElementById('listView').style.display = 'none';
-        document.getElementById('calendarView').style.display = '';
-        document.getElementById('calendarViewBtn').classList.add('active');
-        document.getElementById('listViewBtn').classList.remove('active');
-        renderCalendar();
-    });
+  document.getElementById('listViewBtn').addEventListener('click', () => {
+    document.getElementById('listView').style.display = '';
+    document.getElementById('calendarView').style.display = 'none';
+    document.getElementById('listViewBtn').classList.add('active');
+    document.getElementById('calendarViewBtn').classList.remove('active');
+  });
+  document.getElementById('calendarViewBtn').addEventListener('click', () => {
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('calendarView').style.display = '';
+    document.getElementById('calendarViewBtn').classList.add('active');
+    document.getElementById('listViewBtn').classList.remove('active');
+    renderCalendar();
+  });
 
-    // Calendar nav
-    document.getElementById('calPrev').addEventListener('click', () => {
-        calendarDate.setMonth(calendarDate.getMonth() - 1);
-        renderCalendar();
-    });
-    document.getElementById('calNext').addEventListener('click', () => {
-        calendarDate.setMonth(calendarDate.getMonth() + 1);
-        renderCalendar();
-    });
+  document.getElementById('calPrev').addEventListener('click', () => {
+    calendarDate.setMonth(calendarDate.getMonth() - 1);
+    renderCalendar();
+  });
+  document.getElementById('calNext').addEventListener('click', () => {
+    calendarDate.setMonth(calendarDate.getMonth() + 1);
+    renderCalendar();
+  });
 
-    // Add event
-    document.getElementById('addEventBtn').addEventListener('click', () => openModal(null));
+  // Backup / restore
+  document.getElementById('backupBtn').addEventListener('click', exportBackup);
+  document.getElementById('restoreBtn').addEventListener('click', () => document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    importBackup(file);
+    e.target.value = '';
+  });
 
-    // Card clicks (list view)
-    document.getElementById('listView').addEventListener('click', (e) => {
-        const card = e.target.closest('.event-card');
-        if (card) {
-            const ev = events.find(ev => ev.id === card.dataset.id);
-            if (ev) openModal(ev);
-        }
-    });
+  // Modal
+  document.getElementById('modalClose').addEventListener('click', closeDialog);
+  document.getElementById('cancelBtn').addEventListener('click', closeDialog);
+  document.getElementById('modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modal')) closeDialog();
+  });
+  document.getElementById('eventForm').addEventListener('submit', savePersonal);
 
-    // Calendar event clicks
-    document.getElementById('calDays').addEventListener('click', (e) => {
-        const el = e.target.closest('.cal-event');
-        if (el && el.dataset.id) {
-            const ev = events.find(ev => ev.id === el.dataset.id);
-            if (ev) openModal(ev);
-        }
-    });
-
-    // Modal
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-    document.getElementById('cancelBtn').addEventListener('click', closeModal);
-    document.getElementById('modal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('modal')) closeModal();
-    });
-    document.getElementById('eventForm').addEventListener('submit', saveEvent);
-    document.getElementById('deleteBtn').addEventListener('click', deleteEvent);
-    document.getElementById('exportBtn').addEventListener('click', exportCSV);
-
-    // Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-    });
+  // Escape + basic focus trap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('modal');
+      if (modal.style.display === 'flex') closeDialog();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const modal = document.getElementById('modal');
+      if (modal.style.display !== 'flex') return;
+      const focusables = modal.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
 }
 
 // === Boot ===

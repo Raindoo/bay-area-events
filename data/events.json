@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-13T07:43:38.182Z",
+  "events": [
+    {
+      "id": "evt-008",
+      "name": "Oakland First Fridays",
+      "location": "Telegraph Ave, Oakland",
+      "size": "Medium",
+      "categories": [
+        "Art",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Monthly art walk & street fair. First Friday of every month. Rolling applications.",
+      "scheduleNote": "Monthly art walk & street fair. First Friday of every month. Rolling applications.",
+      "occurrences": [
+        {
+          "id": "evt-008@2026-01-02",
+          "startDate": "2026-01-02",
+          "endDate": "2026-01-02",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2026-08-07",
+          "startDate": "2026-08-07",
+          "endDate": "2026-08-07",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2026-09-04",
+          "startDate": "2026-09-04",
+          "endDate": "2026-09-04",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2026-10-02",
+          "startDate": "2026-10-02",
+          "endDate": "2026-10-02",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2026-11-06",
+          "startDate": "2026-11-06",
+          "endDate": "2026-11-06",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2026-12-04",
+          "startDate": "2026-12-04",
+          "endDate": "2026-12-04",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-008@2027-01-01",
+          "startDate": "2027-01-01",
+          "endDate": "2027-01-01",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": "Dessert vendors $250-$400; food trucks $300-$600; food booths $450-$700",
+        "eligibility": "Food vendors need California seller, Oakland business, Alameda County health, insurance, and applicable fire permits.",
+        "applicationUrl": "https://www.eventeny.com/company/?c=304760",
+        "verification": {
+          "status": "partial",
+          "lastVerifiedAt": "2026-07-13",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.oaklandfirstfridays.org/",
+        "publisher": "Oakland First Fridays",
+        "status": "partial",
+        "lastVerifiedAt": "2026-07-13",
+        "verificationMethod": "generated"
+      },
+      "recurrence": {
+        "frequency": "monthly",
+        "startDate": "2026-01-01",
+        "endDate": null,
+        "byWeekdays": [
+          "FR"
+        ],
+        "weekOfMonth": 1,
+        "exceptions": [],
+        "horizonDays": 180,
+        "summary": "First Friday of each month; check the official schedule for exceptions.",
+        "verification": {
+          "status": "partial",
+          "lastVerifiedAt": "2026-07-13",
+          "method": "generated"
+        }
+      }
+    },
+    {
+      "id": "evt-012",
+      "name": "Foodwise Ferry Plaza Farmers Market",
+      "location": "Ferry Building, San Francisco",
+      "size": "Medium",
+      "categories": [
+        "Market",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Year-round Foodwise farmers market with prepared-food sellers at the San Francisco Ferry Building.",
+      "scheduleNote": "Weekly Saturday market (Tues & Thurs too). Premium location. Competitive entry.",
+      "occurrences": [
+        {
+          "id": "evt-012@2026-01-03",
+          "startDate": "2026-01-03",
+          "endDate": "2026-01-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-14",
+          "startDate": "2026-07-14",
+          "endDate": "2026-07-14",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-16",
+          "startDate": "2026-07-16",
+          "endDate": "2026-07-16",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-18",
+          "startDate": "2026-07-18",
+          "endDate": "2026-07-18",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-21",
+          "startDate": "2026-07-21",
+          "endDate": "2026-07-21",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-23",
+          "startDate": "2026-07-23",
+          "endDate": "2026-07-23",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-25",
+          "startDate": "2026-07-25",
+          "endDate": "2026-07-25",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-28",
+          "startDate": "2026-07-28",
+          "endDate": "2026-07-28",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-07-30",
+          "startDate": "2026-07-30",
+          "endDate": "2026-07-30",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-01",
+          "startDate": "2026-08-01",
+          "endDate": "2026-08-01",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-04",
+          "startDate": "2026-08-04",
+          "endDate": "2026-08-04",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-06",
+          "startDate": "2026-08-06",
+          "endDate": "2026-08-06",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-08",
+          "startDate": "2026-08-08",
+          "endDate": "2026-08-08",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-11",
+          "startDate": "2026-08-11",
+          "endDate": "2026-08-11",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-13",
+          "startDate": "2026-08-13",
+          "endDate": "2026-08-13",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-15",
+          "startDate": "2026-08-15",
+          "endDate": "2026-08-15",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-18",
+          "startDate": "2026-08-18",
+          "endDate": "2026-08-18",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-20",
+          "startDate": "2026-08-20",
+          "endDate": "2026-08-20",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-22",
+          "startDate": "2026-08-22",
+          "endDate": "2026-08-22",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-25",
+          "startDate": "2026-08-25",
+          "endDate": "2026-08-25",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-27",
+          "startDate": "2026-08-27",
+          "endDate": "2026-08-27",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-08-29",
+          "startDate": "2026-08-29",
+          "endDate": "2026-08-29",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-01",
+          "startDate": "2026-09-01",
+          "endDate": "2026-09-01",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-03",
+          "startDate": "2026-09-03",
+          "endDate": "2026-09-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-05",
+          "startDate": "2026-09-05",
+          "endDate": "2026-09-05",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-08",
+          "startDate": "2026-09-08",
+          "endDate": "2026-09-08",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-10",
+          "startDate": "2026-09-10",
+          "endDate": "2026-09-10",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-12",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-12",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-15",
+          "startDate": "2026-09-15",
+          "endDate": "2026-09-15",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-17",
+          "startDate": "2026-09-17",
+          "endDate": "2026-09-17",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-19",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-19",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-22",
+          "startDate": "2026-09-22",
+          "endDate": "2026-09-22",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-24",
+          "startDate": "2026-09-24",
+          "endDate": "2026-09-24",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-26",
+          "startDate": "2026-09-26",
+          "endDate": "2026-09-26",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-09-29",
+          "startDate": "2026-09-29",
+          "endDate": "2026-09-29",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-01",
+          "startDate": "2026-10-01",
+          "endDate": "2026-10-01",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-03",
+          "startDate": "2026-10-03",
+          "endDate": "2026-10-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-06",
+          "startDate": "2026-10-06",
+          "endDate": "2026-10-06",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-08",
+          "startDate": "2026-10-08",
+          "endDate": "2026-10-08",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-10",
+          "startDate": "2026-10-10",
+          "endDate": "2026-10-10",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-13",
+          "startDate": "2026-10-13",
+          "endDate": "2026-10-13",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-15",
+          "startDate": "2026-10-15",
+          "endDate": "2026-10-15",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-17",
+          "startDate": "2026-10-17",
+          "endDate": "2026-10-17",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-20",
+          "startDate": "2026-10-20",
+          "endDate": "2026-10-20",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-22",
+          "startDate": "2026-10-22",
+          "endDate": "2026-10-22",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-24",
+          "startDate": "2026-10-24",
+          "endDate": "2026-10-24",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-27",
+          "startDate": "2026-10-27",
+          "endDate": "2026-10-27",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-29",
+          "startDate": "2026-10-29",
+          "endDate": "2026-10-29",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-10-31",
+          "startDate": "2026-10-31",
+          "endDate": "2026-10-31",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-11-03",
+          "startDate": "2026-11-03",
+          "endDate": "2026-11-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-11-05",
+          "startDate": "2026-11-05",
+          "endDate": "2026-11-05",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-11-07",
+          "startDate": "2026-11-07",
+          "endDate": "2026-11-07",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "evt-012@2026-11-10",
+          "startDate": "2026-11-10",
+          "endDate": "2026-11-10",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Prepared-food sellers are considered; Foodwise prefers organic, regional ingredients and at least two years of relevant experience. Products undergo review and tasting.",
+        "applicationUrl": "https://foodwise.org/markets/prospective-sellers/",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-07-13",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://foodwise.org/markets/ferry-plaza-farmers-market/",
+        "publisher": "Foodwise",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-13",
+        "verificationMethod": "generated"
+      },
+      "recurrence": {
+        "frequency": "weekly",
+        "startDate": "2026-01-01",
+        "endDate": null,
+        "byWeekdays": [
+          "TU",
+          "TH",
+          "SA"
+        ],
+        "exceptions": [],
+        "horizonDays": 120,
+        "summary": "Tuesday, Thursday, and Saturday year-round; check official updates for holiday exceptions.",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-07-13",
+          "method": "generated"
+        }
+      }
+    },
+    {
+      "id": "evt-028",
+      "name": "Castro Street Fair",
+      "location": "Castro District, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Cultural",
+        "Food",
+        "Festival",
+        "Outdoor"
+      ],
+      "description": "52nd Annual. SF legacy street fair celebrating LGBTQ+ community. Thousands of attendees. Food vendors support local nonprofits. Great community event.",
+      "scheduleNote": null,
+      "occurrences": [
+        {
+          "id": "evt-028@2026-10-04",
+          "startDate": "2026-10-04",
+          "endDate": "2026-10-04",
+          "verification": {
+            "status": "verified",
+            "lastVerifiedAt": "2026-07-13",
+            "method": "generated"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Exhibitor registration is open; confirm the food-vendor category and requirements in the official application.",
+        "applicationUrl": "https://www.eventeny.com/events/castrostreetfair2026-28089/",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-07-13",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://castrostreetfair.org/",
+        "publisher": "Castro Street Fair",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-13",
+        "verificationMethod": "human"
+      }
+    }
+  ]
+}

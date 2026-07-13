@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "eventId": "evt-008",
+      "occurrenceId": "evt-008@2026-01-02",
+      "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal",
+      "enabled": true,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "recurrence",
+          "opportunity"
+        ],
+        "verifies": "partial",
+        "evidence": [
+          "Vendor Registration",
+          "Food vendor registration closes",
+          "2026 Event Schedule"
+        ]
+      }
+    },
+    {
+      "eventId": "evt-012",
+      "occurrenceId": "evt-012@2026-01-03",
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/",
+      "enabled": true,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "recurrence"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Saturday (8 am - 2 pm)",
+          "Tuesday & Thursday (10 am - 2 pm)",
+          "year round"
+        ]
+      }
+    },
+    {
+      "eventId": "evt-012",
+      "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content",
+      "enabled": true,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "prepared food business",
+          "interest form",
+          "Ferry Plaza"
+        ],
+        "input": "html"
+      }
+    },
+    {
+      "eventId": "evt-028",
+      "occurrenceId": "evt-028@2026-10-04",
+      "url": "https://castrostreetfair.org/",
+      "enabled": true,
+      "allowedYears": [
+        2026
+      ],
+      "maxShiftDays": 3,
+      "parser": {
+        "type": "date-pattern",
+        "pattern": "(?<month>October)\\s+(?<startDay>4),\\s+(?<year>2026)"
+      }
+    },
+    {
+      "eventId": "evt-028",
+      "url": "https://castrostreetfair.org/fair/exhibitors/",
+      "enabled": true,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Exhibitor Registration",
+          "registration for 2026 exhibitors",
+          "Eventeny"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+name: Refresh event sources
+
+on:
+  schedule:
+    - cron: "17 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: event-source-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      UPDATE_BRANCH: automation/event-refresh
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Refresh deterministic sources
+        id: refresh
+        run: npm run refresh -- --write
+
+      - name: Validate published data
+        run: npm run verify
+
+      - name: Preserve refresh report
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-refresh-report
+          path: data/refresh-report.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open or update review pull request
+        shell: bash
+        run: |
+          if git diff --quiet -- data/events.json; then
+            echo "No publishable changes."
+            exit 0
+          fi
+
+          existing="$(gh pr list --head "$UPDATE_BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh pr comment "$existing" --body "A newer scheduled refresh found canonical changes, but this automation will not overwrite an open review branch. Merge or close this PR, then rerun the refresh workflow."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$UPDATE_BRANCH"
+          git add data/events.json data/refresh-report.json
+          git commit -m "data: refresh official event sources"
+          git push --force-with-lease origin "$UPDATE_BRANCH"
+
+          gh pr create \
+            --base main \
+            --head "$UPDATE_BRANCH" \
+            --title "data: refresh official event sources" \
+            --body "Automated official-source refresh. Review source links and the generated refresh report before merging. Unknown or ambiguous facts are never auto-published."
+
+      - name: Report source failures or review candidates without duplicating issues
+        shell: bash
+        run: |
+          failures="$(jq '.failures | length' data/refresh-report.json)"
+          reviews="$(jq '.needsReview | length' data/refresh-report.json)"
+          if [ "$failures" -eq 0 ] && [ "$reviews" -eq 0 ]; then
+            exit 0
+          fi
+
+          echo "::warning::$failures source failure(s) and $reviews review candidate(s)."
+          title="Event source refresh needs attention"
+          existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh issue create \
+              --title "$title" \
+              --body "The scheduled refresh found $failures source failure(s) and $reviews review candidate(s). Download the event-refresh-report artifact from the latest workflow run. Ambiguous facts were not published."
+          else
+            gh issue comment "$existing" --body "The scheduled refresh has $failures source failure(s) and $reviews review candidate(s). Download the event-refresh-report artifact from the latest workflow run."
+          fi
