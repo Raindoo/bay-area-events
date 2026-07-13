@@ -6,12 +6,13 @@ The refresh only checks sources already registered in `data/sources.json`. It
 does not search the web for new opportunities. Adding an event remains a human
 curation task.
 
-## Human-reviewed publication
+## Autonomous but conservative publication
 
 Automation can refresh evidence timestamps, mark old facts stale, and extend
 configured recurrence rules. A newly observed date that differs from the catalog
-always becomes a `needsReview` candidate. Scheduled changes go through a pull
-request and are never auto-merged.
+always becomes a `needsReview` candidate and is not guessed. Validated safe
+changes publish directly to `main`; exceptional ambiguity may still need a person
+if the official source cannot be made deterministic.
 
 ## Source pages can resist automation
 
@@ -45,6 +46,6 @@ This prevents a temporary quarantine or failed catalog load from destroying note
 
 ## Static hosting
 
-GitHub Pages serves the last merged catalog. A successful source check does not
-become visible until its pull request is reviewed and merged. This lag is the
-cost of preventing unattended publication of misleading event facts.
+GitHub Pages serves the last validated catalog. Safe automatic changes become
+visible after the bot commit deploys. Failed or ambiguous checks leave the prior
+catalog online and create or update one health issue.

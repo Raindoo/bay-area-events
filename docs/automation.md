@@ -4,15 +4,17 @@
 
 `.github/workflows/refresh-events.yml` runs every day at 15:17 UTC and on
 manual dispatch. It checks out full history, uses Node 22, runs the refresh with
-`--write`, validates the result, and proposes changed catalog data on branch
-`automation/event-refresh`.
+`--write --strict`, validates the result, and publishes safe catalog changes
+directly to `main`. A successful push triggers GitHub Pages deployment.
 
-The workflow never merges to `main`. If an update PR is already open, a later run
-comments on it instead of overwriting the branch under review.
+Publication is fail-closed: fetch/parser failures, validation failures, and push
+failures prevent a catalog update. Ambiguous facts are left unchanged. Safe
+changes are limited to verification freshness/staleness and deterministic
+recurrence output; the workflow retries a raced push against the newest `main`.
 
 Failures and review candidates create or update one issue titled
 `Event source refresh needs attention`. The latest report is also uploaded as a
-workflow artifact so it can be inspected even when no catalog PR is needed.
+90-day workflow artifact. A later healthy run closes the stale alert issue.
 
 ## What may change automatically
 
@@ -20,15 +22,15 @@ workflow artifact so it can be inspected even when no catalog PR is needed.
 - Failed or changed evidence may mark sufficiently old targets stale.
 - Recurrence rules may add derived occurrences within their configured horizon.
 - A candidate date that differs from an existing occurrence is report-only and
-  requires human review.
+  never overwrites the catalog automatically.
 
-## Review procedure
+## Autonomous publication gate
 
-1. Inspect `data/events.json` and `data/refresh-report.json` in the PR.
-2. Open every source URL related to a non-trivial change.
-3. Resolve all `needsReview` and `failures` entries or document why they are safe.
-4. Confirm the quality workflow passes.
-5. Merge manually.
+1. Fetch registered official sources with bounded retries and timeouts.
+2. Apply only deterministic safe changes in memory.
+3. Validate the complete catalog and run the full test suite.
+4. Commit only when `data/events.json` changed.
+5. Retry a raced push to `main` up to three times, then deploy through Pages.
 
 ## Local commands
 
@@ -40,7 +42,6 @@ workflow artifact so it can be inspected even when no catalog PR is needed.
 
 ## Recovery
 
-- Close an unmerged bad PR; `main` is untouched.
-- Revert a bad merged PR with `git revert <merge-commit>`.
+- Revert a bad automation commit with `git revert <commit>`.
 - For an accidental local write, restore only the affected data files from git.
 - Do not use destructive history rewrites for ordinary recovery.
