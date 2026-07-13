@@ -12,8 +12,8 @@ plausible-looking event cards.
 - `data/sources.json` registers official pages that the daily refresh checks.
 - `scripts/refresh-events.mjs` uses deterministic date/evidence adapters. It never
   invents a fact and never changes a differing official date without review.
-- `.github/workflows/refresh-events.yml` proposes catalog changes on a branch and
-  opens a pull request. Nothing auto-merges to `main`.
+- `.github/workflows/refresh-events.yml` validates and publishes safe catalog
+  changes directly to `main`; ambiguous facts remain unchanged.
 - The browser stores only personal application status, notes, deadline, and fee in
   a versioned local overlay. Backup and Restore use JSON.
 
@@ -95,11 +95,12 @@ The scheduled workflow runs every day at 15:17 UTC (8:17 AM PDT / 7:17 AM PST):
 3. Refresh verification metadata, extend recurring occurrences, and flag
    discrepancies or failures.
 4. Validate the resulting catalog and run all tests.
-5. Open a review pull request when published catalog data changed.
-6. Open or update a deduplicated issue when failures or review candidates exist.
+5. Commit validated catalog changes directly to `main` and deploy Pages.
+6. Open/update one health issue on failures or ambiguity, and close it after a
+   healthy run.
 
-Review the source URL and `data/refresh-report.json` before merging. The workflow
-does not discover new events and does not merge its own pull requests.
+The workflow does not discover new events. It never guesses ambiguous facts or
+publishes a catalog that fails validation/tests.
 
 ## Personal data and backups
 

@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   issues: write
 
 concurrency:
@@ -20,11 +19,11 @@ jobs:
     timeout-minutes: 15
     env:
       GH_TOKEN: ${{ github.token }}
-      UPDATE_BRANCH: automation/event-refresh
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -35,62 +34,110 @@ jobs:
 
       - name: Refresh deterministic sources
         id: refresh
-        run: npm run refresh -- --write
+        continue-on-error: true
+        run: npm run refresh -- --write --strict
 
       - name: Validate published data
+        id: verify
+        if: always()
+        continue-on-error: true
         run: npm run verify
 
       - name: Preserve refresh report
+        id: artifact
+        if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: event-refresh-report
           path: data/refresh-report.json
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
 
-      - name: Open or update review pull request
+      - name: Summarize refresh
+        if: always()
+        shell: bash
+        run: |
+          confirmed="$(jq '.confirmed | length' data/refresh-report.json)"
+          changed="$(jq '.changed | length' data/refresh-report.json)"
+          reviews="$(jq '.needsReview | length' data/refresh-report.json)"
+          failures="$(jq '.failures | length' data/refresh-report.json)"
+          {
+            echo "## Event refresh"
+            echo "- Confirmed monitors: $confirmed"
+            echo "- Safe catalog changes: $changed"
+            echo "- Ambiguous/review items: $reviews"
+            echo "- Failures: $failures"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish validated catalog changes
+        id: publish
+        if: steps.refresh.outcome == 'success' && steps.verify.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           if git diff --quiet -- data/events.json; then
-            echo "No publishable changes."
-            exit 0
-          fi
-
-          existing="$(gh pr list --head "$UPDATE_BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
-          if [ -n "$existing" ]; then
-            gh pr comment "$existing" --body "A newer scheduled refresh found canonical changes, but this automation will not overwrite an open review branch. Merge or close this PR, then rerun the refresh workflow."
+            echo "No publishable catalog changes."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -C "$UPDATE_BRANCH"
           git add data/events.json data/refresh-report.json
           git commit -m "data: refresh official event sources"
-          git push --force-with-lease origin "$UPDATE_BRANCH"
 
-          gh pr create \
-            --base main \
-            --head "$UPDATE_BRANCH" \
-            --title "data: refresh official event sources" \
-            --body "Automated official-source refresh. Review source links and the generated refresh report before merging. Unknown or ambiguous facts are never auto-published."
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              break
+            fi
+            git fetch origin main
+            git rebase origin/main || {
+              git rebase --abort
+              exit 1
+            }
+          done
+          exit 1
 
-      - name: Report source failures or review candidates without duplicating issues
+      - name: Maintain refresh health issue
+        if: always()
         shell: bash
         run: |
           failures="$(jq '.failures | length' data/refresh-report.json)"
           reviews="$(jq '.needsReview | length' data/refresh-report.json)"
-          if [ "$failures" -eq 0 ] && [ "$reviews" -eq 0 ]; then
-            exit 0
+          automation_failure=0
+          if [ "${{ steps.refresh.outcome }}" != "success" ] || \
+             [ "${{ steps.verify.outcome }}" != "success" ] || \
+             [ "${{ steps.artifact.outcome }}" != "success" ] || \
+             [ "${{ steps.publish.outcome }}" = "failure" ]; then
+            automation_failure=1
           fi
 
-          echo "::warning::$failures source failure(s) and $reviews review candidate(s)."
           title="Event source refresh needs attention"
           existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
-          if [ -z "$existing" ]; then
-            gh issue create \
-              --title "$title" \
-              --body "The scheduled refresh found $failures source failure(s) and $reviews review candidate(s). Download the event-refresh-report artifact from the latest workflow run. Ambiguous facts were not published."
+          if [ "$failures" -gt 0 ] || [ "$reviews" -gt 0 ] || [ "$automation_failure" -gt 0 ]; then
+            echo "::warning::$failures source failure(s), $reviews ambiguous item(s), automation failure=$automation_failure."
+            body="Daily refresh: $failures source failure(s), $reviews ambiguous item(s), automation failure=$automation_failure. Ambiguous or invalid facts were not published. See the latest workflow run and event-refresh-report artifact."
+            if [ -z "$existing" ]; then
+              gh issue create --title "$title" --body "$body"
+            else
+              gh issue comment "$existing" --body "$body"
+            fi
           else
-            gh issue comment "$existing" --body "The scheduled refresh has $failures source failure(s) and $reviews review candidate(s). Download the event-refresh-report artifact from the latest workflow run."
+            if [ -n "$existing" ]; then
+              gh issue close "$existing" --comment "The latest daily refresh is healthy: all sources, validation, and publication checks passed."
+            fi
+          fi
+
+      - name: Enforce healthy automation
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.refresh.outcome }}" != "success" ] || \
+             [ "${{ steps.verify.outcome }}" != "success" ] || \
+             [ "${{ steps.artifact.outcome }}" != "success" ] || \
+             [ "${{ steps.publish.outcome }}" = "failure" ]; then
+            exit 1
           fi
