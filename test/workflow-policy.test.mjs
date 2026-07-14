@@ -7,7 +7,7 @@ const workflowUrl = new URL('../.github/workflows/refresh-events.yml', import.me
 test('daily workflow autonomously publishes only after strict validation', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
 
-  assert.match(workflow, /cron: "17 15 \* \* \*"/);
+  assert.match(workflow, /cron: "0 13 \* \* \*"/);
   assert.match(workflow, /npm run refresh -- --write --strict/);
   assert.match(workflow, /npm run verify/);
   assert.match(workflow, /if: steps\.refresh\.outcome == 'success' && steps\.verify\.outcome == 'success'/);

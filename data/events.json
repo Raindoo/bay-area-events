@@ -1280,6 +1280,64 @@
         "lastVerifiedAt": "2026-07-14",
         "verificationMethod": "generated"
       }
+    },
+    {
+      "id": "solano-stroll-2026", "recordType": "dated_event", "name": "Solano Avenue Stroll", "location": "Solano Avenue, Berkeley and Albany", "size": "Massive",
+      "categories": ["Street Fair", "Food", "Coffee", "Outdoor"], "description": "Large East Bay street festival with current registration for prepared and prepackaged food vendors.", "scheduleNote": "September 13, 2026, 10 AM–5 PM.",
+      "occurrences": [{"id":"solano-stroll-2026@2026-09-13","startDate":"2026-09-13","endDate":"2026-09-13","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":null,"fee":"$590 prepackaged food; $960 food prepared onsite, plus safety fee","eligibility":"Food vendors must provide permits, insurance when required, and seller documentation.","applicationUrl":"https://www.solanoavenueassn.org/events/solano-avenue-stroll/application-form/","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.solanoavenueassn.org/events/solano-avenue-stroll/applications/","publisher":"Solano Avenue Association","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"presidio-popup-2026-fall","recordType":"vendor_network","name":"Presidio Pop Up Fall/Winter","location":"Presidio Tunnel Tops, San Francisco","size":"Large","categories":["Food","Coffee","Vendor Program","Outdoor"],"description":"Six-month mobile-food program accepting trucks, trailers, carts, and tents.","scheduleNote":"November 1, 2026–March 31, 2027; minimum two shifts weekly if selected.","occurrences":[],
+      "opportunity":{"applicationStatus":"open","deadline":"2026-08-02","fee":"Tiered daily fee by asset and weekday/weekend","eligibility":"Bay Area mobile food businesses using trucks, trailers, carts, or tents.","applicationUrl":"https://presidio.gov/presidio-pop-up-vendor-information","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://presidio.gov/presidio-pop-up-vendor-information","publisher":"Presidio Trust","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"sf-vegfest-2026","recordType":"dated_event","name":"San Francisco VegFest","location":"County Fair Building, San Francisco","size":"Medium","categories":["Food","Coffee","Festival","Indoor","Vegan"],"description":"Plant-based festival with an explicit food court and espresso-bar eligibility.","scheduleNote":"November 14, 2026.",
+      "occurrences":[{"id":"sf-vegfest-2026@2026-11-14","startDate":"2026-11-14","endDate":"2026-11-14","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":null,"fee":"$225 food-court booth plus applicable SF health fees","eligibility":"All products must be 100% vegan; espresso bars and food vendors are explicitly supported.","applicationUrl":"https://www.sfvs.org/2026exhibitors","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.sfvs.org/2026exhibitors","publisher":"San Francisco Vegan Society","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"ssf-concert-park-2026","recordType":"dated_event","name":"South San Francisco Concert in the Park","location":"Orange Memorial Park, South San Francisco","size":"Large","categories":["Music","Food","Coffee","Outdoor"],"description":"City-produced concert accepting direct food-vendor inquiries.","scheduleNote":"2026 event; official page controls the current date and selection timeline.",
+      "occurrences":[{"id":"ssf-concert-park-2026@2026-09-26","startDate":"2026-09-26","endDate":"2026-09-26","verification":{"status":"partial","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":null,"fee":null,"eligibility":"Food vendors must meet city business-license, county health, and insurance requirements.","applicationUrl":"https://www.ssfca.gov/concert","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.ssfca.gov/concert","publisher":"City of South San Francisco","status":"partial","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"program-napa-farmers-market","recordType":"vendor_network","name":"Napa Farmers Market Vendor Program","location":"Napa","size":"Medium","categories":["Farmers Market","Food","Coffee","Recurring"],"description":"Year-round Saturday market and seasonal Tuesday market with prospective food-vendor intake.","scheduleNote":"Saturday year-round; Tuesday April–December.","occurrences":[],
+      "opportunity":{"applicationStatus":"rolling","deadline":null,"fee":null,"eligibility":"New food and artisan vendors may apply to the Saturday waitlist; placement is not guaranteed.","applicationUrl":"https://napafarmersmarket.org/apply/","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://napafarmersmarket.org/apply/","publisher":"Napa Farmers Market","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"program-365-night-market-2026","recordType":"vendor_network","name":"365 Night Market","location":"Grand Century Mall, San José","size":"Large","categories":["Night Market","Food","Coffee","Recurring"],"description":"Monthly cultural night-market series with food, beverage, food-truck, and product-vendor intake.","scheduleNote":"Monthly through October 2026; consult the official upcoming-events page for individual dates.","occurrences":[],
+      "opportunity":{"applicationStatus":"rolling","deadline":null,"fee":"Varies by vendor type and market date","eligibility":"Food and beverage vendors require applicable Santa Clara County health documentation and insurance.","applicationUrl":"https://www.365nightmarket.com/sellwithus","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.365nightmarket.com/sellwithus","publisher":"365 Night Market","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"bizerkeley-food-fest-2026","recordType":"dated_event","name":"Bizerkeley Food Fest","location":"Sports Basement, Berkeley","size":"Medium","categories":["Food","Coffee","Festival","Vegan","Outdoor"],"description":"Plant-based food festival with dedicated food and food-truck applications.","scheduleNote":"September 6, 2026, noon–6 PM.",
+      "occurrences":[{"id":"bizerkeley-food-fest-2026@2026-09-06","startDate":"2026-09-06","endDate":"2026-09-06","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":"2026-08-01","fee":"$200–$750 plus applicable health fees","eligibility":"Food must be dairy- and meat-free; food trucks and established/new food businesses may apply.","applicationUrl":"https://www.eventeny.com/events/vendor/?id=47222","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.eventeny.com/events/vendor/?id=47222","publisher":"Bizerkeley Food Fest / Eventeny","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"sonoma-tuesday-market-2026","recordType":"recurring_market","name":"Sonoma Tuesday Night Market","location":"Sonoma Plaza, Sonoma","size":"Large","categories":["Farmers Market","Food","Coffee","Recurring","Outdoor"],"description":"City-supported weekly market accepting packaged and prepared-food vendors.","scheduleNote":"Tuesdays through September 8, 2026.",
+      "recurrence":{"frequency":"weekly","startDate":"2026-05-05","endDate":"2026-09-08","byWeekdays":["TU"],"exceptions":[],"horizonDays":120,"verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "occurrences":[{"id":"sonoma-tuesday-market-2026@2026-07-14","startDate":"2026-07-14","endDate":"2026-07-14","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":null,"fee":null,"eligibility":"Prepared food, packaged food, agricultural, and artisan vendors may apply.","applicationUrl":"https://www.sonomacity.org/sonomas-market/","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.sonomacity.org/sonomas-market/","publisher":"City of Sonoma","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"program-heart-city-market","recordType":"vendor_network","name":"Heart of the City Farmers Market Vendor Program","location":"Fulton Plaza, San Francisco","size":"Large","categories":["Farmers Market","Food","Coffee","Recurring"],"description":"Ongoing San Francisco market intake for hot food, packaged food, cottage food, and permitted food trucks.","scheduleNote":"Market participation is assigned by the organizer.","occurrences":[],
+      "opportunity":{"applicationStatus":"rolling","deadline":null,"fee":null,"eligibility":"Hot-food, packaged-food, cottage-food, farm, and permitted food-truck categories are supported.","applicationUrl":"https://hotcfarmersmarket.org/participate","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://hotcfarmersmarket.org/participate","publisher":"Heart of the City Farmers Market","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
+    },
+    {
+      "id":"sf-greek-food-festival-2026","recordType":"dated_event","name":"San Francisco Greek Food Festival","location":"Annunciation Cathedral, San Francisco","size":"Medium","categories":["Food","Coffee","Cultural","Festival"],"description":"Annual Greek food festival with an official current-year vendor application.","scheduleNote":"September 18–20, 2026.",
+      "occurrences":[{"id":"sf-greek-food-festival-2026@2026-09-18","startDate":"2026-09-18","endDate":"2026-09-20","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}}],
+      "opportunity":{"applicationStatus":"open","deadline":null,"fee":null,"eligibility":"Vendor participation is subject to organizer approval and SF permit requirements.","applicationUrl":"https://www.annunciation.org/festival_vendor_application","verification":{"status":"verified","method":"generated","lastVerifiedAt":"2026-07-14"}},
+      "source":{"officialUrl":"https://www.annunciation.org/festival_vendor_application","publisher":"Annunciation Cathedral","status":"verified","lastVerifiedAt":"2026-07-14","verificationMethod":"generated"}
     }
   ]
 }
