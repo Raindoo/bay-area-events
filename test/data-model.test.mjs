@@ -113,3 +113,15 @@ test('keeps unverified records out of the published catalog', () => {
   const errors = validatePublishedDataset(validDataset());
   assert.ok(errors.some(error => error.includes('belongs in quarantine')));
 });
+
+test('allows verified vendor networks without invented occurrence dates', () => {
+  const dataset = validDataset();
+  const event = dataset.events[0];
+  event.recordType = 'vendor_network';
+  event.occurrences = [];
+  event.source.status = 'verified';
+  event.opportunity.applicationStatus = 'rolling';
+  event.opportunity.verification.status = 'verified';
+  assert.deepEqual(validateDataset(dataset), []);
+  assert.deepEqual(validatePublishedDataset(dataset), []);
+});

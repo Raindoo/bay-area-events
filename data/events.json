@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-13T07:43:38.182Z",
+  "generatedAt": "2026-07-14T00:51:08.826Z",
   "events": [
     {
       "id": "evt-008",
@@ -94,7 +94,7 @@
         "applicationUrl": "https://www.eventeny.com/company/?c=304760",
         "verification": {
           "status": "partial",
-          "lastVerifiedAt": "2026-07-13",
+          "lastVerifiedAt": "2026-07-14",
           "method": "generated"
         }
       },
@@ -102,7 +102,7 @@
         "officialUrl": "https://www.oaklandfirstfridays.org/",
         "publisher": "Oakland First Fridays",
         "status": "partial",
-        "lastVerifiedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-14",
         "verificationMethod": "generated"
       },
       "recurrence": {
@@ -118,10 +118,11 @@
         "summary": "First Friday of each month; check the official schedule for exceptions.",
         "verification": {
           "status": "partial",
-          "lastVerifiedAt": "2026-07-13",
+          "lastVerifiedAt": "2026-07-14",
           "method": "generated"
         }
-      }
+      },
+      "recordType": "recurring_market"
     },
     {
       "id": "evt-012",
@@ -675,7 +676,7 @@
         "applicationUrl": "https://foodwise.org/markets/prospective-sellers/",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-13",
+          "lastVerifiedAt": "2026-07-14",
           "method": "generated"
         }
       },
@@ -683,7 +684,7 @@
         "officialUrl": "https://foodwise.org/markets/ferry-plaza-farmers-market/",
         "publisher": "Foodwise",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-14",
         "verificationMethod": "generated"
       },
       "recurrence": {
@@ -700,10 +701,11 @@
         "summary": "Tuesday, Thursday, and Saturday year-round; check official updates for holiday exceptions.",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-13",
+          "lastVerifiedAt": "2026-07-14",
           "method": "generated"
         }
-      }
+      },
+      "recordType": "recurring_market"
     },
     {
       "id": "evt-028",
@@ -725,7 +727,7 @@
           "endDate": "2026-10-04",
           "verification": {
             "status": "verified",
-            "lastVerifiedAt": "2026-07-13",
+            "lastVerifiedAt": "2026-07-14",
             "method": "generated"
           }
         }
@@ -738,7 +740,7 @@
         "applicationUrl": "https://www.eventeny.com/events/castrostreetfair2026-28089/",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-13",
+          "lastVerifiedAt": "2026-07-14",
           "method": "generated"
         }
       },
@@ -748,6 +750,364 @@
         "status": "verified",
         "lastVerifiedAt": "2026-07-13",
         "verificationMethod": "human"
+      },
+      "recordType": "dated_event"
+    },
+    {
+      "id": "program-pcfma",
+      "recordType": "vendor_network",
+      "name": "PCFMA Bay Area Farmers Markets",
+      "location": "30+ markets across the Bay Area",
+      "size": "Massive",
+      "categories": [
+        "Farmers Market",
+        "Food",
+        "Coffee",
+        "Recurring"
+      ],
+      "description": "Rolling interest program for Pacific Coast Farmers’ Market Association markets. Individual market placement depends on organizer review and availability.",
+      "scheduleNote": "Choose preferred markets during organizer screening.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food producers may submit the official interest form; individual market availability is confirmed by PCFMA.",
+        "applicationUrl": "https://www.pcfma.org/sell/interestform",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.pcfma.org/sell",
+        "publisher": "Pacific Coast Farmers’ Market Association",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "program-aim",
+      "recordType": "vendor_network",
+      "name": "AIM Farmers Markets Vendor Program",
+      "location": "Nine Bay Area farmers markets",
+      "size": "Large",
+      "categories": [
+        "Farmers Market",
+        "Food",
+        "Coffee",
+        "Recurring"
+      ],
+      "description": "Agricultural Institute of Marin reviews prepared-food, TFF, onsite-consumption, and food-truck applicants for its market network.",
+      "scheduleNote": "Applications are reviewed within 45 days; placement is market-specific.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Prepared food must be producer-made and is subject to organizer review and tasting.",
+        "applicationUrl": "https://www.agriculturalinstitute.org/joinourmarkets",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.agriculturalinstitute.org/joinourmarkets",
+        "publisher": "Agricultural Institute of Marin",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "program-uvfm",
+      "recordType": "vendor_network",
+      "name": "Urban Village Farmers’ Markets Vendor Program",
+      "location": "Ten Bay Area farmers markets",
+      "size": "Large",
+      "categories": [
+        "Farmers Market",
+        "Food",
+        "Coffee",
+        "Recurring"
+      ],
+      "description": "Official application route for prepared and hot food or drinks sold for immediate onsite consumption.",
+      "scheduleNote": "Accepted vendors are generally expected to attend weekly.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Requires commissary production, permits, insurance, food/fire compliance, and organizer approval.",
+        "applicationUrl": "https://uvfm.org/food-hot",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://uvfm.org/food-hot",
+        "publisher": "Urban Village Farmers’ Market Association",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "dftsf-2026",
+      "recordType": "recurring_market",
+      "name": "Downtown First Thursdays Street Party",
+      "location": "2nd Street, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Night Market",
+        "Food",
+        "Street Festival",
+        "Recurring"
+      ],
+      "description": "Monthly downtown street party with an official call for San Francisco food and retail vendors.",
+      "scheduleNote": "First Thursday through December 2026, 5–10 PM.",
+      "occurrences": [
+        {
+          "id": "dftsf-2026@2026-08-06",
+          "startDate": "2026-08-06",
+          "endDate": "2026-08-06",
+          "verification": {
+            "status": "verified",
+            "method": "human",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        },
+        {
+          "id": "dftsf-2026@2026-09-03",
+          "startDate": "2026-09-03",
+          "endDate": "2026-09-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        },
+        {
+          "id": "dftsf-2026@2026-10-01",
+          "startDate": "2026-10-01",
+          "endDate": "2026-10-01",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        },
+        {
+          "id": "dftsf-2026@2026-11-05",
+          "startDate": "2026-11-05",
+          "endDate": "2026-11-05",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        },
+        {
+          "id": "dftsf-2026@2026-12-03",
+          "startDate": "2026-12-03",
+          "endDate": "2026-12-03",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        }
+      ],
+      "recurrence": {
+        "frequency": "monthly",
+        "startDate": "2026-08-01",
+        "endDate": "2026-12-31",
+        "byWeekdays": [
+          "TH"
+        ],
+        "weekOfMonth": 1,
+        "exceptions": [],
+        "horizonDays": 180,
+        "summary": "First Thursday monthly through December 2026, 5–10 PM.",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food and retail celebrating San Francisco; the login-gated portal does not publicly prove application availability.",
+        "applicationUrl": "https://managemymarket.com/Vendorsv2/MarketApp2.aspx?apply=1&marketID=8358",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.intothestreetssf.com/vendors",
+        "publisher": "Into The Streets",
+        "status": "partial",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "bhangra-beats-2026",
+      "recordType": "dated_event",
+      "name": "Bhangra & Beats Night Market",
+      "location": "Yerba Buena, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Night Market",
+        "Food",
+        "Cultural",
+        "Outdoor"
+      ],
+      "description": "Night market celebrating Indian and South Asian cultures with an official food and retail vendor call.",
+      "scheduleNote": "4–9 PM.",
+      "occurrences": [
+        {
+          "id": "bhangra-beats-2026@2026-07-24",
+          "startDate": "2026-07-24",
+          "endDate": "2026-07-24",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        },
+        {
+          "id": "bhangra-beats-2026@2026-11-13",
+          "startDate": "2026-11-13",
+          "endDate": "2026-11-13",
+          "verification": {
+            "status": "verified",
+            "method": "human",
+            "lastVerifiedAt": "2026-07-13"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food offering should fit the event’s Indian and South Asian cultural focus; portal availability is not public.",
+        "applicationUrl": "https://managemymarket.com/Vendorsv2/MarketApp2.aspx?apply=1&marketID=8429",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.intothestreetssf.com/vendors",
+        "publisher": "Into The Streets",
+        "status": "partial",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "hasf-2026",
+      "recordType": "dated_event",
+      "name": "Haight Ashbury Street Fair",
+      "location": "Haight Street, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Street Fair",
+        "Food",
+        "Coffee",
+        "Outdoor"
+      ],
+      "description": "Long-running neighborhood fair with explicit 2026 food-vendor applications and permit resources.",
+      "scheduleNote": "September 20, 2026, 11 AM–6 PM.",
+      "occurrences": [
+        {
+          "id": "hasf-2026@2026-09-20",
+          "startDate": "2026-09-20",
+          "endDate": "2026-09-20",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "$950 non-flame food booth total",
+        "eligibility": "Non-flame food vending is explicitly supported; permits, insurance, and organizer approval are required.",
+        "applicationUrl": "https://www.haightashburystreetfair.org/store/p/food-vending-non-flame",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.haightashburystreetfair.org/vending",
+        "publisher": "Haight Ashbury Street Fair",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "renegade-sf-winter-2026",
+      "recordType": "dated_event",
+      "name": "Renegade Craft SF Winter",
+      "location": "Fort Mason Center, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Craft Fair",
+        "Food",
+        "Coffee",
+        "Holiday",
+        "Indoor"
+      ],
+      "description": "Curated holiday fair that explicitly welcomes food and drink participants and supports dedicated power arrangements for beverage service.",
+      "scheduleNote": "November 14–15, 2026, 11 AM–5 PM.",
+      "occurrences": [
+        {
+          "id": "renegade-sf-winter-2026@2026-11-14",
+          "startDate": "2026-11-14",
+          "endDate": "2026-11-15",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-07-14"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2026-08-23",
+        "fee": "$800 full booth; food truck 15% gross with $200 minimum",
+        "eligibility": "Juried creative-business event; food/beverage vendors must coordinate equipment and power requirements.",
+        "applicationUrl": "https://www.renegadecraft.com/participation-application/",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-14"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.renegadecraft.com/event/san-francisco-winter/",
+        "publisher": "Renegade Craft",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
       }
     }
   ]

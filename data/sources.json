@@ -88,6 +88,163 @@
           "Eventeny"
         ]
       }
+    },
+    {
+      "eventId": "program-pcfma",
+      "url": "https://www.pcfma.org/sell",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Complete the Interest Form first",
+          "operating certified farmers’ markets throughout the San Francisco Bay Area"
+        ]
+      }
+    },
+    {
+      "eventId": "program-aim",
+      "url": "https://www.agriculturalinstitute.org/joinourmarkets",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Food Purveyor / TFF / Onsite Consumption / Food Truck",
+          "within 45 days of receiving a completed application"
+        ]
+      }
+    },
+    {
+      "eventId": "program-uvfm",
+      "url": "https://uvfm.org/food-hot",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Food & Drinks Ready For Immediate, On-Site Consumption",
+          "Fill out and submit the online Application Form below",
+          "It is free to apply"
+        ]
+      }
+    },
+    {
+      "eventId": "dftsf-2026",
+      "url": "https://www.intothestreetssf.com/vendors",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "recurrence",
+          "opportunity"
+        ],
+        "verifies": "partial",
+        "evidence": [
+          "Downtown First Thursdays Monthly Street Party",
+          "Every First Thursday through December 2026",
+          "Food and retail that celebrates the best of San Francisco"
+        ]
+      }
+    },
+    {
+      "eventId": "bhangra-beats-2026",
+      "occurrenceId": "bhangra-beats-2026@2026-07-24",
+      "url": "https://www.intothestreetssf.com/vendors",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "occurrence",
+          "opportunity"
+        ],
+        "verifies": "partial",
+        "evidence": [
+          "Bhangra & Beats",
+          "July 24 and November 13",
+          "Food and retail that celebrates Indian and South Asian cultures"
+        ]
+      }
+    },
+    {
+      "eventId": "hasf-2026",
+      "occurrenceId": "hasf-2026@2026-09-20",
+      "url": "https://www.haightashburystreetfair.org/vending",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "occurrence",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Applications are now open for the upcoming fair",
+          "September 20, 2026",
+          "Food Vending Non - Flame",
+          "$950.00"
+        ]
+      }
+    },
+    {
+      "eventId": "renegade-sf-winter-2026",
+      "occurrenceId": "renegade-sf-winter-2026@2026-11-14",
+      "url": "https://www.renegadecraft.com/event/san-francisco-winter/",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "occurrence",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "November 14 + 15",
+          "Applications for this event are open until August 23",
+          "Fort Mason Center Festival Pavilion"
+        ]
+      }
+    },
+    {
+      "eventId": "renegade-sf-winter-2026",
+      "url": "https://www.renegadecraft.com/apply/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "2026 Applications Are Open",
+          "Fall/Winter Events in Los Angeles, San Francisco, Seattle, New York, and Chicago - August 23",
+          "Food Truck - 15% of Gross Sales w/ $200 minimum"
+        ]
+      }
     }
   ]
 }
