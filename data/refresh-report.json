@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-14T00:52:14.867Z",
+  "checkedAt": "2026-07-14T01:20:57.627Z",
   "confirmed": [
     {
       "eventId": "bhangra-beats-2026",
@@ -70,6 +70,16 @@
       "url": "https://castrostreetfair.org/fair/exhibitors/"
     },
     {
+      "eventId": "fellowship-craft-winter-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1"
+    },
+    {
       "eventId": "hasf-2026",
       "targets": [
         "identity",
@@ -78,6 +88,16 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.haightashburystreetfair.org/vending"
+    },
+    {
+      "eventId": "laurel-streetfair-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.laureldistrictassociation.org/vendors"
     },
     {
       "eventId": "program-aim",
@@ -89,6 +109,15 @@
       "url": "https://www.agriculturalinstitute.org/joinourmarkets"
     },
     {
+      "eventId": "program-off-the-grid-2026",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://summer-2026.offthegrid.com/"
+    },
+    {
       "eventId": "program-pcfma",
       "targets": [
         "identity",
@@ -96,6 +125,32 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.pcfma.org/sell"
+    },
+    {
+      "eventId": "program-sjmade",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.sanjosemade.com/pages/events"
+    },
+    {
+      "eventId": "program-sunset-mercantile",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://sunsetmercantilesf.com/join-faqs/"
+    },
+    {
+      "eventId": "program-sunset-mercantile",
+      "targets": [
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://sunsetmercantilesf.com/join-prices/"
     },
     {
       "eventId": "program-uvfm",
@@ -123,6 +178,16 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.renegadecraft.com/apply/"
+    },
+    {
+      "eventId": "sf-coffee-festival-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.sfcoffeefestival.com/"
     }
   ],
   "changed": [],

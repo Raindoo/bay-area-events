@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { expandRecurringOccurrences } from '../app-logic.js';
+import { expandRecurringOccurrences, matchesDashboardView } from '../app-logic.js';
 import {
   PERSONAL_STORAGE_KEY,
   importPersonalBackup,
@@ -65,4 +65,17 @@ test('legacy migration and backup restore retain orphaned event notes', () => {
   }), new Set());
   assert.equal(imported.ok, true);
   assert.equal(imported.events['old-event'].notes, 'Still useful');
+});
+
+test('dashboard application views include only ongoing or future events', () => {
+  const past = { occurrences: [{ startDate: '2026-07-01', endDate: '2026-07-01' }] };
+  const future = { occurrences: [{ startDate: '2026-08-01', endDate: '2026-08-02' }] };
+  const today = new Date('2026-07-13T12:00:00');
+
+  assert.equal(matchesDashboardView(past, 'Applied', 'applied', today), false);
+  assert.equal(matchesDashboardView(future, 'Applied', 'applied', today), true);
+  assert.equal(matchesDashboardView(future, 'Waitlisted', 'applied', today), true);
+  assert.equal(matchesDashboardView(future, 'Accepted', 'accepted', today), true);
+  assert.equal(matchesDashboardView(past, 'Not Applied', 'upcoming', today), false);
+  assert.equal(matchesDashboardView(future, 'Not Applied', 'upcoming', today), true);
 });

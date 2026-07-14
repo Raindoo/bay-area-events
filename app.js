@@ -21,6 +21,8 @@ import {
   applicationWindowLabel,
   el,
   expandRecurringOccurrences,
+  hasFutureOccurrence,
+  matchesDashboardView,
 } from './app-logic.js';
 
 // === State ===
@@ -28,6 +30,7 @@ let catalog = [];
 let personal = { version: PERSONAL_SCHEMA_VERSION, events: {} };
 let calendarDate = new Date();
 let lastFocused = null;
+let dashboardView = 'all';
 
 // === Init ===
 async function init() {
@@ -100,12 +103,15 @@ function getFiltered() {
   const now = new Date();
 
   let filtered = catalog.filter((e) => {
+    const personalStatus = getEventState(personal, e.id).status || 'Not Applied';
+    if (!matchesDashboardView(e, personalStatus, dashboardView, now)) return false;
     if (search) {
       const hay = (e.name + ' ' + e.location + ' ' + (e.categories || []).join(' ')).toLowerCase();
       if (!hay.includes(search)) return false;
     }
     if (size && e.size !== size) return false;
-    if (status && (getEventState(personal, e.id).status || 'Not Applied') !== status) return false;
+    if (status && personalStatus !== status) return false;
+    if (status && status !== 'Not Applied' && !hasFutureOccurrence(e, now)) return false;
     if (category && !(e.categories || []).includes(category)) return false;
     if (month) {
       const m = parseInt(month, 10);
@@ -134,17 +140,24 @@ function getFiltered() {
 function updateDashboard() {
   const now = new Date();
   document.getElementById('statTotal').textContent = catalog.length;
-  document.getElementById('statUpcoming').textContent = catalog.filter((e) => {
-    const s = summarizeOccurrences(e.occurrences, now).state;
-    return s === 'upcoming' || s === 'ongoing';
-  }).length;
+  document.getElementById('statUpcoming').textContent = catalog.filter((e) => hasFutureOccurrence(e, now)).length;
   document.getElementById('statPending').textContent = catalog.filter((e) => {
     const s = getEventState(personal, e.id).status || 'Not Applied';
-    return s === 'Applied' || s === 'Waitlisted';
+    return hasFutureOccurrence(e, now) && (s === 'Applied' || s === 'Waitlisted');
   }).length;
   document.getElementById('statAccepted').textContent = catalog.filter((e) => {
-    return (getEventState(personal, e.id).status || 'Not Applied') === 'Accepted';
+    return hasFutureOccurrence(e, now) && (getEventState(personal, e.id).status || 'Not Applied') === 'Accepted';
   }).length;
+}
+
+function setDashboardView(view) {
+  dashboardView = view;
+  document.querySelectorAll('.stat-card[data-view]').forEach((button) => {
+    const active = button.dataset.view === view;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  renderList();
 }
 
 // === Category filter ===
@@ -548,6 +561,9 @@ function refresh() {
 
 // === Event bindings ===
 function bindEvents() {
+  document.querySelectorAll('.stat-card[data-view]').forEach((button) => {
+    button.addEventListener('click', () => setDashboardView(button.dataset.view));
+  });
   document.getElementById('searchInput').addEventListener('input', renderList);
   ['filterMonth', 'filterSize', 'filterStatus', 'filterCategory', 'sortBy'].forEach((id) => {
     document.getElementById(id).addEventListener('change', renderList);

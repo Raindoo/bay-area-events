@@ -126,6 +126,22 @@ export function summarizeOccurrences(occurrences, now = new Date()) {
   return { next, futureCount: future.length, pastCount: past, state, sorted: future };
 }
 
+export function hasFutureOccurrence(event, now = new Date()) {
+  const state = summarizeOccurrences(event?.occurrences, now).state;
+  return state === 'upcoming' || state === 'ongoing';
+}
+
+// Dashboard views are deliberately future-aware. Personal application states remain
+// stored after an event passes, but they do not clutter the actionable pipeline views.
+export function matchesDashboardView(event, personalStatus = 'Not Applied', view = 'all', now = new Date()) {
+  if (view === 'all') return true;
+  if (!hasFutureOccurrence(event, now)) return false;
+  if (view === 'upcoming') return true;
+  if (view === 'applied') return personalStatus === 'Applied' || personalStatus === 'Waitlisted';
+  if (view === 'accepted') return personalStatus === 'Accepted';
+  return false;
+}
+
 // ---------- Verification / stale badges ----------
 export const STALE_MAX_AGE_DAYS = 90;
 
