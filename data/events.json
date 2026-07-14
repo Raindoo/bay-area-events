@@ -1109,6 +1109,177 @@
         "lastVerifiedAt": "2026-07-14",
         "verificationMethod": "generated"
       }
+    },
+    {
+      "id": "program-sunset-mercantile",
+      "recordType": "vendor_network",
+      "name": "Sunset Mercantile Vendor Program",
+      "location": "San Francisco",
+      "size": "Medium",
+      "categories": ["Market", "Food", "Coffee", "Outdoor", "Vendor Program"],
+      "description": "Organizer network for recurring farmers markets, neighborhood markets, night markets, and seasonal fairs across San Francisco.",
+      "scheduleNote": "Event dates and availability are selected inside the organizer's application portals.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "rolling",
+        "deadline": null,
+        "fee": "Event-specific application and booth fees; food permits and fire requirements vary by event.",
+        "eligibility": "Food vendors, coffee and drink businesses, cottage food operators, and food trucks are supported at selected events.",
+        "applicationUrl": "https://sunsetmercantilesf.com/join-faqs/",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://sunsetmercantilesf.com/join/",
+        "publisher": "Sunset Mercantile",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "fellowship-craft-winter-2026",
+      "recordType": "dated_event",
+      "name": "Fellowship of Craft Winter 2026",
+      "location": "Henry J. Kaiser Center for the Arts, Oakland",
+      "size": "Medium",
+      "categories": ["Craft Fair", "Food", "Coffee", "Holiday", "Indoor"],
+      "description": "Juried holiday craft event with an explicit prepared-food exhibitor category.",
+      "scheduleNote": "November 28–29, 2026, 10 AM–5 PM both days.",
+      "occurrences": [{
+        "id": "fellowship-craft-winter-2026@2026-11-28",
+        "startDate": "2026-11-28",
+        "endDate": "2026-11-29",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      }],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2026-09-08",
+        "fee": "Prepared-food permit approximately $211; exhibitor booth pricing is application-specific.",
+        "eligibility": "Artists, craftspeople, packaged-food businesses, and prepared-food exhibitors are eligible under the organizer's stated rules.",
+        "applicationUrl": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1",
+        "publisher": "Fellowship of Craft",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "program-sjmade",
+      "recordType": "vendor_network",
+      "name": "San José Made Vendor Opportunities",
+      "location": "San José and South Bay",
+      "size": "Large",
+      "categories": ["Market", "Food", "Coffee", "Craft Fair", "Vendor Program"],
+      "description": "Official organizer calendar for South Bay fairs, night markets, holiday markets, and vendor applications.",
+      "scheduleNote": "Applications are event-specific; only opportunities linked from the official organizer site should be trusted.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "Varies by event and vendor type.",
+        "eligibility": "Food eligibility varies: some events accept packaged food and drinks while cooking vendors may be routed to Moveable Feast.",
+        "applicationUrl": "https://www.sanjosemade.com/pages/events",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://www.sanjosemade.com/pages/events",
+        "publisher": "San José Made",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "laurel-streetfair-2026",
+      "recordType": "dated_event",
+      "name": "Laurel StreetFair World Music Festival",
+      "location": "MacArthur Boulevard, Oakland",
+      "size": "Large",
+      "categories": ["Street Fair", "Food", "Coffee", "Music", "Outdoor"],
+      "description": "Large Oakland neighborhood festival with explicit packaged food, hot food, cart, and food-truck vendor categories.",
+      "scheduleNote": "August 8, 2026, 11 AM–7 PM.",
+      "occurrences": [{
+        "id": "laurel-streetfair-2026@2026-08-08",
+        "startDate": "2026-08-08",
+        "endDate": "2026-08-08",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      }],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "Packaged food $375; hot 10x20 $550; cart $300; food truck $750–$800, plus processing and deposit requirements.",
+        "eligibility": "Food vendors must meet Alameda County permit, insurance, payment, and organizer approval requirements.",
+        "applicationUrl": "https://www.laureldistrictassociation.org/vendors",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://www.laureldistrictassociation.org/info",
+        "publisher": "Laurel District Association",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "program-off-the-grid-2026",
+      "recordType": "vendor_network",
+      "name": "Off the Grid 2026 Market Applications",
+      "location": "Bay Area",
+      "size": "Large",
+      "categories": ["Market", "Food", "Coffee", "Food Truck", "Vendor Program"],
+      "description": "Official application hub for food creators seeking placement at Off the Grid's 2026 Bay Area markets.",
+      "scheduleNote": "Market selection and operating dates are listed in the official application experience.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "Market-specific fees and permits apply.",
+        "eligibility": "Food trucks, food stalls, beverage businesses, and other food creators are routed through Off the Grid's creator application.",
+        "applicationUrl": "https://summer-2026.offthegrid.com/",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://summer-2026.offthegrid.com/",
+        "publisher": "Off the Grid",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
+    },
+    {
+      "id": "sf-coffee-festival-2026",
+      "recordType": "dated_event",
+      "name": "San Francisco Coffee Festival",
+      "location": "Fort Mason Center, San Francisco",
+      "size": "Large",
+      "categories": ["Coffee", "Food", "Festival", "Indoor"],
+      "description": "Specialty coffee festival featuring roasters, coffee shops, exhibitors, and food; no public 2026 vendor application status is stated.",
+      "scheduleNote": "November 7–8, 2026.",
+      "occurrences": [{
+        "id": "sf-coffee-festival-2026@2026-11-07",
+        "startDate": "2026-11-07",
+        "endDate": "2026-11-08",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      }],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "The event features roasters, coffee shops, exhibitors, and food, but no public current-year application route is stated.",
+        "applicationUrl": null,
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-07-14"}
+      },
+      "source": {
+        "officialUrl": "https://www.sfcoffeefestival.com/",
+        "publisher": "San Francisco Coffee Festival",
+        "status": "verified",
+        "lastVerifiedAt": "2026-07-14",
+        "verificationMethod": "generated"
+      }
     }
   ]
 }

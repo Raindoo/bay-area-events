@@ -19,7 +19,7 @@ test('every Phase 1 opportunity has an enabled deterministic monitor', () => {
 });
 
 test('network opportunities do not invent event dates', () => {
-  const networks = dataset.events.filter(event => event.recordType === 'vendor_network');
+  const networks = dataset.events.filter(event => phase1Ids.has(event.id) && event.recordType === 'vendor_network');
   assert.deepEqual(networks.map(event => event.id).sort(), ['program-aim', 'program-pcfma', 'program-uvfm']);
   assert.ok(networks.every(event => event.occurrences.length === 0));
   assert.ok(networks.every(event => event.opportunity.applicationStatus === 'rolling'));

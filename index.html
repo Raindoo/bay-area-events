@@ -27,22 +27,22 @@
 
         <!-- Dashboard Stats -->
         <section class="dashboard">
-            <div class="stat-card">
+            <button type="button" class="stat-card active" data-view="all" aria-pressed="true">
                 <div class="stat-number" id="statTotal">0</div>
                 <div class="stat-label">Opportunities</div>
-            </div>
-            <div class="stat-card stat-upcoming">
+            </button>
+            <button type="button" class="stat-card stat-upcoming" data-view="upcoming" aria-pressed="false">
                 <div class="stat-number" id="statUpcoming">0</div>
                 <div class="stat-label">Upcoming</div>
-            </div>
-            <div class="stat-card stat-pending">
+            </button>
+            <button type="button" class="stat-card stat-pending" data-view="applied" aria-pressed="false">
                 <div class="stat-number" id="statPending">0</div>
-                <div class="stat-label">Pending Apps</div>
-            </div>
-            <div class="stat-card stat-accepted">
+                <div class="stat-label">Applied / Pending</div>
+            </button>
+            <button type="button" class="stat-card stat-accepted" data-view="accepted" aria-pressed="false">
                 <div class="stat-number" id="statAccepted">0</div>
                 <div class="stat-label">Accepted</div>
-            </div>
+            </button>
         </section>
 
         <!-- Controls -->

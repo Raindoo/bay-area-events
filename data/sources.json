@@ -245,6 +245,119 @@
           "Food Truck - 15% of Gross Sales w/ $200 minimum"
         ]
       }
+    },
+    {
+      "eventId": "program-sunset-mercantile",
+      "url": "https://sunsetmercantilesf.com/join-faqs/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "The ManageMyMarket application is a 2-step process",
+          "applying to be a part of our event",
+          "All of our events have different prices"
+        ]
+      }
+    },
+    {
+      "eventId": "program-sunset-mercantile",
+      "url": "https://sunsetmercantilesf.com/join-prices/",
+      "enabled": true,
+      "staleAfterDays": 14,
+      "parser": {
+        "type": "evidence",
+        "targets": ["opportunity"],
+        "verifies": "verified",
+        "evidence": ["Outer Sunset Farmers Market & Mercantile", "Food Vendors", "Food Trucks"]
+      }
+    },
+    {
+      "eventId": "fellowship-craft-winter-2026",
+      "occurrenceId": "fellowship-craft-winter-2026@2026-11-28",
+      "url": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "November 28 & 29, 2026",
+          "Applications open June 8 and close September 8",
+          "Applications are open and rolling",
+          "prepared food is $211"
+        ]
+      }
+    },
+    {
+      "eventId": "program-sjmade",
+      "url": "https://www.sanjosemade.com/pages/events",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "Upcoming Events & Pop Ups",
+          "Whether you're looking to attend or looking to vend",
+          "Receive Vendor Application Notifications"
+        ]
+      }
+    },
+    {
+      "eventId": "laurel-streetfair-2026",
+      "occurrenceId": "laurel-streetfair-2026@2026-08-08",
+      "url": "https://www.laureldistrictassociation.org/vendors",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "Laurel StreetFair 2026 Vendor INFORMATION",
+          "August 8th 2026",
+          "Food - based on type",
+          "VENDOR APPLICATION"
+        ]
+      }
+    },
+    {
+      "eventId": "program-off-the-grid-2026",
+      "url": "https://summer-2026.offthegrid.com/",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "input": "html",
+        "evidence": [
+          "Off the Grid | Summer 2026 Market Applications",
+          "Apply now for Off the Grid Summer 2026 markets"
+        ]
+      }
+    },
+    {
+      "eventId": "sf-coffee-festival-2026",
+      "occurrenceId": "sf-coffee-festival-2026@2026-11-07",
+      "url": "https://www.sfcoffeefestival.com/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "November 7 & 8, 2026",
+          "Fort Mason Center for Arts & Culture",
+          "specialty roasters and coffee shops"
+        ]
+      }
     }
   ]
 }
