@@ -2,7 +2,8 @@ name: Refresh event sources
 
 on:
   schedule:
-    - cron: "17 15 * * *"
+    # 13:00 UTC is 6:00 AM Pacific daylight time.
+    - cron: "0 13 * * *"
   workflow_dispatch:
 
 permissions:
