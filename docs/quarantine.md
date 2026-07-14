@@ -6,9 +6,9 @@ are not deleted — they are **quarantined**.
 
 ## Current scope (as of this writing)
 
-- **Published catalog (`data/events.json`):** 3 verified/actionable events, with
-  **61 expanded occurrences** (recurrence included).
-- **Source registry (`data/sources.json`):** 5 source entries the daily refresh
+- **Published catalog (`data/events.json`):** 10 trusted opportunities, with
+  **70 expanded occurrences** (recurrence included).
+- **Source registry (`data/sources.json`):** 13 source entries the daily refresh
   checks.
 - **Quarantine (`research/quarantined-legacy-events.json`):** **33 legacy records**
   preserved out of the published catalog.

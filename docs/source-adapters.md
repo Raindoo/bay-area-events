@@ -64,3 +64,20 @@ reachable manual source still produces `needsReview` because it proves no fact.
 `npm run check:data` rejects unknown event/occurrence ids, duplicate source keys,
 non-HTTPS production URLs, missing evidence phrases, invalid targets, date
 parsers without allowed years, and any `autopublish` field.
+
+## Phase 1 source families
+
+The first coverage expansion favors organizer networks over one-off listings:
+
+- PCFMA, AIM, and Urban Village are modeled as `vendor_network` records. A live
+  interest/application form proves a vendor route, not availability at any
+  particular market.
+- Into The Streets supplies separate records for Downtown First Thursdays and
+  Bhangra & Beats. Login-gated ManageMyMarket links never prove an application is
+  open, so their application status remains `unknown`.
+- Haight Ashbury Street Fair and Renegade SF Winter may be `open` only while their
+  official pages contain explicit current-year open language and event evidence.
+
+Opportunity monitors use a shorter `staleAfterDays` (3–7 days) than ordinary
+event identity checks. Missing evidence downgrades trust; it never guesses a new
+status.

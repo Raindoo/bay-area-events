@@ -7,6 +7,7 @@
 Each event contains:
 
 - `id`: stable identifier.
+- `recordType`: `dated_event`, `recurring_market`, or `vendor_network`.
 - `name`, `location`, `size`, `categories[]`, optional description/schedule note.
 - `occurrences[]`: explicit `id`, `startDate`, `endDate`, and verification.
 - optional `recurrence`: `weekly` or `monthly`, start/end, weekdays, optional
@@ -16,7 +17,10 @@ Each event contains:
 - `source`: HTTPS official URL, publisher, status, last verification date, and
   verification method.
 
-Dates use strict `YYYY-MM-DD`. Published records cannot be unverified. An open or
+`vendor_network` records may have an empty `occurrences[]` because inventing dates
+for rolling multi-market programs would be misleading. Other record types require
+at least one occurrence. Dates use strict `YYYY-MM-DD`. Published records cannot
+be unverified. An open or
 rolling opportunity must have verified or partially verified evidence.
 
 Verification status is `verified`, `partial`, `unverified`, or `stale`.
@@ -75,7 +79,7 @@ a `promotionRule`, and an `events[]` array using the same event schema as the
 catalog. `validateDataset` keeps `unverified` records out of the published
 catalog, so a quarantined event must be promoted (independently verified, given a
 deterministic monitor, and passing `npm run verify`) before it ships. The narrow
-scope is intentional: the live catalog holds 3 verified/actionable events while 33
+scope is intentional: the live catalog holds 10 trusted opportunities while 33
 legacy records are preserved. See [docs/quarantine.md](docs/quarantine.md).
 
 `npm run verify` (check-data) runs `validateDataset` + `validatePublishedDataset` +

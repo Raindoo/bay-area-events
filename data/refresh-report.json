@@ -1,6 +1,26 @@
 {
-  "checkedAt": "2026-07-13T21:55:13.374Z",
+  "checkedAt": "2026-07-14T00:52:14.867Z",
   "confirmed": [
+    {
+      "eventId": "bhangra-beats-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.intothestreetssf.com/vendors"
+    },
+    {
+      "eventId": "dftsf-2026",
+      "targets": [
+        "identity",
+        "recurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.intothestreetssf.com/vendors"
+    },
     {
       "eventId": "evt-008",
       "targets": [
@@ -48,6 +68,61 @@
       ],
       "method": "evidence-monitor",
       "url": "https://castrostreetfair.org/fair/exhibitors/"
+    },
+    {
+      "eventId": "hasf-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.haightashburystreetfair.org/vending"
+    },
+    {
+      "eventId": "program-aim",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.agriculturalinstitute.org/joinourmarkets"
+    },
+    {
+      "eventId": "program-pcfma",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.pcfma.org/sell"
+    },
+    {
+      "eventId": "program-uvfm",
+      "targets": [
+        "identity",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://uvfm.org/food-hot"
+    },
+    {
+      "eventId": "renegade-sf-winter-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.renegadecraft.com/event/san-francisco-winter/"
+    },
+    {
+      "eventId": "renegade-sf-winter-2026",
+      "targets": [
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.renegadecraft.com/apply/"
     }
   ],
   "changed": [],

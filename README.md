@@ -63,10 +63,11 @@ Published events must pass these rules:
 
 ## Scope and quarantine
 
-The published catalog is intentionally narrow: it holds only events with current
-primary-source verification and an actionable vendor path. As of now that is **3
-verified/actionable events** with **61 expanded occurrences** (recurrence
-included), refreshed by **5 source entries**. The other **33 legacy records** are
+The published catalog is intentionally narrow: it holds only opportunities with
+current primary-source verification and a credible vendor path. As of now that is
+**10 verified/partially verified opportunities** (4 dated events, 3 recurring
+markets, and 3 multi-market vendor networks) with **70 expanded occurrences**,
+refreshed by **13 source entries**. The other **33 legacy records** are
 preserved — not deleted — in `research/quarantined-legacy-events.json`. They were
 moved out because they lack current primary-source verification or an actionable
 application path.
@@ -149,7 +150,7 @@ docs/                              schema and operating details
 - No backend or cross-device sync for personal state.
 - Browser checks cannot validate JavaScript-only or bot-protected pages.
 - Recurrence rules need manually maintained exceptions for cancellations.
-- A human must review and merge proposed updates.
+- Ambiguous official-source changes remain unchanged and create a health alert.
 
 These are intentional boundaries, not hidden capabilities. See
 `docs/limitations.md` for operational detail.

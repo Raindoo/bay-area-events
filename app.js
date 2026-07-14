@@ -162,6 +162,7 @@ function populateCategoryFilter() {
 // === Badge helpers ===
 function stateBadge(state) {
   const map = {
+    program: ['Vendor program', 'badge-rolling'],
     upcoming: ['Upcoming', 'badge-upcoming'],
     ongoing: ['Happening now', 'badge-ongoing'],
     expired: ['Expired', 'badge-expired'],
@@ -187,6 +188,7 @@ function statusBadge(status) {
 function buildCard(event) {
   const now = new Date();
   const ps = getEventState(personal, event.id);
+  const isProgram = event.recordType === 'vendor_network';
   const occ = summarizeOccurrences(event.occurrences, now);
   const opp = event.opportunity || {};
   const appStatus = opp.applicationStatus || 'unknown';
@@ -200,14 +202,16 @@ function buildCard(event) {
   const recurrence = event.recurrence;
 
   const badges = el('div', { class: 'event-badges' }, [
-    stateBadge(occ.state),
+    stateBadge(isProgram ? 'program' : occ.state),
     appWindowBadge(appStatus),
     verifiedBadge(vBadge),
     statusBadge(myStatus),
   ]);
 
   const meta = el('div', { class: 'event-meta' });
-  if (occ.next) {
+  if (isProgram) {
+    meta.appendChild(el('span', {}, ['🧭 Multi-market vendor program']));
+  } else if (occ.next) {
     const extra = occ.futureCount > 1 ? ` (+${occ.futureCount - 1} more)` : '';
     meta.appendChild(el('span', {}, [`📅 ${formatDate(occ.next.startDate)}${extra}`]));
   } else {
@@ -262,7 +266,7 @@ function buildCard(event) {
       role: 'button',
       tabindex: '0',
       dataset: { id: event.id },
-      'aria-label': `${event.name}. ${occ.next ? 'Next: ' + formatDate(occ.next.startDate) : 'No upcoming dates'}. Your status: ${myStatus}.`,
+      'aria-label': `${event.name}. ${isProgram ? 'Rolling vendor program' : occ.next ? 'Next: ' + formatDate(occ.next.startDate) : 'No upcoming dates'}. Your status: ${myStatus}.`,
       onclick: () => openDialog(event),
       onkeydown: (ev) => {
         if (ev.target !== card) return;
@@ -413,9 +417,12 @@ function openDialog(event) {
 
   const details = document.getElementById('modalDetails');
   details.textContent = '';
+  details.appendChild(detailRow('Type', event.recordType === 'vendor_network' ? 'Multi-market vendor program' : event.recordType === 'recurring_market' ? 'Recurring market' : 'Dated event'));
   details.appendChild(detailRow('Location', event.location));
   details.appendChild(detailRow('Size', event.size));
-  if (occ.next) {
+  if (event.recordType === 'vendor_network') {
+    details.appendChild(detailRow('Schedule', 'Rolling program; choose markets after organizer review'));
+  } else if (occ.next) {
     const range = `${formatDate(occ.next.startDate)}${occ.next.endDate && occ.next.endDate !== occ.next.startDate ? ' – ' + formatDate(occ.next.endDate) : ''}${occ.futureCount > 1 ? ` (+${occ.futureCount - 1} more)` : ''}`;
     details.appendChild(detailRow('Next occurrence', range));
   } else {

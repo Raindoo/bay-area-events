@@ -3,6 +3,7 @@ const HTTP_URL_PATTERN = /^https:\/\//;
 const SOURCE_STATUSES = new Set(['verified', 'partial', 'unverified', 'stale']);
 const VERIFICATION_METHODS = new Set(['human', 'generated']);
 const WEEKDAYS = new Set(['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']);
+const RECORD_TYPES = new Set(['dated_event', 'recurring_market', 'vendor_network']);
 
 function validateVerification(value, path, errors) {
   if (!value || typeof value !== 'object') {
@@ -33,6 +34,8 @@ export function validateDataset(dataset) {
 
   for (const [index, event] of dataset.events.entries()) {
     const path = `events[${index}]`;
+    const recordType = event.recordType || 'dated_event';
+    if (!RECORD_TYPES.has(recordType)) errors.push(`${path}.recordType is invalid`);
     if (!event.id || typeof event.id !== 'string') errors.push(`${path}.id is required`);
     else if (eventIds.has(event.id)) errors.push(`${path}.id duplicates ${event.id}`);
     else eventIds.add(event.id);
@@ -65,8 +68,8 @@ export function validateDataset(dataset) {
       }
       validateVerification(event.recurrence.verification, `${path}.recurrence.verification`, errors);
     }
-    if (!Array.isArray(event.occurrences) || event.occurrences.length === 0) {
-      errors.push(`${path}.occurrences must contain at least one occurrence`);
+    if (!Array.isArray(event.occurrences) || (event.occurrences.length === 0 && recordType !== 'vendor_network')) {
+      errors.push(`${path}.occurrences must contain at least one occurrence unless recordType is vendor_network`);
     } else {
       for (const [occurrenceIndex, occurrence] of event.occurrences.entries()) {
         const occurrencePath = `${path}.occurrences[${occurrenceIndex}]`;
@@ -167,6 +170,7 @@ export function validatePublishedDataset(dataset) {
       && !['verified', 'partial'].includes(event.opportunity?.verification?.status)) {
       errors.push(`${path} claims an actionable application status without current verification`);
     }
+    if ((event.recordType || 'dated_event') === 'vendor_network') continue;
     const futureOccurrences = (event.occurrences || []).filter(occurrence => occurrence.endDate >= new Date().toISOString().slice(0, 10));
     if (futureOccurrences.length && futureOccurrences.every(occurrence => occurrence.verification?.status === 'unverified')) {
       errors.push(`${path} has only unverified future occurrences`);
