@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T14:23:45.084Z",
+  "generatedAt": "2026-07-18T14:14:27.677Z",
   "events": [
     {
       "id": "evt-008",
@@ -94,7 +94,7 @@
         "applicationUrl": "https://www.eventeny.com/company/?c=304760",
         "verification": {
           "status": "partial",
-          "lastVerifiedAt": "2026-07-17",
+          "lastVerifiedAt": "2026-07-18",
           "method": "generated"
         }
       },
@@ -102,7 +102,7 @@
         "officialUrl": "https://www.oaklandfirstfridays.org/",
         "publisher": "Oakland First Fridays",
         "status": "partial",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       },
       "recurrence": {
@@ -118,7 +118,7 @@
         "summary": "First Friday of each month; check the official schedule for exceptions.",
         "verification": {
           "status": "partial",
-          "lastVerifiedAt": "2026-07-17",
+          "lastVerifiedAt": "2026-07-18",
           "method": "generated"
         }
       },
@@ -696,7 +696,7 @@
         "applicationUrl": "https://foodwise.org/markets/prospective-sellers/",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-17",
+          "lastVerifiedAt": "2026-07-18",
           "method": "generated"
         }
       },
@@ -704,7 +704,7 @@
         "officialUrl": "https://foodwise.org/markets/ferry-plaza-farmers-market/",
         "publisher": "Foodwise",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       },
       "recurrence": {
@@ -721,7 +721,7 @@
         "summary": "Tuesday, Thursday, and Saturday year-round; check official updates for holiday exceptions.",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-17",
+          "lastVerifiedAt": "2026-07-18",
           "method": "generated"
         }
       },
@@ -747,7 +747,7 @@
           "endDate": "2026-10-04",
           "verification": {
             "status": "verified",
-            "lastVerifiedAt": "2026-07-17",
+            "lastVerifiedAt": "2026-07-18",
             "method": "generated"
           }
         }
@@ -760,7 +760,7 @@
         "applicationUrl": "https://www.eventeny.com/events/castrostreetfair2026-28089/",
         "verification": {
           "status": "verified",
-          "lastVerifiedAt": "2026-07-17",
+          "lastVerifiedAt": "2026-07-18",
           "method": "generated"
         }
       },
@@ -797,14 +797,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.pcfma.org/sell",
         "publisher": "Pacific Coast Farmers’ Market Association",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -832,14 +832,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.agriculturalinstitute.org/joinourmarkets",
         "publisher": "Agricultural Institute of Marin",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -867,14 +867,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://uvfm.org/food-hot",
         "publisher": "Urban Village Farmers’ Market Association",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -958,7 +958,7 @@
         "verification": {
           "status": "partial",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "opportunity": {
@@ -970,14 +970,14 @@
         "verification": {
           "status": "partial",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.intothestreetssf.com/vendors",
         "publisher": "Into The Streets",
         "status": "partial",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1003,7 +1003,7 @@
           "verification": {
             "status": "partial",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         },
         {
@@ -1026,14 +1026,14 @@
         "verification": {
           "status": "partial",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.intothestreetssf.com/vendors",
         "publisher": "Into The Streets",
         "status": "partial",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1059,7 +1059,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1072,14 +1072,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.haightashburystreetfair.org/vending",
         "publisher": "Haight Ashbury Street Fair",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1106,7 +1106,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1119,14 +1119,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.renegadecraft.com/event/san-francisco-winter/",
         "publisher": "Renegade Craft",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1155,14 +1155,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://sunsetmercantilesf.com/join/",
         "publisher": "Sunset Mercantile",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1189,7 +1189,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1202,14 +1202,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1",
         "publisher": "Fellowship of Craft",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1238,14 +1238,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.sanjosemade.com/pages/events",
         "publisher": "San José Made",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1272,7 +1272,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1285,14 +1285,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.laureldistrictassociation.org/info",
         "publisher": "Laurel District Association",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1321,14 +1321,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://summer-2026.offthegrid.com/",
         "publisher": "Off the Grid",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1354,7 +1354,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1367,14 +1367,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.sfcoffeefestival.com/",
         "publisher": "San Francisco Coffee Festival",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1400,7 +1400,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1413,14 +1413,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.solanoavenueassn.org/events/solano-avenue-stroll/applications/",
         "publisher": "Solano Avenue Association",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1448,14 +1448,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://presidio.gov/presidio-pop-up-vendor-information",
         "publisher": "Presidio Trust",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1482,7 +1482,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1495,14 +1495,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.sfvs.org/2026exhibitors",
         "publisher": "San Francisco Vegan Society",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1541,14 +1541,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.ssfca.gov/concert",
         "publisher": "City of South San Francisco",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1576,14 +1576,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://napafarmersmarket.org/apply/",
         "publisher": "Napa Farmers Market",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1611,14 +1611,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.365nightmarket.com/sellwithus",
         "publisher": "365 Night Market",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1645,7 +1645,7 @@
           "verification": {
             "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-17"
+            "lastVerifiedAt": "2026-07-18"
           }
         }
       ],
@@ -1658,14 +1658,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.eventeny.com/events/vendor/?id=47222",
         "publisher": "Bizerkeley Food Fest / Eventeny",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1696,7 +1696,7 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "occurrences": [
@@ -1800,14 +1800,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.sonomacity.org/sonomas-market/",
         "publisher": "City of Sonoma",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1835,14 +1835,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://hotcfarmersmarket.org/participate",
         "publisher": "Heart of the City Farmers Market",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     },
@@ -1881,14 +1881,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-17"
+          "lastVerifiedAt": "2026-07-18"
         }
       },
       "source": {
         "officialUrl": "https://www.annunciation.org/festival_vendor_application",
         "publisher": "Annunciation Cathedral",
         "status": "verified",
-        "lastVerifiedAt": "2026-07-17",
+        "lastVerifiedAt": "2026-07-18",
         "verificationMethod": "generated"
       }
     }
