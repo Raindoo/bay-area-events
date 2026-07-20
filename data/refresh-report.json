@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-19T14:18:37.113Z",
+  "checkedAt": "2026-07-20T15:00:34.492Z",
   "confirmed": [
     {
       "eventId": "bhangra-beats-2026",
@@ -10,16 +10,6 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.intothestreetssf.com/vendors"
-    },
-    {
-      "eventId": "bizerkeley-food-fest-2026",
-      "targets": [
-        "identity",
-        "occurrence",
-        "opportunity"
-      ],
-      "method": "evidence-monitor",
-      "url": "https://www.eventeny.com/events/vendor/?id=47222"
     },
     {
       "eventId": "dftsf-2026",
@@ -296,16 +286,6 @@
       "url": "https://www.intothestreetssf.com/vendors"
     },
     {
-      "eventId": "bizerkeley-food-fest-2026",
-      "action": "refresh-verification",
-      "targets": [
-        "identity",
-        "occurrence",
-        "opportunity"
-      ],
-      "url": "https://www.eventeny.com/events/vendor/?id=47222"
-    },
-    {
       "eventId": "dftsf-2026",
       "action": "refresh-verification",
       "targets": [
@@ -341,6 +321,21 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
+    },
+    {
+      "eventId": "evt-012",
+      "action": "add-recurring-occurrence",
+      "after": {
+        "id": "evt-012@2026-11-17",
+        "startDate": "2026-11-17",
+        "endDate": "2026-11-17",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-07-20"
+        }
+      },
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
@@ -547,6 +542,12 @@
       "url": "https://www.ssfca.gov/concert"
     }
   ],
-  "needsReview": [],
+  "needsReview": [
+    {
+      "eventId": "bizerkeley-food-fest-2026",
+      "reason": "Expected official-source evidence changed or disappeared",
+      "url": "https://www.eventeny.com/events/vendor/?id=47222"
+    }
+  ],
   "failures": []
 }
