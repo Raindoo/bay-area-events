@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-22T14:53:56.772Z",
+  "checkedAt": "2026-07-23T14:59:35.705Z",
   "confirmed": [
     {
       "eventId": "bhangra-beats-2026",
@@ -286,6 +286,16 @@
       "url": "https://www.intothestreetssf.com/vendors"
     },
     {
+      "eventId": "bizerkeley-food-fest-2026",
+      "action": "mark-stale",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "url": "https://www.eventeny.com/events/vendor/?id=47222"
+    },
+    {
       "eventId": "dftsf-2026",
       "action": "refresh-verification",
       "targets": [
@@ -321,21 +331,6 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
-    },
-    {
-      "eventId": "evt-012",
-      "action": "add-recurring-occurrence",
-      "after": {
-        "id": "evt-012@2026-11-19",
-        "startDate": "2026-11-19",
-        "endDate": "2026-11-19",
-        "verification": {
-          "status": "partial",
-          "method": "generated",
-          "lastVerifiedAt": "2026-07-22"
-        }
-      },
-      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
