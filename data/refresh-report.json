@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-24T14:42:33.581Z",
+  "checkedAt": "2026-07-26T14:22:39.884Z",
   "confirmed": [
     {
       "eventId": "bhangra-beats-2026",
@@ -321,21 +321,6 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
-    },
-    {
-      "eventId": "evt-012",
-      "action": "add-recurring-occurrence",
-      "after": {
-        "id": "evt-012@2026-11-21",
-        "startDate": "2026-11-21",
-        "endDate": "2026-11-21",
-        "verification": {
-          "status": "partial",
-          "method": "generated",
-          "lastVerifiedAt": "2026-07-24"
-        }
-      },
-      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
