@@ -41,6 +41,7 @@ export function validateDataset(dataset) {
     else eventIds.add(event.id);
 
     if (!event.name || typeof event.name !== 'string') errors.push(`${path}.name is required`);
+    if (!isDate(event.addedAt)) errors.push(`${path}.addedAt must be YYYY-MM-DD`);
     if (!event.location || typeof event.location !== 'string') errors.push(`${path}.location is required`);
     if (!Array.isArray(event.categories)) errors.push(`${path}.categories must be an array`);
     else {
@@ -165,16 +166,13 @@ export function validatePublishedDataset(dataset) {
   const errors = [];
   for (const [index, event] of (dataset?.events || []).entries()) {
     const path = `events[${index}]`;
-    if (event.source?.status === 'unverified') errors.push(`${path} is unverified and belongs in quarantine, not the published catalog`);
     if (['open', 'rolling'].includes(event.opportunity?.applicationStatus)
       && !['verified', 'partial'].includes(event.opportunity?.verification?.status)) {
       errors.push(`${path} claims an actionable application status without current verification`);
     }
     if ((event.recordType || 'dated_event') === 'vendor_network') continue;
-    const futureOccurrences = (event.occurrences || []).filter(occurrence => occurrence.endDate >= new Date().toISOString().slice(0, 10));
-    if (futureOccurrences.length && futureOccurrences.every(occurrence => occurrence.verification?.status === 'unverified')) {
-      errors.push(`${path} has only unverified future occurrences`);
-    }
+    // Unverified candidates may be published when clearly labelled in the UI, but
+    // they cannot claim that vendor applications are open or rolling.
   }
   return errors;
 }

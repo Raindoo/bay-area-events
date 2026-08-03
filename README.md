@@ -52,7 +52,7 @@ Published events must pass these rules:
 
 - Every event has an HTTPS official URL and a verification status.
 - Actionable application windows require verified or partially verified evidence.
-- Unverified records stay in `research/quarantined-legacy-events.json`.
+- Plausible candidates may appear with an Unverified label and unknown application status.
 - Occurrences use explicit date ranges; recurring events use deterministic rules
   with optional exception dates.
 - Successful source checks refresh verification timestamps. Missing evidence or
@@ -72,12 +72,10 @@ preserved — not deleted — in `research/quarantined-legacy-events.json`. They
 moved out because they lack current primary-source verification or an actionable
 application path.
 
-`validateDataset` keeps `unverified` records out of the published catalog, so a
-record must be promoted before it can ship. The quarantine file's `promotionRule`
-is: *verify the official event occurrence and vendor opportunity independently,
-add deterministic monitoring, and pass `npm run verify`.* In short: independently
-confirm the facts, add a `data/sources.json` monitor, move the event into
-`data/events.json` with `verified`/`partial` status, then pass `npm run verify`.
+Quarantine remains for out-of-scope or weak legacy records. A newly discovered
+in-scope candidate may ship as `unverified` when its application status is
+`unknown`; the interface labels it clearly until official evidence supports an
+upgrade to `partial` or `verified`.
 `autopublish` is unsupported — any new date difference is a `needsReview`
 candidate, never a machine write.
 

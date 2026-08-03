@@ -11,6 +11,7 @@ import {
 } from './app-state.js';
 import {
   formatDate,
+  addedLabel,
   parseDate,
   startOfDay,
   getDeadlineInfo,
@@ -252,6 +253,8 @@ function buildCard(event) {
     main.appendChild(el('div', { class: 'event-recurrence' }, [`🔁 ${recurrence.summary}`]));
   }
 
+  main.appendChild(el('div', { class: 'event-added' }, [addedLabel(event.addedAt, now)]));
+
   const right = el('div', { class: 'event-card-right' });
   if (fee) right.appendChild(el('span', { class: 'event-fee' }, [fee]));
   if (deadlineInfo) {
@@ -445,6 +448,7 @@ function openDialog(event) {
     details.appendChild(detailRow('Recurrence', event.recurrence.summary));
   }
   details.appendChild(detailRow('Verification', vBadge.label));
+  details.appendChild(detailRow('Added to tracker', formatDate(event.addedAt) || 'Unknown'));
   details.appendChild(detailRow('Applications', applicationWindowLabel(appStatus)));
   if (opp.fee) details.appendChild(detailRow('Fee', opp.fee));
   if (event.description) details.appendChild(detailRow('Description', event.description));

@@ -244,6 +244,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
 .event-deadline { font-size: 0.75rem; color: var(--text-dim); }
 .event-deadline.urgent { color: var(--red); font-weight: 600; }
 .event-notes-preview { font-size: 0.78rem; color: var(--text-dim); font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 400px; }
+.event-added { font-size: 0.72rem; color: var(--text-dim); }
 
 .no-events {
     text-align: center;

@@ -28,6 +28,7 @@ test('detects an official date change without publishing it and marks stale evid
     generatedAt: null,
     events: [{
       id: 'example-festival',
+      addedAt: '2026-07-13',
       name: 'Example Festival',
       location: 'Oakland, CA',
       size: 'Medium',
