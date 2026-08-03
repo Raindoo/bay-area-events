@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { addedLabel, expandRecurringOccurrences, matchesDashboardView } from '../app-logic.js';
+import { addedLabel, eventsOnDate, expandRecurringOccurrences, matchesDashboardView } from '../app-logic.js';
 import {
   PERSONAL_STORAGE_KEY,
   importPersonalBackup,
@@ -84,4 +84,13 @@ test('formats catalog addition dates for quick scanning', () => {
   const now = new Date('2026-08-02T12:00:00');
   assert.equal(addedLabel('2026-08-02', now), 'Added today');
   assert.equal(addedLabel('2026-07-20', now), 'Added 13 days ago');
+});
+
+test('finds single-day and multi-day events for a selected calendar day', () => {
+  const events = [
+    { id: 'single', occurrences: [{ startDate: '2026-08-05', endDate: '2026-08-05' }] },
+    { id: 'weekend', occurrences: [{ startDate: '2026-08-07', endDate: '2026-08-09' }] },
+  ];
+  assert.deepEqual(eventsOnDate(events, new Date('2026-08-08T12:00:00')).map(event => event.id), ['weekend']);
+  assert.deepEqual(eventsOnDate(events, new Date('2026-08-05T12:00:00')).map(event => event.id), ['single']);
 });

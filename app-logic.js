@@ -141,6 +141,15 @@ export function hasFutureOccurrence(event, now = new Date()) {
   return state === 'upcoming' || state === 'ongoing';
 }
 
+export function eventsOnDate(events, date) {
+  const target = startOfDay(date);
+  return (events || []).filter((event) => (event.occurrences || []).some((occurrence) => {
+    const start = parseDate(occurrence.startDate) || parseDate(occurrence.endDate);
+    const end = parseDate(occurrence.endDate) || start;
+    return start && target >= startOfDay(start) && target <= startOfDay(end);
+  }));
+}
+
 // Dashboard views are deliberately future-aware. Personal application states remain
 // stored after an event passes, but they do not clutter the actionable pipeline views.
 export function matchesDashboardView(event, personalStatus = 'Not Applied', view = 'all', now = new Date()) {
