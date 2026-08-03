@@ -103,21 +103,36 @@
 
         <!-- Calendar View -->
         <section id="calendarView" class="calendar-view" style="display:none;">
-            <div class="calendar-nav">
-                <button id="calPrev" class="btn btn-secondary">◀</button>
-                <h2 id="calTitle"></h2>
-                <button id="calNext" class="btn btn-secondary">▶</button>
+            <div id="calendarMonthPanel">
+                <div class="calendar-nav">
+                    <button id="calPrev" class="btn btn-secondary" aria-label="Previous month">←</button>
+                    <h2 id="calTitle"></h2>
+                    <button id="calToday" class="btn btn-secondary">Today</button>
+                    <button id="calNext" class="btn btn-secondary" aria-label="Next month">→</button>
+                </div>
+                <div class="calendar-grid" aria-hidden="true">
+                    <div class="cal-header"><span class="weekday-long">Sun</span><span class="weekday-short">S</span></div>
+                    <div class="cal-header"><span class="weekday-long">Mon</span><span class="weekday-short">M</span></div>
+                    <div class="cal-header"><span class="weekday-long">Tue</span><span class="weekday-short">T</span></div>
+                    <div class="cal-header"><span class="weekday-long">Wed</span><span class="weekday-short">W</span></div>
+                    <div class="cal-header"><span class="weekday-long">Thu</span><span class="weekday-short">T</span></div>
+                    <div class="cal-header"><span class="weekday-long">Fri</span><span class="weekday-short">F</span></div>
+                    <div class="cal-header"><span class="weekday-long">Sat</span><span class="weekday-short">S</span></div>
+                </div>
+                <div id="calDays" class="calendar-days"></div>
+                <div class="calendar-legend" aria-label="Calendar legend">
+                    <span><i class="event-dot dot-open"></i> Apply now</span>
+                    <span><i class="event-dot dot-rolling"></i> Rolling</span>
+                    <span><i class="event-dot dot-unknown"></i> Timing unknown</span>
+                    <span><i class="event-dot dot-closed"></i> Closed</span>
+                </div>
             </div>
-            <div class="calendar-grid">
-                <div class="cal-header">Sun</div>
-                <div class="cal-header">Mon</div>
-                <div class="cal-header">Tue</div>
-                <div class="cal-header">Wed</div>
-                <div class="cal-header">Thu</div>
-                <div class="cal-header">Fri</div>
-                <div class="cal-header">Sat</div>
-            </div>
-            <div id="calDays" class="calendar-days"></div>
+            <section id="calendarDayPanel" class="day-view" hidden aria-live="polite">
+                <button id="calBack" class="day-view-back">← Back to month</button>
+                <p class="day-view-eyebrow">On this day</p>
+                <h2 id="calDayTitle"></h2>
+                <div id="calDayEvents" class="day-view-events"></div>
+            </section>
         </section>
     </main>
 

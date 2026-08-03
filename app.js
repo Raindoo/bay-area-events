@@ -23,6 +23,7 @@ import {
   el,
   expandRecurringOccurrences,
   hasFutureOccurrence,
+  eventsOnDate,
   matchesDashboardView,
 } from './app-logic.js';
 
@@ -311,10 +312,6 @@ function renderList() {
 }
 
 // === Rendering: Calendar ===
-function pad(n) {
-  return String(n).padStart(2, '0');
-}
-
 function renderCalendar() {
   const year = calendarDate.getFullYear();
   const month = calendarDate.getMonth();
@@ -326,22 +323,11 @@ function renderCalendar() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const daysInPrev = new Date(year, month, 0).getDate();
   const today = new Date();
-  const now = new Date();
-
-  const eventsInRange = catalog.filter((e) =>
-    (e.occurrences || []).some((o) => {
-      const start = parseDate(o.startDate) || parseDate(o.endDate);
-      const end = parseDate(o.endDate) || start;
-      if (!start) return false;
-      const monthStart = new Date(year, month, 1);
-      const monthEnd = new Date(year, month + 1, 0);
-      return start <= monthEnd && end >= monthStart;
-    })
-  );
 
   const calDays = document.getElementById('calDays');
   calDays.textContent = '';
-  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  // Five compact rows for most months; a sixth only when the dates require it.
+  const totalCells = Math.max(35, Math.ceil((firstDay + daysInMonth) / 7) * 7);
   const frag = document.createDocumentFragment();
 
   for (let i = 0; i < totalCells; i++) {
@@ -365,48 +351,70 @@ function renderCalendar() {
       classes.push('today');
     }
 
-    const dayEl = el('div', { class: classes.join(' ') }, [el('div', { class: 'cal-day-number' }, [String(day)])]);
+    const matching = eventsOnDate(catalog, cellDate);
+    if (matching.length) classes.push('has-events');
+    const label = cellDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    const dayEl = el('button', {
+      type: 'button',
+      class: classes.join(' '),
+      'aria-label': `${label}. ${matching.length} event${matching.length === 1 ? '' : 's'}.`,
+      onclick: () => showDayView(cellDate),
+    }, [el('span', { class: 'cal-day-number' }, [String(day)])]);
 
-    if (!isOther) {
-      const cd = startOfDay(cellDate);
-      const matching = eventsInRange.filter((e) =>
-        (e.occurrences || []).some((o) => {
-          const start = parseDate(o.startDate) || parseDate(o.endDate);
-          const end = parseDate(o.endDate) || start;
-          return cd >= startOfDay(start) && cd <= startOfDay(end);
-        })
-      );
-      matching.slice(0, 3).forEach((e) => {
-        const myStatus = getEventState(personal, e.id).status || 'Not Applied';
-        const sc = 'status-' + myStatus.toLowerCase().replace(/\s+/g, '-');
-        const node = el(
-          'div',
-          {
-            class: `cal-event ${sc}`,
-            role: 'button',
-            tabindex: '0',
-            dataset: { id: e.id },
-            title: e.name,
-            onclick: () => openDialog(e),
-            onkeydown: (ev) => {
-              if (ev.target !== node) return;
-              if (ev.key === 'Enter' || ev.key === ' ') {
-                ev.preventDefault();
-                openDialog(e);
-              }
-            },
-          },
-          [e.name]
-        );
-        dayEl.appendChild(node);
-      });
-      if (matching.length > 3) {
-        dayEl.appendChild(el('div', { class: 'cal-event', style: 'color:var(--text-dim)' }, [`+${matching.length - 3} more`]));
-      }
-    }
+    const dots = el('span', { class: 'cal-dots', 'aria-hidden': 'true' });
+    matching.slice(0, 4).forEach((event) => {
+      const status = event.opportunity?.applicationStatus || 'unknown';
+      dots.appendChild(el('i', { class: `event-dot dot-${status}` }));
+    });
+    if (matching.length > 4) dots.appendChild(el('span', { class: 'cal-more' }, [`+${matching.length - 4}`]));
+    dayEl.appendChild(dots);
     frag.appendChild(dayEl);
   }
   calDays.appendChild(frag);
+}
+
+function showDayView(date) {
+  const events = eventsOnDate(catalog, date).sort((a, b) => a.name.localeCompare(b.name));
+  document.getElementById('calendarMonthPanel').hidden = true;
+  const panel = document.getElementById('calendarDayPanel');
+  panel.hidden = false;
+  document.getElementById('calDayTitle').textContent = date.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+  });
+  const container = document.getElementById('calDayEvents');
+  container.textContent = '';
+  if (!events.length) {
+    container.appendChild(el('div', { class: 'day-view-empty' }, ['No tracked opportunities on this day.']));
+  } else {
+    events.forEach((event) => container.appendChild(buildDayEvent(event)));
+  }
+  panel.focus?.();
+  if (window.matchMedia('(max-width: 768px)').matches) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildDayEvent(event) {
+  const status = event.opportunity?.applicationStatus || 'unknown';
+  const verification = verificationBadge(event.source, new Date());
+  return el('button', {
+    type: 'button',
+    class: 'day-event',
+    onclick: () => openDialog(event),
+  }, [
+    el('span', { class: `event-dot dot-${status}`, 'aria-hidden': 'true' }),
+    el('span', { class: 'day-event-content' }, [
+      el('strong', {}, [event.name]),
+      el('span', {}, [event.location]),
+      el('span', { class: 'day-event-meta' }, [
+        `${applicationWindowLabel(status)} · ${verification.label}`,
+      ]),
+    ]),
+    el('span', { class: 'day-event-arrow', 'aria-hidden': 'true' }, ['→']),
+  ]);
+}
+
+function showMonthView() {
+  document.getElementById('calendarDayPanel').hidden = true;
+  document.getElementById('calendarMonthPanel').hidden = false;
 }
 
 // === Dialog (details + personal state) ===
@@ -588,13 +596,21 @@ function bindEvents() {
   });
 
   document.getElementById('calPrev').addEventListener('click', () => {
+    showMonthView();
     calendarDate.setMonth(calendarDate.getMonth() - 1);
     renderCalendar();
   });
   document.getElementById('calNext').addEventListener('click', () => {
+    showMonthView();
     calendarDate.setMonth(calendarDate.getMonth() + 1);
     renderCalendar();
   });
+  document.getElementById('calToday').addEventListener('click', () => {
+    showMonthView();
+    calendarDate = new Date();
+    renderCalendar();
+  });
+  document.getElementById('calBack').addEventListener('click', showMonthView);
 
   // Backup / restore
   document.getElementById('backupBtn').addEventListener('click', exportBackup);
