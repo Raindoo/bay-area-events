@@ -15,6 +15,16 @@ export function formatDate(value) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
+export function addedLabel(value, now = new Date()) {
+  const added = parseDate(value);
+  if (!added) return 'Added date unknown';
+  const days = dayDiff(added, now);
+  if (days === 0) return 'Added today';
+  if (days === 1) return 'Added yesterday';
+  if (days > 1 && days < 30) return `Added ${days} days ago`;
+  return `Added ${formatDate(value)}`;
+}
+
 // Date-only "today" (local midnight), so day-boundary math is stable regardless of clock time.
 export function startOfDay(date = new Date()) {
   const d = new Date(date);

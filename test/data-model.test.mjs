@@ -8,6 +8,7 @@ function validDataset() {
     generatedAt: null,
     events: [{
       id: 'example',
+      addedAt: '2026-08-02',
       name: 'Example Event',
       location: 'Oakland, CA',
       size: 'Medium',
@@ -109,9 +110,15 @@ test('rejects malformed recurrence and evidence verification configuration', () 
   assert.ok(sourceErrors.some(error => error.includes('maxShiftDays')));
 });
 
-test('keeps unverified records out of the published catalog', () => {
+test('allows clearly labelled unverified candidates with unknown application status', () => {
   const errors = validatePublishedDataset(validDataset());
-  assert.ok(errors.some(error => error.includes('belongs in quarantine')));
+  assert.deepEqual(errors, []);
+});
+
+test('requires an immutable added date', () => {
+  const dataset = validDataset();
+  delete dataset.events[0].addedAt;
+  assert.ok(validateDataset(dataset).some(error => error.includes('addedAt')));
 });
 
 test('allows verified vendor networks without invented occurrence dates', () => {

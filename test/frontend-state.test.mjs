@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { expandRecurringOccurrences, matchesDashboardView } from '../app-logic.js';
+import { addedLabel, expandRecurringOccurrences, matchesDashboardView } from '../app-logic.js';
 import {
   PERSONAL_STORAGE_KEY,
   importPersonalBackup,
@@ -78,4 +78,10 @@ test('dashboard application views include only ongoing or future events', () => 
   assert.equal(matchesDashboardView(future, 'Accepted', 'accepted', today), true);
   assert.equal(matchesDashboardView(past, 'Not Applied', 'upcoming', today), false);
   assert.equal(matchesDashboardView(future, 'Not Applied', 'upcoming', today), true);
+});
+
+test('formats catalog addition dates for quick scanning', () => {
+  const now = new Date('2026-08-02T12:00:00');
+  assert.equal(addedLabel('2026-08-02', now), 'Added today');
+  assert.equal(addedLabel('2026-07-20', now), 'Added 13 days ago');
 });

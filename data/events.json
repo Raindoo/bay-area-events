@@ -122,7 +122,8 @@
           "method": "generated"
         }
       },
-      "recordType": "recurring_market"
+      "recordType": "recurring_market",
+      "addedAt": "2026-07-13"
     },
     {
       "id": "evt-012",
@@ -785,7 +786,8 @@
           "method": "generated"
         }
       },
-      "recordType": "recurring_market"
+      "recordType": "recurring_market",
+      "addedAt": "2026-07-13"
     },
     {
       "id": "evt-028",
@@ -831,7 +833,8 @@
         "lastVerifiedAt": "2026-07-13",
         "verificationMethod": "human"
       },
-      "recordType": "dated_event"
+      "recordType": "dated_event",
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-pcfma",
@@ -866,7 +869,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-aim",
@@ -901,7 +905,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-uvfm",
@@ -936,7 +941,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "dftsf-2026",
@@ -1039,7 +1045,8 @@
         "status": "partial",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "bhangra-beats-2026",
@@ -1095,7 +1102,8 @@
         "status": "partial",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "hasf-2026",
@@ -1141,7 +1149,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "renegade-sf-winter-2026",
@@ -1188,7 +1197,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-sunset-mercantile",
@@ -1224,7 +1234,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "fellowship-craft-winter-2026",
@@ -1271,7 +1282,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-sjmade",
@@ -1307,7 +1319,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "laurel-streetfair-2026",
@@ -1354,7 +1367,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "program-off-the-grid-2026",
@@ -1390,7 +1404,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "sf-coffee-festival-2026",
@@ -1436,7 +1451,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "solano-stroll-2026",
@@ -1482,7 +1498,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-13"
     },
     {
       "id": "presidio-popup-2026-fall",
@@ -1517,7 +1534,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "sf-vegfest-2026",
@@ -1564,7 +1582,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "ssf-concert-park-2026",
@@ -1610,7 +1629,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "program-napa-farmers-market",
@@ -1645,7 +1665,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "program-365-night-market-2026",
@@ -1680,7 +1701,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "bizerkeley-food-fest-2026",
@@ -1727,7 +1749,8 @@
         "status": "stale",
         "lastVerifiedAt": "2026-07-19",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "sonoma-tuesday-market-2026",
@@ -1869,7 +1892,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "program-heart-city-market",
@@ -1904,7 +1928,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     },
     {
       "id": "sf-greek-food-festival-2026",
@@ -1950,7 +1975,8 @@
         "status": "verified",
         "lastVerifiedAt": "2026-08-02",
         "verificationMethod": "generated"
-      }
+      },
+      "addedAt": "2026-07-14"
     }
   ]
 }
