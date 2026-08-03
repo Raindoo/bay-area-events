@@ -6,7 +6,6 @@ import {
   savePersonalState,
   getEventState,
   setEventState,
-  importPersonalBackup,
   PERSONAL_SCHEMA_VERSION,
 } from './app-state.js';
 import {
@@ -513,43 +512,6 @@ function savePersonal(e) {
   showBanner('Saved your details for this event.', 'ok');
 }
 
-// === Backup export / import (personal state only) ===
-function exportBackup() {
-  const payload = {
-    version: PERSONAL_SCHEMA_VERSION,
-    exportedAt: new Date().toISOString(),
-    events: personal.events || {},
-  };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `bay-area-events-backup-${new Date().toISOString().slice(0, 10)}.json`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
-
-function importBackup(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    const res = importPersonalBackup(String(reader.result), null);
-    if (!res.ok) {
-      showBanner('Import failed: ' + res.error, 'error');
-      return;
-    }
-    personal.events = { ...personal.events, ...res.events };
-    savePersonalState(personal);
-    refresh();
-    const n = Object.keys(res.events).length;
-    showBanner(`Imported ${n} event${n === 1 ? '' : 's'} from backup.`, 'ok');
-  };
-  reader.onerror = () => showBanner('Could not read the backup file.', 'error');
-  reader.readAsText(file);
-}
-
 // === Banner ===
 function showBanner(msg, kind) {
   const b = document.getElementById('banner');
@@ -611,15 +573,6 @@ function bindEvents() {
     renderCalendar();
   });
   document.getElementById('calBack').addEventListener('click', showMonthView);
-
-  // Backup / restore
-  document.getElementById('backupBtn').addEventListener('click', exportBackup);
-  document.getElementById('restoreBtn').addEventListener('click', () => document.getElementById('importFile').click());
-  document.getElementById('importFile').addEventListener('change', (e) => {
-    const file = e.target.files && e.target.files[0];
-    importBackup(file);
-    e.target.value = '';
-  });
 
   // Modal
   document.getElementById('modalClose').addEventListener('click', closeDialog);

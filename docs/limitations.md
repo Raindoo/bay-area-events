@@ -37,9 +37,8 @@ pipeline both honor exception dates.
 
 ## Personal state is browser-local
 
-Application status and notes are not synced across browsers or devices. Backup
-and Restore provide a JSON transfer path. Clearing browser data without a backup
-loses the overlay.
+Application status and notes are not synced across browsers or devices. Clearing
+browser data removes the overlay.
 
 Personal records for currently unpublished event ids are retained but hidden.
 This prevents a temporary quarantine or failed catalog load from destroying notes.
