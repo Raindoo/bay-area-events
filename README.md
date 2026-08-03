@@ -14,8 +14,8 @@ plausible-looking event cards.
   invents a fact and never changes a differing official date without review.
 - `.github/workflows/refresh-events.yml` validates and publishes safe catalog
   changes directly to `main`; ambiguous facts remain unchanged.
-- The browser stores only personal application status, notes, deadline, and fee in
-  a versioned local overlay. Backup and Restore use JSON.
+- The browser stores personal application status, notes, deadline, and fee in a
+  versioned local overlay.
 
 The old 36-event hand-written catalog was quarantined in
 `research/quarantined-legacy-events.json`. The live interface does not load it.
@@ -101,19 +101,16 @@ The scheduled workflow runs every day at 15:17 UTC (8:17 AM PDT / 7:17 AM PST):
 The workflow does not discover new events. It never guesses ambiguous facts or
 publishes a catalog that fails validation/tests.
 
-## Personal data and backups
+## Personal data
 
 Personal state is stored at localStorage key `bayAreaEvents.personal`, schema v1.
 It is separate from the catalog so a refresh cannot overwrite your notes.
 
-- **Backup** downloads the complete overlay as JSON.
-- **Restore** validates and merges a JSON backup.
 - Notes for events temporarily removed from the published catalog are retained,
   even though those events are hidden until republished.
 - The first load migrates useful fields from the legacy `bayAreaEvents` array.
 
-Git protects catalog history. Browser-local personal state still needs occasional
-JSON backups if it matters.
+Git protects catalog history. Personal state remains local to the current browser.
 
 ## Adding or correcting an event
 
