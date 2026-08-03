@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T14:22:17.748Z",
+  "generatedAt": "2026-08-03T06:57:00.000Z",
   "events": [
     {
       "id": "evt-008",
@@ -1977,6 +1977,94 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-07-14"
+    },
+    {
+      "id": "fort-mason-night-market-2026",
+      "recordType": "dated_event",
+      "name": "Fort Mason Night Market",
+      "location": "Fort Mason Center, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Night Market",
+        "Food",
+        "Craft Fair",
+        "Outdoor",
+        "Holiday"
+      ],
+      "description": "Joint Fort Mason Center, Off the Grid, and West Coast Craft night market combining shopping, food, and art; the official attendee page says Off the Grid will curate 25+ local food creators.",
+      "scheduleNote": "Friday evenings: August 21, September 18, October 16, November 6, and December 18, 2026; December is indoors at the Gateway Pavilion.",
+      "occurrences": [
+        {
+          "id": "fort-mason-night-market-2026@2026-08-21",
+          "startDate": "2026-08-21",
+          "endDate": "2026-08-21",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-02"
+          }
+        },
+        {
+          "id": "fort-mason-night-market-2026@2026-09-18",
+          "startDate": "2026-09-18",
+          "endDate": "2026-09-18",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-02"
+          }
+        },
+        {
+          "id": "fort-mason-night-market-2026@2026-10-16",
+          "startDate": "2026-10-16",
+          "endDate": "2026-10-16",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-02"
+          }
+        },
+        {
+          "id": "fort-mason-night-market-2026@2026-11-06",
+          "startDate": "2026-11-06",
+          "endDate": "2026-11-06",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-02"
+          }
+        },
+        {
+          "id": "fort-mason-night-market-2026@2026-12-18",
+          "startDate": "2026-12-18",
+          "endDate": "2026-12-18",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-02"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food participation is curated by Off the Grid; the official attendee page states that 25+ local food creators will be included. The public West Coast Craft application is for craft booth vendors, so food application details are not stated.",
+        "applicationUrl": "https://summer-2026.offthegrid.com/",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-02"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.westcoastcraft.com/fort-mason-night-market",
+        "publisher": "West Coast Craft, Fort Mason Center, and Off the Grid",
+        "status": "partial",
+        "lastVerifiedAt": "2026-08-02",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-02"
     }
   ]
 }
