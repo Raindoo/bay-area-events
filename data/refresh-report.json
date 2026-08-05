@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-04T15:14:56.358Z",
+  "checkedAt": "2026-08-05T15:06:47.076Z",
   "confirmed": [
     {
       "eventId": "bhangra-beats-2026",
@@ -88,6 +88,14 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.laureldistrictassociation.org/vendors"
+    },
+    {
+      "eventId": "mill-valley-fall-arts-festival-2026",
+      "targets": [
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://form.jotform.com/260456659241057"
     },
     {
       "eventId": "presidio-popup-2026-fall",
@@ -301,6 +309,21 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
+    },
+    {
+      "eventId": "evt-012",
+      "action": "add-recurring-occurrence",
+      "after": {
+        "id": "evt-012@2026-12-03",
+        "startDate": "2026-12-03",
+        "endDate": "2026-12-03",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-05"
+        }
+      },
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
@@ -522,6 +545,11 @@
       "eventId": "fort-mason-night-market-2026",
       "reason": "Expected official-source evidence changed or disappeared",
       "url": "https://www.westcoastcraft.com/fort-mason-night-market"
+    },
+    {
+      "eventId": "mill-valley-fall-arts-festival-2026",
+      "reason": "Expected official-source evidence changed or disappeared",
+      "url": "https://www.mvfaf.org/"
     }
   ],
   "failures": []
