@@ -2075,6 +2075,53 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-02"
+    },
+    {
+      "id": "mill-valley-fall-arts-festival-2026",
+      "recordType": "dated_event",
+      "name": "Mill Valley Fall Arts Festival",
+      "location": "Old Mill Park, Mill Valley",
+      "size": "Large",
+      "categories": [
+        "Arts Festival",
+        "Food",
+        "Coffee",
+        "Outdoor"
+      ],
+      "description": "Mill Valley arts festival with a current organizer application for two food trucks, one coffee cart, and one ice-cream cart.",
+      "scheduleNote": "September 19–20, 2026, 10 AM–5 PM both days.",
+      "occurrences": [
+        {
+          "id": "mill-valley-fall-arts-festival-2026@2026-09-19",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-20",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-05"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "Food truck participation fee is $800 for both days; coffee or ice-cream cart participation fee is $500. Health permit fee is not included.",
+        "eligibility": "The organizer is selecting two professional food trucks, one coffee cart, and one ice-cream cart; accepted vendors need a Marin County mobile food facility health permit and insurance.",
+        "applicationUrl": "https://form.jotform.com/260456659241057",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-05"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.mvfaf.org/",
+        "publisher": "Mill Valley Fall Arts Festival",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-05",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-05"
     }
   ]
 }
