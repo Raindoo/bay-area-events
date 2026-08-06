@@ -1,6 +1,16 @@
 {
-  "checkedAt": "2026-08-05T15:06:47.076Z",
+  "checkedAt": "2026-08-06T15:04:54.625Z",
   "confirmed": [
+    {
+      "eventId": "bay-area-craft-beer-martinez-2026",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.eventeny.com/events/vendor/?id=49663"
+    },
     {
       "eventId": "bhangra-beats-2026",
       "targets": [
@@ -20,6 +30,16 @@
       ],
       "method": "evidence-monitor",
       "url": "https://www.intothestreetssf.com/vendors"
+    },
+    {
+      "eventId": "evt-008",
+      "targets": [
+        "identity",
+        "recurrence",
+        "opportunity"
+      ],
+      "method": "evidence-monitor",
+      "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal"
     },
     {
       "eventId": "evt-012",
@@ -294,6 +314,16 @@
       "url": "https://www.intothestreetssf.com/vendors"
     },
     {
+      "eventId": "evt-008",
+      "action": "refresh-verification",
+      "targets": [
+        "identity",
+        "recurrence",
+        "opportunity"
+      ],
+      "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal"
+    },
+    {
       "eventId": "evt-012",
       "action": "refresh-verification",
       "targets": [
@@ -309,21 +339,6 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
-    },
-    {
-      "eventId": "evt-012",
-      "action": "add-recurring-occurrence",
-      "after": {
-        "id": "evt-012@2026-12-03",
-        "startDate": "2026-12-03",
-        "endDate": "2026-12-03",
-        "verification": {
-          "status": "partial",
-          "method": "generated",
-          "lastVerifiedAt": "2026-08-05"
-        }
-      },
-      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
@@ -352,6 +367,16 @@
       "url": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1"
     },
     {
+      "eventId": "fort-mason-night-market-2026",
+      "action": "mark-stale",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "url": "https://www.westcoastcraft.com/fort-mason-night-market"
+    },
+    {
       "eventId": "hasf-2026",
       "action": "refresh-verification",
       "targets": [
@@ -370,6 +395,14 @@
         "opportunity"
       ],
       "url": "https://www.laureldistrictassociation.org/vendors"
+    },
+    {
+      "eventId": "mill-valley-fall-arts-festival-2026",
+      "action": "refresh-verification",
+      "targets": [
+        "opportunity"
+      ],
+      "url": "https://form.jotform.com/260456659241057"
     },
     {
       "eventId": "presidio-popup-2026-fall",
@@ -535,11 +568,6 @@
       "eventId": "bizerkeley-food-fest-2026",
       "reason": "Expected official-source evidence changed or disappeared",
       "url": "https://www.eventeny.com/events/vendor/?id=47222"
-    },
-    {
-      "eventId": "evt-008",
-      "reason": "Expected official-source evidence changed or disappeared",
-      "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal"
     },
     {
       "eventId": "fort-mason-night-market-2026",
