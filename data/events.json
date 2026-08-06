@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-05T15:06:51.259Z",
+  "generatedAt": "2026-08-06T14:00:00.000Z",
   "events": [
     {
       "id": "evt-008",
@@ -2132,6 +2132,53 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-05"
+    },
+    {
+      "id": "bay-area-craft-beer-martinez-2026",
+      "recordType": "dated_event",
+      "name": "Bay Area Craft Beer Festival & Martinez Sesquicentennial Celebration",
+      "location": "Martinez Waterfront, Martinez",
+      "size": "Large",
+      "categories": [
+        "Food",
+        "Festival",
+        "Outdoor",
+        "Community"
+      ],
+      "description": "Waterfront craft beer festival and city sesquicentennial celebration with curated food-vendor spaces.",
+      "scheduleNote": "August 29, 2026, 11 AM–7 PM.",
+      "occurrences": [
+        {
+          "id": "bay-area-craft-beer-martinez-2026@2026-08-29",
+          "startDate": "2026-08-29",
+          "endDate": "2026-08-29",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-06"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "$500 food vendor; $350 pre-packaged food vendor",
+        "eligibility": "Food vendors are curated for menu diversity, event experience, operational capacity, and fit; required documents include current health permit, Contra Costa County health and fire applications, certificate of insurance, and seller's permit/resale license.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=49663",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-06"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=49663",
+        "publisher": "Bay Area Craft Beer Festival / Eventeny",
+        "status": "partial",
+        "lastVerifiedAt": "2026-08-06",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-06"
     }
   ]
 }
