@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-06T15:04:54.625Z",
+  "checkedAt": "2026-08-07T14:04:09.826Z",
   "confirmed": [
     {
       "eventId": "bay-area-craft-beer-martinez-2026",
@@ -294,6 +294,16 @@
   ],
   "changed": [
     {
+      "eventId": "bay-area-craft-beer-martinez-2026",
+      "action": "refresh-verification",
+      "targets": [
+        "identity",
+        "occurrence",
+        "opportunity"
+      ],
+      "url": "https://www.eventeny.com/events/vendor/?id=49663"
+    },
+    {
       "eventId": "bhangra-beats-2026",
       "action": "refresh-verification",
       "targets": [
@@ -341,6 +351,21 @@
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
     },
     {
+      "eventId": "evt-012",
+      "action": "add-recurring-occurrence",
+      "after": {
+        "id": "evt-012@2026-12-05",
+        "startDate": "2026-12-05",
+        "endDate": "2026-12-05",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-07"
+        }
+      },
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
+    },
+    {
       "eventId": "evt-028",
       "action": "refresh-verification",
       "targets": [
@@ -365,16 +390,6 @@
         "opportunity"
       ],
       "url": "https://www.fellowshipofcraft.com/exhibitor-faq-winter-2026-1"
-    },
-    {
-      "eventId": "fort-mason-night-market-2026",
-      "action": "mark-stale",
-      "targets": [
-        "identity",
-        "occurrence",
-        "opportunity"
-      ],
-      "url": "https://www.westcoastcraft.com/fort-mason-night-market"
     },
     {
       "eventId": "hasf-2026",
