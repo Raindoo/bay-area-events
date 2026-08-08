@@ -2189,6 +2189,99 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-06"
+    },
+    {
+      "id": "silicon-valley-pride-2026",
+      "recordType": "dated_event",
+      "name": "Silicon Valley PRIDE Festival 2026",
+      "location": "Plaza Park, Downtown San Jose",
+      "size": "Large",
+      "categories": [
+        "Festival",
+        "Food",
+        "Cultural",
+        "Outdoor"
+      ],
+      "description": "Downtown San Jose Pride festival with vendor booths and explicit food-sales participation for permitted vendors.",
+      "scheduleNote": "Night Festival August 29, 2026, 6–11 PM; Day Festival August 30, 2026, 12–6 PM.",
+      "occurrences": [
+        {
+          "id": "silicon-valley-pride-2026@2026-08-29",
+          "startDate": "2026-08-29",
+          "endDate": "2026-08-29",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-08"
+          }
+        },
+        {
+          "id": "silicon-valley-pride-2026@2026-08-30",
+          "startDate": "2026-08-30",
+          "endDate": "2026-08-30",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-08"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food vendors may sell food or beverages; sellers need a seller's permit and Santa Clara County Health Permit, and must comply with city, county, and state requirements. Vendors may bring or rent a pop-up tent.",
+        "applicationUrl": "https://www.svpride.com/vendors",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-08"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.svpride.com/vendors",
+        "publisher": "Silicon Valley Pride",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-08",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-08"
+    },
+    {
+      "id": "program-little-italy-sj-food-vendors-2026",
+      "recordType": "vendor_network",
+      "name": "Little Italy San Jose Italian Festival Food Vendor Program",
+      "location": "Little Italy San Jose, San Jose",
+      "size": "Large",
+      "categories": [
+        "Food Festival",
+        "Food",
+        "Italian",
+        "Outdoor"
+      ],
+      "description": "Official 2026 food-vendor application for the Little Italy San Jose Italian Festival, with packaged-food booths, prepared-food booths, and food-truck options.",
+      "scheduleNote": null,
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "Italian packaged-food booth $378; packaged-food booth $428; 10x10 booth $1,350; 10x20 booth $1,500; food truck $985. The page states that these options include the county health-permit fee, with electricity included for the 10x10 and 10x20 booths.",
+        "eligibility": "The official 2026 form accepts food businesses for packaged-food booths, food booths, and food trucks and requires a Temporary Food Facility permit application.",
+        "applicationUrl": "https://www.littleitalysj.com/food-vendor-application",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-08"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.littleitalysj.com/food-vendor-application",
+        "publisher": "Little Italy San Jose",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-08",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-08"
     }
   ]
 }

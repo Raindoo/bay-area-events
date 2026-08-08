@@ -373,5 +373,38 @@
     {"eventId":"mill-valley-fall-arts-festival-2026","occurrenceId":"mill-valley-fall-arts-festival-2026@2026-09-19","url":"https://www.mvfaf.org/","enabled":true,"staleAfterDays":3,"parser":{"type":"evidence","targets":["identity","occurrence"],"verifies":"verified","evidence":["September 19-20, 2026","Old Mill Park: 64 Cascade Drive, Mill Valley CA 94941","artisan food vendors"]}},
     {"eventId":"mill-valley-fall-arts-festival-2026","url":"https://form.jotform.com/260456659241057","enabled":true,"staleAfterDays":3,"parser":{"type":"evidence","targets":["opportunity"],"verifies":"verified","evidence":["Call to Food Trucks, Coffee Cart, and Ice Cream Cart","two professional food trucks, one coffee cart, and one ice cream cart","Fee for participation as a food truck for both days is $800","Fee for participation as a coffee or ice cream cart is $500"]}},
     {"eventId":"bay-area-craft-beer-martinez-2026","occurrenceId":"bay-area-craft-beer-martinez-2026@2026-08-29","url":"https://www.eventeny.com/events/vendor/?id=49663","enabled":true,"staleAfterDays":3,"parser":{"type":"evidence","targets":["identity","occurrence","opportunity"],"verifies":"partial","evidence":["Bay Area Craft Beer Festival & Martinez Sesquicentennial Celebration","Saturday, August 29, 2026","Food Vendor Fee: $500","Pre-Packaged Food Vendor Fee: $350","Food vendor spaces are limited and will be curated"]}}
+    ,{
+      "eventId": "silicon-valley-pride-2026",
+      "occurrenceId": "silicon-valley-pride-2026@2026-08-29",
+      "url": "https://www.svpride.com/vendors",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "2026 Vendor Registration",
+          "Night Festival: Saturday, August 29, 2026",
+          "Only food vendors may sell food or beverages"
+        ]
+      }
+    },
+    {
+      "eventId": "program-little-italy-sj-food-vendors-2026",
+      "url": "https://www.littleitalysj.com/food-vendor-application",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "FOOD VENDOR APPLICATION 2026",
+          "Italian Packaged Food Vendor booth",
+          "Food Truck"
+        ]
+      }
+    }
   ]
 }
