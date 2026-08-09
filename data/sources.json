@@ -405,6 +405,23 @@
           "Food Truck"
         ]
       }
+    },
+    {
+      "eventId": "sjmade-holiday-fair-2026",
+      "occurrenceId": "sjmade-holiday-fair-2026@2026-11-27",
+      "url": "https://www.sanjosemade.com/pages/sjmade-holiday-fair-2026",
+      "enabled": true,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "partial",
+        "evidence": [
+          "SJMADE Holiday Fair",
+          "November 27–28, 2026",
+          "vendor lineup features an exciting array of desserts, baked goods, packaged food and snacks vendors",
+          "All vendor spaces have been sold out for this event and the waitlist is currently full"
+        ]
+      }
     }
   ]
 }

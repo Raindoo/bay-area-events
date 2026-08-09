@@ -2292,6 +2292,40 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-08"
+    },
+    {
+      "id": "sjmade-holiday-fair-2026",
+      "recordType": "dated_event",
+      "name": "SJMADE Holiday Fair 2026",
+      "location": "Santa Clara Convention Center, Santa Clara",
+      "size": "Large",
+      "categories": ["Market", "Food", "Coffee", "Bakery", "Craft Fair", "Indoor"],
+      "description": "Large indoor holiday fair with an official vendor program that includes desserts, baked goods, packaged food, and snacks businesses.",
+      "scheduleNote": "November 27–28, 2026, 11 AM–6 PM both days.",
+      "occurrences": [
+        {
+          "id": "sjmade-holiday-fair-2026@2026-11-27",
+          "startDate": "2026-11-27",
+          "endDate": "2026-11-28",
+          "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-09"}
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "closed",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "The 2026 vendor lineup includes desserts, baked goods, packaged food, and snacks; food trucks and cooking food stalls are not accepted at this venue. The organizer says all vendor spaces are sold out and the waitlist is full.",
+        "applicationUrl": "https://www.sanjosemade.com/pages/sjmade-holiday-fair-2026",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-09"}
+      },
+      "source": {
+        "officialUrl": "https://www.sanjosemade.com/pages/sjmade-holiday-fair-2026",
+        "publisher": "San José Made",
+        "status": "partial",
+        "lastVerifiedAt": "2026-08-09",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-09"
     }
   ]
 }
