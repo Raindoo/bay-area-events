@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-09T13:39:59.831Z",
+  "checkedAt": "2026-08-10T14:10:48.789Z",
   "confirmed": [
     {
       "eventId": "bay-area-craft-beer-martinez-2026",
@@ -353,21 +353,6 @@
       "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal"
     },
     {
-      "eventId": "evt-008",
-      "action": "add-recurring-occurrence",
-      "after": {
-        "id": "evt-008@2027-02-05",
-        "startDate": "2027-02-05",
-        "endDate": "2027-02-05",
-        "verification": {
-          "status": "partial",
-          "method": "generated",
-          "lastVerifiedAt": "2026-08-09"
-        }
-      },
-      "url": "https://www.oaklandfirstfridays.org/"
-    },
-    {
       "eventId": "evt-012",
       "action": "refresh-verification",
       "targets": [
@@ -383,6 +368,21 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
+    },
+    {
+      "eventId": "evt-012",
+      "action": "add-recurring-occurrence",
+      "after": {
+        "id": "evt-012@2026-12-08",
+        "startDate": "2026-12-08",
+        "endDate": "2026-12-08",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-10"
+        }
+      },
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
@@ -429,15 +429,6 @@
         "opportunity"
       ],
       "url": "https://www.laureldistrictassociation.org/vendors"
-    },
-    {
-      "eventId": "mill-valley-fall-arts-festival-2026",
-      "action": "mark-stale",
-      "targets": [
-        "identity",
-        "occurrence"
-      ],
-      "url": "https://www.mvfaf.org/"
     },
     {
       "eventId": "mill-valley-fall-arts-festival-2026",
@@ -640,6 +631,11 @@
       "eventId": "mill-valley-fall-arts-festival-2026",
       "reason": "Expected official-source evidence changed or disappeared",
       "url": "https://www.mvfaf.org/"
+    },
+    {
+      "eventId": "sjmade-holiday-fair-2026",
+      "reason": "Expected official-source evidence changed or disappeared",
+      "url": "https://www.sanjosemade.com/pages/sjmade-holiday-fair-2026"
     }
   ],
   "failures": []
