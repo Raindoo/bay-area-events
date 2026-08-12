@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-11T14:10:39.771Z",
+  "checkedAt": "2026-08-12T14:11:40.864Z",
   "confirmed": [
     {
       "eventId": "bay-area-craft-beer-martinez-2026",
@@ -368,6 +368,21 @@
         "opportunity"
       ],
       "url": "https://foodwise.org/wp-json/wp/v2/pages?slug=prospective-sellers&_fields=link,modified,content"
+    },
+    {
+      "eventId": "evt-012",
+      "action": "add-recurring-occurrence",
+      "after": {
+        "id": "evt-012@2026-12-10",
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-10",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-12"
+        }
+      },
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
     },
     {
       "eventId": "evt-028",
