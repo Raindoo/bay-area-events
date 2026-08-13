@@ -422,6 +422,24 @@
           "All vendor spaces have been sold out for this event and the waitlist is currently full"
         ]
       }
+    },
+    {
+      "eventId": "program-redwood-city-events",
+      "url": "https://www.redwoodcity.org/residents/redwood-city-events/vendor-information",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": [
+          "Become a Vendor at one of our Special Events",
+          "options for food vendors",
+          "packaged or freshly made",
+          "no food trucks please",
+          "one-stop-shop vendor portal"
+        ]
+      }
     }
   ]
 }

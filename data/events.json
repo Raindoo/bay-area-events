@@ -2361,6 +2361,42 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-09"
+    },
+    {
+      "id": "program-redwood-city-events",
+      "recordType": "vendor_network",
+      "name": "Redwood City Special Events Vendor Program",
+      "location": "Redwood City, Peninsula",
+      "size": "Large",
+      "categories": [
+        "Market",
+        "Food",
+        "Bakery",
+        "Vendor Program"
+      ],
+      "description": "City-run vendor program for Redwood City special events; food sellers may apply for event-specific opportunities.",
+      "scheduleNote": "Event dates and availability are not stated on the city vendor-information page; applications are event-specific.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food vendors may sell packaged or freshly made food products. Food trucks are not accepted.",
+        "applicationUrl": "https://eventhub.net/profiles/rwcevents",
+        "verification": {
+          "status": "verified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-13"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.redwoodcity.org/residents/redwood-city-events/vendor-information",
+        "publisher": "City of Redwood City",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-13",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-13"
     }
   ]
 }
