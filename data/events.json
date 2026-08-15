@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T14:11:45.333Z",
+  "generatedAt": "2026-08-15T14:01:30.000Z",
   "events": [
     {
       "id": "evt-008",
@@ -2397,6 +2397,54 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-13"
+    },
+    {
+      "id": "sjmade-winter-wonder-market-2026",
+      "recordType": "dated_event",
+      "name": "San José Winter Wonder Market 2026",
+      "location": "South Hall, 435 S. Market Street, San José",
+      "size": "Large",
+      "categories": [
+        "Market",
+        "Food",
+        "Coffee",
+        "Bakery",
+        "Indoor"
+      ],
+      "description": "Large indoor holiday market with an official vendor application for packaged food products, baked goods, desserts, snacks, coffee and tea drinks, and fruit drinks.",
+      "scheduleNote": "December 12–13, 2026, 11 AM–6 PM both days.",
+      "occurrences": [
+        {
+          "id": "sjmade-winter-wonder-market-2026@2026-12-12",
+          "startDate": "2026-12-12",
+          "endDate": "2026-12-13",
+          "verification": {
+            "status": "partial",
+            "method": "generated",
+            "lastVerifiedAt": "2026-08-15"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "closed",
+        "deadline": null,
+        "fee": "$500 booth application fee.",
+        "eligibility": "Packaged food products, baked goods, desserts, snacks, coffee or tea drinks, and fruit drinks may apply at a booth. Cooking booths serving meals and food trucks are not accepted.",
+        "applicationUrl": "https://www.sanjosemade.com/products/apply-to-vend-san-jose-winter-wonder-market-2026",
+        "verification": {
+          "status": "partial",
+          "lastVerifiedAt": "2026-08-15",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.sanjosemade.com/products/apply-to-vend-san-jose-winter-wonder-market-2026",
+        "publisher": "San José Made",
+        "status": "partial",
+        "lastVerifiedAt": "2026-08-15",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-15"
     }
   ]
 }

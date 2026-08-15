@@ -440,6 +440,24 @@
           "one-stop-shop vendor portal"
         ]
       }
+    },
+    {
+      "eventId": "sjmade-winter-wonder-market-2026",
+      "occurrenceId": "sjmade-winter-wonder-market-2026@2026-12-12",
+      "url": "https://www.sanjosemade.com/products/apply-to-vend-san-jose-winter-wonder-market-2026",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "partial",
+        "evidence": [
+          "4th annual San José Winter Wonder Market",
+          "December 12–13, 2026",
+          "packaged food products, baked goods, desserts, snacks, coffee/tea drinks, or fruit drinks",
+          "Sold out"
+        ]
+      }
     }
   ]
 }
