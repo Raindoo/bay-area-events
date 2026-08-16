@@ -2445,6 +2445,39 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-15"
+    },
+    {
+      "id": "hercules-cultural-festival-2026",
+      "recordType": "vendor_network",
+      "name": "Hercules Cultural Festival 2026 Food Vendor Program",
+      "location": "Hercules, East Bay",
+      "size": "Small",
+      "categories": [
+        "Food",
+        "Festival"
+      ],
+      "description": "The official 2026 food-vendor application invites food businesses to apply; event dates and other application details were not reliably extractable.",
+      "occurrences": [],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.bayfrontchamber.com/wp-content/uploads/2026-Hercules-Cultural-Festival-Food-Vendor-Application.pdf",
+        "verification": {
+          "status": "unverified",
+          "method": "generated",
+          "lastVerifiedAt": "2026-08-16"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.bayfrontchamber.com/wp-content/uploads/2026-Hercules-Cultural-Festival-Food-Vendor-Application.pdf",
+        "publisher": "Bayfront Chamber of Commerce",
+        "status": "unverified",
+        "lastVerifiedAt": "2026-08-16",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-08-16"
     }
   ]
 }
