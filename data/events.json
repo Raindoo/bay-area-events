@@ -2447,6 +2447,90 @@
       "addedAt": "2026-08-15"
     },
     {
+      "id": "castro-valley-fall-festival-2026",
+      "recordType": "dated_event",
+      "name": "Castro Valley Fall Festival 2026",
+      "location": "Castro Valley Boulevard, Castro Valley",
+      "size": "Large",
+      "categories": ["Festival", "Food", "Outdoor"],
+      "description": "Street festival with 10-by-10 vendor spaces and an explicit food-vendor category.",
+      "scheduleNote": "September 12–13, 2026; Saturday 10 AM–6 PM and Sunday 10 AM–5 PM.",
+      "occurrences": [
+        {
+          "id": "castro-valley-fall-festival-2026@2026-09-12",
+          "startDate": "2026-09-12",
+          "endDate": "2026-09-13",
+          "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "Food space fee $595; Chamber-member food space fee $495.",
+        "eligibility": "Festival Productions lists a Food vendor category for entrée-type food prepared or assembled for fairgoers; vendors may provide their own tent, canopy, or booth.",
+        "applicationUrl": "https://www.festivalproductions2.com/event/191/2026_54th_Annual_Castro_Valley_Fall_Festival.html",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+      },
+      "source": {"officialUrl": "https://www.festivalproductions2.com/event/191/2026_54th_Annual_Castro_Valley_Fall_Festival.html", "publisher": "Festival Productions", "status": "partial", "lastVerifiedAt": "2026-08-17", "verificationMethod": "generated"},
+      "addedAt": "2026-08-17"
+    },
+    {
+      "id": "millbrae-art-wine-festival-2026",
+      "recordType": "dated_event",
+      "name": "Millbrae Art & Wine Festival 2026",
+      "location": "Broadway, Millbrae",
+      "size": "Large",
+      "categories": ["Festival", "Food", "Outdoor"],
+      "description": "Peninsula street festival with 10-by-10 spaces and an explicit food-vendor category.",
+      "scheduleNote": "September 5–6, 2026; Saturday and Sunday 10 AM–5 PM.",
+      "occurrences": [
+        {
+          "id": "millbrae-art-wine-festival-2026@2026-09-05",
+          "startDate": "2026-09-05",
+          "endDate": "2026-09-06",
+          "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "Food vendor fee $500 per 10-by-10 space plus 10% commission on all sales.",
+        "eligibility": "Festival Productions states that food vendors are welcome; vendors may provide their own tent, table, and chairs or rent equipment.",
+        "applicationUrl": "https://www.festivalproductions2.com/event/193/2026_55th_Annual_Millbrae_Art_Wine_Festival.html",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+      },
+      "source": {"officialUrl": "https://www.festivalproductions2.com/event/193/2026_55th_Annual_Millbrae_Art_Wine_Festival.html", "publisher": "Festival Productions", "status": "partial", "lastVerifiedAt": "2026-08-17", "verificationMethod": "generated"},
+      "addedAt": "2026-08-17"
+    },
+    {
+      "id": "pacifica-fog-fest-2026",
+      "recordType": "dated_event",
+      "name": "Pacific Coast Fog Fest 2026",
+      "location": "Palmetto Avenue, Pacifica",
+      "size": "Large",
+      "categories": ["Festival", "Food", "Outdoor"],
+      "description": "Coastal community festival with more than 200 vendor booths and an explicit non-entree food category.",
+      "scheduleNote": "September 26–27, 2026; Saturday and Sunday 10 AM–6 PM.",
+      "occurrences": [
+        {
+          "id": "pacifica-fog-fest-2026@2026-09-26",
+          "startDate": "2026-09-26",
+          "endDate": "2026-09-27",
+          "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "Non-entree food vendor space fee $500; booth rental, if needed, $350.",
+        "eligibility": "Festival Productions lists non-entree food vendors and requires applicants to provide a product description, menu, and booth image; vendors may provide their own tent, canopy, or booth.",
+        "applicationUrl": "https://www.festivalproductions2.com/event/192/2026_Pacific_Coast_Fog_Fest_in_Pacifica.html",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-08-17"}
+      },
+      "source": {"officialUrl": "https://www.festivalproductions2.com/event/192/2026_Pacific_Coast_Fog_Fest_in_Pacifica.html", "publisher": "Festival Productions", "status": "partial", "lastVerifiedAt": "2026-08-17", "verificationMethod": "generated"},
+      "addedAt": "2026-08-17"
+    },
+    {
       "id": "hercules-cultural-festival-2026",
       "recordType": "vendor_network",
       "name": "Hercules Cultural Festival 2026 Food Vendor Program",

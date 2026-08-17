@@ -2,6 +2,30 @@
   "schemaVersion": 1,
   "sources": [
     {
+      "eventId": "castro-valley-fall-festival-2026",
+      "occurrenceId": "castro-valley-fall-festival-2026@2026-09-12",
+      "url": "https://www.festivalproductions2.com/event/191/2026_54th_Annual_Castro_Valley_Fall_Festival.html",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {"type": "evidence", "targets": ["identity", "occurrence", "opportunity"], "verifies": "partial", "evidence": ["September 12, 2026 - Sunday, September 13, 2026", "Space Fee: ... Food - $595", "Food"]}
+    },
+    {
+      "eventId": "millbrae-art-wine-festival-2026",
+      "occurrenceId": "millbrae-art-wine-festival-2026@2026-09-05",
+      "url": "https://www.festivalproductions2.com/event/193/2026_55th_Annual_Millbrae_Art_Wine_Festival.html",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {"type": "evidence", "targets": ["identity", "occurrence", "opportunity"], "verifies": "partial", "evidence": ["September 5, 2026 - Sunday, September 6, 2026", "Food vendors -$500 per 10' x 10' space", "All categories of vendors are welcome"]}
+    },
+    {
+      "eventId": "pacifica-fog-fest-2026",
+      "occurrenceId": "pacifica-fog-fest-2026@2026-09-26",
+      "url": "https://www.festivalproductions2.com/event/192/2026_Pacific_Coast_Fog_Fest_in_Pacifica.html",
+      "enabled": true,
+      "staleAfterDays": 3,
+      "parser": {"type": "evidence", "targets": ["identity", "occurrence", "opportunity"], "verifies": "partial", "evidence": ["September 26, 2026 - Sunday, September 27, 2026", "Non-entree food vendors: $500", "over 200 vendor booths"]}
+    },
+    {
       "eventId": "evt-008",
       "occurrenceId": "evt-008@2026-01-02",
       "url": "https://www.oaklandfirstfridays.org/oakland-first-fridays-vendor-portal",
