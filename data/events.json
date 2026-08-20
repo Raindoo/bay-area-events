@@ -2562,6 +2562,52 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-16"
+    },
+    {
+      "id": "bay-area-oktoberfest-crockett-2026",
+      "recordType": "dated_event",
+      "name": "Bay Area's Oktoberfest Crockett 2026",
+      "location": "2nd Avenue, Crockett",
+      "size": "Medium",
+      "categories": [
+        "Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Community Oktoberfest listing with an explicit food-booth and food-truck route for independent vendors.",
+      "scheduleNote": "October 11, 2026; 12 PM–5 PM.",
+      "occurrences": [
+        {
+          "id": "bay-area-oktoberfest-crockett-2026@2026-10-11",
+          "startDate": "2026-10-11",
+          "endDate": "2026-10-11",
+          "verification": {
+            "status": "unverified",
+            "method": "human",
+            "lastVerifiedAt": "2026-08-20"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=55046",
+        "verification": {
+          "status": "unverified",
+          "method": "human",
+          "lastVerifiedAt": "2026-08-20"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=55046",
+        "publisher": "Eventeny vendor portal",
+        "status": "unverified",
+        "lastVerifiedAt": "2026-08-20",
+        "verificationMethod": "human"
+      },
+      "addedAt": "2026-08-20"
     }
   ]
 }
