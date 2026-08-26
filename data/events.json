@@ -2608,6 +2608,52 @@
         "verificationMethod": "human"
       },
       "addedAt": "2026-08-20"
+    },
+    {
+      "id": "oaktoberfest-dimond-2026",
+      "recordType": "dated_event",
+      "name": "Oaktoberfest in the Dimond",
+      "location": "Dimond District, Oakland",
+      "size": "Large",
+      "categories": [
+        "Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Oakland community Oktoberfest with food and dining, artisan vendors, and an official vendor-application route.",
+      "scheduleNote": "October 3–4, 2026.",
+      "occurrences": [
+        {
+          "id": "oaktoberfest-dimond-2026@2026-10-03",
+          "startDate": "2026-10-03",
+          "endDate": "2026-10-04",
+          "verification": {
+            "status": "partial",
+            "method": "human",
+            "lastVerifiedAt": "2026-08-26"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.oaktoberfest.org/",
+        "verification": {
+          "status": "partial",
+          "method": "human",
+          "lastVerifiedAt": "2026-08-26"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.oaktoberfest.org/",
+        "publisher": "Oaktoberfest in the Dimond",
+        "status": "partial",
+        "lastVerifiedAt": "2026-08-26",
+        "verificationMethod": "human"
+      },
+      "addedAt": "2026-08-26"
     }
   ]
 }
