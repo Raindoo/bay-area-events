@@ -482,6 +482,24 @@
           "Sold out"
         ]
       }
+    },
+    {
+      "eventId": "oaktoberfest-dimond-2026",
+      "occurrenceId": "oaktoberfest-dimond-2026@2026-10-03",
+      "url": "https://www.oaktoberfest.org/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "partial",
+        "evidence": [
+          "Oaktoberfest in the Dimond",
+          "OCTOBER 3 & 4",
+          "FOOD & DINING HALL",
+          "VENDOR APPLICATIONS"
+        ]
+      }
     }
   ]
 }
