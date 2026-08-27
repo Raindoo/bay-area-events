@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T14:01:30.000Z",
+  "generatedAt": "2026-08-27T14:00:00.000Z",
   "events": [
     {
       "id": "evt-008",
@@ -2654,6 +2654,52 @@
         "verificationMethod": "human"
       },
       "addedAt": "2026-08-26"
+    },
+    {
+      "id": "bay-area-tri-county-food-truck-fest-2026",
+      "recordType": "dated_event",
+      "name": "Bay Area Tri-County Food Truck Fest",
+      "location": "Santa Clara County Fairgrounds, San Jose",
+      "size": "Large",
+      "categories": [
+        "Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Food Truck Fest presented as part of the Bay Area Tri-County Home & Outdoor Living Expo, with food trucks and local vendor activity.",
+      "scheduleNote": "September 19–20, 2026, 10 AM–5 PM.",
+      "occurrences": [
+        {
+          "id": "bay-area-tri-county-food-truck-fest-2026@2026-09-19",
+          "startDate": "2026-09-19",
+          "endDate": "2026-09-20",
+          "verification": {
+            "status": "verified",
+            "method": "human",
+            "lastVerifiedAt": "2026-08-27"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "$500 for both days",
+        "eligibility": null,
+        "applicationUrl": "https://www.bayareatricountyexpo.com/food-truck-vendor-fee",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-08-27",
+          "method": "human"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.bayareatricountyexpo.com/food-truck-vendor-fee",
+        "publisher": "Bay Area Tri-County Home & Outdoor Living Expo",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-27",
+        "verificationMethod": "human"
+      },
+      "addedAt": "2026-08-27"
     }
   ]
 }
