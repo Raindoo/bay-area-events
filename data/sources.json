@@ -500,6 +500,29 @@
           "VENDOR APPLICATIONS"
         ]
       }
+    },
+    {
+      "eventId": "bay-area-tri-county-food-truck-fest-2026",
+      "occurrenceId": "bay-area-tri-county-food-truck-fest-2026@2026-09-19",
+      "url": "https://www.bayareatricountyexpo.com/food-truck-vendor-fee",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": [
+          "identity",
+          "occurrence",
+          "opportunity"
+        ],
+        "verifies": "verified",
+        "evidence": [
+          "Food Truck Fest",
+          "September 19–20, 2026",
+          "Santa Clara County Fairgrounds",
+          "$500",
+          "If you're interested in participating in this event as a food vendor or food truck"
+        ]
+      }
     }
   ]
 }
