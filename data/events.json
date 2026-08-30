@@ -1785,22 +1785,22 @@
           "startDate": "2026-09-06",
           "endDate": "2026-09-06",
           "verification": {
-            "status": "stale",
+            "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-07-19"
+            "lastVerifiedAt": "2026-08-30"
           }
         }
       ],
       "opportunity": {
-        "applicationStatus": "unknown",
-        "deadline": "2026-08-01",
+        "applicationStatus": "closed",
+        "deadline": "2026-07-18",
         "fee": "$200–$750 plus applicable health fees",
         "eligibility": "Food must be dairy- and meat-free; food trucks and established/new food businesses may apply.",
         "applicationUrl": "https://www.eventeny.com/events/vendor/?id=47222",
         "verification": {
-          "status": "stale",
+          "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-07-19"
+          "lastVerifiedAt": "2026-08-30"
         }
       },
       "source": {
@@ -2146,9 +2146,9 @@
           "startDate": "2026-09-19",
           "endDate": "2026-09-20",
           "verification": {
-            "status": "stale",
+            "status": "verified",
             "method": "generated",
-            "lastVerifiedAt": "2026-08-05"
+            "lastVerifiedAt": "2026-08-30"
           }
         }
       ],
@@ -2161,14 +2161,14 @@
         "verification": {
           "status": "verified",
           "method": "generated",
-          "lastVerifiedAt": "2026-08-12"
+          "lastVerifiedAt": "2026-08-30"
         }
       },
       "source": {
         "officialUrl": "https://www.mvfaf.org/",
         "publisher": "Mill Valley Fall Arts Festival",
-        "status": "stale",
-        "lastVerifiedAt": "2026-08-05",
+        "status": "verified",
+        "lastVerifiedAt": "2026-08-30",
         "verificationMethod": "generated"
       },
       "addedAt": "2026-08-05"
