@@ -2,6 +2,22 @@
   "schemaVersion": 1,
   "sources": [
     {
+      "eventId": "dia-de-muertos-san-jose-2026",
+      "occurrenceId": "dia-de-muertos-san-jose-2026@2026-10-31",
+      "url": "https://www.aztecadancers.com/dia-de-muertos",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {"type": "evidence", "targets": ["identity", "occurrence", "opportunity"], "verifies": "partial", "evidence": ["22ND ANNUAL MICAILHUITL", "OCTOBER 31 - NOVEMBER 1, 2026", "food trucks", "Interested in becoming a Vendor"]}
+    },
+    {
+      "eventId": "chocolate-fest-belmont-2027",
+      "occurrenceId": "chocolate-fest-belmont-2027@2027-02-06",
+      "url": "https://chocolatefestofbelmont.org/for-vendors/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {"type": "evidence", "targets": ["identity", "occurrence", "opportunity"], "verifies": "partial", "evidence": ["43rd edition of Chocolate Fest", "Saturday, February 6, 2027", "welcome vendors", "no vendor fee"]}
+    },
+    {
       "eventId": "castro-valley-fall-festival-2026",
       "occurrenceId": "castro-valley-fall-festival-2026@2026-09-12",
       "url": "https://www.festivalproductions2.com/event/191/2026_54th_Annual_Castro_Valley_Fall_Festival.html",
