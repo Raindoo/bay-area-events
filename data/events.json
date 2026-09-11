@@ -2656,6 +2656,98 @@
       "addedAt": "2026-08-26"
     },
     {
+      "id": "dia-de-muertos-san-jose-2026",
+      "recordType": "dated_event",
+      "name": "Día de Muertos Community Event",
+      "location": "History Park, San Jose",
+      "size": "Large",
+      "categories": [
+        "Cultural Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Free family-friendly Mexica cultural celebration with food trucks, artisanal arts and crafts, and other vendors.",
+      "scheduleNote": "October 31–November 1, 2026.",
+      "occurrences": [
+        {
+          "id": "dia-de-muertos-san-jose-2026@2026-10-31",
+          "startDate": "2026-10-31",
+          "endDate": "2026-11-01",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-09-11"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.aztecadancers.com/dia-de-muertos",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-09-11"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.aztecadancers.com/dia-de-muertos",
+        "publisher": "Calpulli Tonahlehqueh",
+        "status": "partial",
+        "lastVerifiedAt": "2026-09-11",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "chocolate-fest-belmont-2027",
+      "recordType": "dated_event",
+      "name": "Chocolate Fest",
+      "location": "Belmont, San Mateo County",
+      "size": "Medium",
+      "categories": [
+        "Food Festival",
+        "Bakery",
+        "Outdoor"
+      ],
+      "description": "Public chocolate-focused event supporting local businesses, with vendor participation, tasting samples, and direct-to-consumer sales.",
+      "scheduleNote": "February 6, 2027.",
+      "occurrences": [
+        {
+          "id": "chocolate-fest-belmont-2027@2027-02-06",
+          "startDate": "2027-02-06",
+          "endDate": "2027-02-06",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-09-11"
+          }
+        }
+      ],
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "No vendor fee; vendors are asked to donate 10% of event-day sales and provide tasting samples.",
+        "eligibility": null,
+        "applicationUrl": "https://chocolatefestofbelmont.org/for-vendors/",
+        "verification": {
+          "status": "partial",
+          "method": "generated",
+          "lastVerifiedAt": "2026-09-11"
+        }
+      },
+      "source": {
+        "officialUrl": "https://chocolatefestofbelmont.org/for-vendors/",
+        "publisher": "San Mateo County Health Foundation",
+        "status": "partial",
+        "lastVerifiedAt": "2026-09-11",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-09-11"
+    },
+    {
       "id": "bay-area-tri-county-food-truck-fest-2026",
       "recordType": "dated_event",
       "name": "Bay Area Tri-County Food Truck Fest",
