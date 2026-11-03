@@ -2748,6 +2748,38 @@
       "addedAt": "2026-09-11"
     },
     {
+      "id": "aia-holi-festival-2027",
+      "recordType": "dated_event",
+      "name": "Holi Festival 2027",
+      "location": "Bay Area (venue not stated)",
+      "size": "Large",
+      "categories": ["Cultural Festival", "Food", "Outdoor"],
+      "description": "Association of Indo Americans cultural festival with food-vendor booth opportunities.",
+      "scheduleNote": "March 20, 2027.",
+      "occurrences": [{
+        "id": "aia-holi-festival-2027@2027-03-20",
+        "startDate": "2027-03-20",
+        "endDate": "2027-03-20",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-03"}
+      }],
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "Food vendor booths starting at $1,500.",
+        "eligibility": "Food vendors may apply for a 10x10 booth with electricity; event-specific eligibility is not stated.",
+        "applicationUrl": "https://www.aiaevents.org/vendors",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-03", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://www.aiaevents.org/vendors",
+        "publisher": "Association of Indo Americans",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-03",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-03"
+    },
+    {
       "id": "bay-area-tri-county-food-truck-fest-2026",
       "recordType": "dated_event",
       "name": "Bay Area Tri-County Food Truck Fest",
