@@ -518,6 +518,19 @@
       }
     },
     {
+      "eventId": "aia-holi-festival-2027",
+      "occurrenceId": "aia-holi-festival-2027@2027-03-20",
+      "url": "https://www.aiaevents.org/vendors",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Holi Festival 2027", "March 20, 2027", "Food Vendors", "10x10 booth space with electricity", "Starting at $1,500"]
+      }
+    },
+    {
       "eventId": "bay-area-tri-county-food-truck-fest-2026",
       "occurrenceId": "bay-area-tri-county-food-truck-fest-2026@2026-09-19",
       "url": "https://www.bayareatricountyexpo.com/food-truck-vendor-fee",
