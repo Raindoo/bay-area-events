@@ -552,6 +552,23 @@
           "If you're interested in participating in this event as a food vendor or food truck"
         ]
       }
+    },
+    {
+      "eventId": "veranda-holiday-night-markets-2026",
+      "url": "https://form.jotform.com/262360700191044",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "partial",
+        "evidence": [
+          "2026 Holiday Night Markets Vendor Application",
+          "Please select the dates you'd like to participate",
+          "Select packaged goods",
+          "Your application will be reviewed"
+        ]
+      }
     }
   ]
 }
