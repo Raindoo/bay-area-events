@@ -569,6 +569,45 @@
           "Your application will be reviewed"
         ]
       }
+    },
+    {
+      "eventId": "black-joy-parade-2027",
+      "occurrenceId": "black-joy-parade-2027@2027-02-28",
+      "url": "https://www.eventeny.com/events/black-joy-parade-2027-35012/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Black Joy Parade 2027", "Feb 28, 2027", "Specialty Beverage Vendor applications are open", "Registration is open until January 8, 2027"]
+      }
+    },
+    {
+      "eventId": "gilman-district-street-fair-2027",
+      "occurrenceId": "gilman-district-street-fair-2027@2027-04-25",
+      "url": "https://www.gilmandistrict.org/faq",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Gilman District Fair 2027", "Sunday April. 25", "Food Vendor Applications are HERE", "deadline for vendor applications is Feb. 8, 2027"]
+      }
+    },
+    {
+      "eventId": "carnaval-san-francisco-2027",
+      "occurrenceId": "carnaval-san-francisco-2027@2027-05-29",
+      "url": "https://www.eventeny.com/events/vendor/?id=56583",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["2027 Carnaval San Francisco Festival", "May 29–30, 2027", "2027 Festival Food Vendor Application", "Food vendors may sell"]
+      }
     }
   ]
 }
