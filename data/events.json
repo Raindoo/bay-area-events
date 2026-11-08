@@ -2860,6 +2860,147 @@
         "verificationMethod": "human"
       },
       "addedAt": "2026-11-06"
+    },
+    {
+      "id": "black-joy-parade-2027",
+      "recordType": "dated_event",
+      "name": "Black Joy Parade 2027",
+      "location": "Oakland, California",
+      "size": "Large",
+      "categories": [
+        "Cultural Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "Oakland parade and community celebration with specialty beverage, dessert, and other food-vendor booth and food-truck applications.",
+      "scheduleNote": "February 28, 2027, 12:00 PM–7:00 PM.",
+      "occurrences": [
+        {
+          "id": "black-joy-parade-2027@2027-02-28",
+          "startDate": "2027-02-28",
+          "endDate": "2027-02-28",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-11-08"
+          }
+        }
+      ],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2027-01-08",
+        "fee": null,
+        "eligibility": "Specialty beverage vendors with coffee, tea, or similar beverage-only menus may apply as booth setups or food trucks; vendors provide their own tent and required Alameda County health permit and insurance.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=57384",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-11-08",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/black-joy-parade-2027-35012/",
+        "publisher": "Black Joy Parade / Eventeny",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-08",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-08"
+    },
+    {
+      "id": "gilman-district-street-fair-2027",
+      "recordType": "dated_event",
+      "name": "Gilman District Street Fair",
+      "location": "Gilman District, West Berkeley",
+      "size": "Large",
+      "categories": [
+        "Street Fair",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "West Berkeley street fair with dedicated food-vendor applications and booth spaces for independent vendors.",
+      "scheduleNote": "April 25, 2027, 10:00 AM–5:00 PM.",
+      "occurrences": [
+        {
+          "id": "gilman-district-street-fair-2027@2027-04-25",
+          "startDate": "2027-04-25",
+          "endDate": "2027-04-25",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-11-08"
+          }
+        }
+      ],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2027-02-08",
+        "fee": null,
+        "eligibility": "Food vendors may apply through the dedicated food-vendor application; vendors bring their own tent, tables, and chairs, and no electricity is provided.",
+        "applicationUrl": "https://www.gilmandistrict.org/faq",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-11-08",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.gilmandistrict.org/gilmandistrictstreetfair",
+        "publisher": "Gilman District Merchant Association",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-08",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-08"
+    },
+    {
+      "id": "carnaval-san-francisco-2027",
+      "recordType": "dated_event",
+      "name": "Carnaval San Francisco 2027",
+      "location": "Mission District, San Francisco",
+      "size": "Large",
+      "categories": [
+        "Cultural Festival",
+        "Food",
+        "Outdoor"
+      ],
+      "description": "San Francisco cultural festival with a current food-vendor application for booth-based food sales.",
+      "scheduleNote": "May 29–30, 2027.",
+      "occurrences": [
+        {
+          "id": "carnaval-san-francisco-2027@2027-05-29",
+          "startDate": "2027-05-29",
+          "endDate": "2027-05-30",
+          "verification": {
+            "status": "verified",
+            "method": "generated",
+            "lastVerifiedAt": "2026-11-08"
+          }
+        }
+      ],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2027-03-01",
+        "fee": null,
+        "eligibility": "Food vendors may apply to sell approved food items and must comply with San Francisco health, fire, zero-waste, and organizer requirements.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=56583",
+        "verification": {
+          "status": "verified",
+          "lastVerifiedAt": "2026-11-08",
+          "method": "generated"
+        }
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=56583",
+        "publisher": "Carnaval San Francisco / Eventeny",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-08",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-08"
     }
   ]
 }
