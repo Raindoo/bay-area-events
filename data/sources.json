@@ -608,6 +608,19 @@
         "verifies": "verified",
         "evidence": ["2027 Carnaval San Francisco Festival", "May 29–30, 2027", "2027 Festival Food Vendor Application", "Food vendors may sell"]
       }
+    },
+    {
+      "eventId": "mardi-gras-gumbo-festival-2027",
+      "occurrenceId": "mardi-gras-gumbo-festival-2027@2027-02-13",
+      "url": "https://www.gumbosocial.com/mardi-gras-gumbo-festival",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["MARDI GRAS GUMBO FESTIVAL 2027", "Saturday, February 13, 2027", "local food vendors", "Become a Vendor"]
+      }
     }
   ]
 }

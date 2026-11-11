@@ -3001,6 +3001,39 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-08"
+    },
+    {
+      "id": "mardi-gras-gumbo-festival-2027",
+      "recordType": "dated_event",
+      "name": "Mardi Gras Gumbo Festival 2027",
+      "location": "The Midway, San Francisco",
+      "size": "Large",
+      "categories": ["Food Festival", "Cultural", "Outdoor"],
+      "description": "San Francisco food and culture festival with a current vendor-interest route for local food and marketplace businesses.",
+      "scheduleNote": "February 13, 2027.",
+      "occurrences": [{
+        "id": "mardi-gras-gumbo-festival-2027@2027-02-13",
+        "startDate": "2027-02-13",
+        "endDate": "2027-02-13",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-11"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Local food vendors and marketplace vendors may express interest; additional requirements and availability are not published.",
+        "applicationUrl": "https://www.gumbosocial.com/mardi-gras-gumbo-festival",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-11", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://www.gumbosocial.com/mardi-gras-gumbo-festival",
+        "publisher": "Gumbo Social",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-11",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-11"
     }
   ]
 }
