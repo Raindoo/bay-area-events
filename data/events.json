@@ -3034,6 +3034,39 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-11"
+    },
+    {
+      "id": "chinese-new-year-community-street-fair-2027",
+      "recordType": "dated_event",
+      "name": "Chinese New Year Community Street Fair 2027",
+      "location": "Grant Avenue, Chinatown, San Francisco",
+      "size": "Large",
+      "categories": ["Cultural Festival", "Food", "Outdoor"],
+      "description": "San Francisco Chinatown community street fair with more than 120 booths and concessions and an official 2027 vendor application that includes food sales.",
+      "scheduleNote": "February 20–21, 2027.",
+      "occurrences": [{
+        "id": "chinese-new-year-community-street-fair-2027@2027-02-20",
+        "startDate": "2027-02-20",
+        "endDate": "2027-02-21",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-12"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2027-02-05",
+        "fee": "Side-street booth $600 or Grant Avenue retail booth $1,160, plus listed garbage, deposit, health, fire, and electricity fees",
+        "eligibility": "The official 2027 Community Fair application includes packaged food, fruit, and tea sales; vendors must provide required permits, insurance, and booth equipment.",
+        "applicationUrl": "https://chineseparade.com/wp-content/uploads/2026/10/2027-Ram-Application-Form-CF-Updated.pdf",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-12", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://chineseparade.com/communityfair/",
+        "publisher": "San Francisco Chinese Chamber of Commerce / Chinese New Year Festival & Parade",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-12",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-12"
     }
   ]
 }
