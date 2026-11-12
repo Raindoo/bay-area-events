@@ -621,6 +621,19 @@
         "verifies": "verified",
         "evidence": ["MARDI GRAS GUMBO FESTIVAL 2027", "Saturday, February 13, 2027", "local food vendors", "Become a Vendor"]
       }
+    },
+    {
+      "eventId": "chinese-new-year-community-street-fair-2027",
+      "occurrenceId": "chinese-new-year-community-street-fair-2027@2027-02-20",
+      "url": "https://chineseparade.com/communityfair/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Community Street Fair", "February 20–21, 2027", "over 120 booths and concessions", "2027 Community Fair vendor application", "February 5, 2027"]
+      }
     }
   ]
 }
