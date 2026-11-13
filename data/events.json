@@ -3067,6 +3067,72 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-12"
+    },
+    {
+      "id": "sjmade-fest-2027",
+      "recordType": "dated_event",
+      "name": "SJMADE Fest 2027",
+      "location": "History Park San José, San José",
+      "size": "Large",
+      "categories": ["Craft Fair", "Food", "Outdoor"],
+      "description": "San José Made outdoor festival with a foodie market and applications for baked-goods, packaged-food, coffee, tea, and other non-cooking food vendors, plus separate routes for cooking vendors and food trucks.",
+      "scheduleNote": "May 22–23, 2027, 11 a.m.–6 p.m. daily.",
+      "occurrences": [{
+        "id": "sjmade-fest-2027@2027-05-22",
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-23",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-13"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "$450 for the standard non-cooking vendor application; cooking food booths, cooking food trucks, and dessert food trucks use separate listed fees",
+        "eligibility": "Non-cooking food and drink vendors, including baked goods, packaged goods, coffee, tea, and food prepared beforehand and held in warmers, may use the standard application; on-site cooking vendors must use the Moveable Feast route.",
+        "applicationUrl": "https://www.sanjosemade.com/products/sjmade-fest-2027-apply",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-13", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://www.sanjosemade.com/products/sjmade-fest-2027-apply",
+        "publisher": "San José Made",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-13",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-13"
+    },
+    {
+      "id": "san-francisco-pride-2027-dessert-vendors",
+      "recordType": "dated_event",
+      "name": "San Francisco Pride 2027 — Dessert Vendors",
+      "location": "San Francisco",
+      "size": "Large",
+      "categories": ["Cultural Festival", "Food", "Outdoor"],
+      "description": "San Francisco Pride vendor route specifically for dessert sellers who do not cook or bake on site.",
+      "scheduleNote": null,
+      "occurrences": [{
+        "id": "san-francisco-pride-2027-dessert-vendors@2027-06-26",
+        "startDate": "2027-06-26",
+        "endDate": "2027-06-27",
+        "verification": {"status": "unverified", "method": "generated", "lastVerifiedAt": "2026-11-13"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=55391",
+        "verification": {"status": "unverified", "lastVerifiedAt": "2026-11-13", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=55391",
+        "publisher": "San Francisco Pride / Eventeny",
+        "status": "unverified",
+        "lastVerifiedAt": "2026-11-13",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-13"
     }
   ]
 }

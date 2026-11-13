@@ -634,6 +634,19 @@
         "verifies": "verified",
         "evidence": ["Community Street Fair", "February 20–21, 2027", "over 120 booths and concessions", "2027 Community Fair vendor application", "February 5, 2027"]
       }
+    },
+    {
+      "eventId": "sjmade-fest-2027",
+      "occurrenceId": "sjmade-fest-2027@2027-05-22",
+      "url": "https://www.sanjosemade.com/products/sjmade-fest-2027-apply",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["SJMADE Fest 2027", "May 22-23, 2027", "foodie market", "baked goods", "coffee & tea"]
+      }
     }
   ]
 }
