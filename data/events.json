@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T15:00:00.000Z",
+  "generatedAt": "2026-11-15T15:00:00.000Z",
   "events": [
     {
       "id": "evt-008",
@@ -3133,6 +3133,67 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-13"
+    },
+    {
+      "id": "its-a-wonderful-night-san-leandro-2026",
+      "recordType": "dated_event",
+      "name": "It's a Wonderful Night 2026",
+      "location": "Downtown San Leandro, San Leandro",
+      "size": "Large",
+      "categories": ["Holiday Festival", "Food", "Outdoor"],
+      "description": "San Leandro holiday celebration with a published food-vendor application for independent food businesses.",
+      "scheduleNote": "December 4, 2026, 5:00–9:00 PM; main event centered on W. Juana Avenue between E. 14th Street and Washington Avenue.",
+      "occurrences": [{
+        "id": "its-a-wonderful-night-san-leandro-2026@2026-12-04",
+        "startDate": "2026-12-04",
+        "endDate": "2026-12-04",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-15"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food businesses may use the published food-vendor application; the official page also publishes a pre-packaged food application.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=56617",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-15", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=56617",
+        "publisher": "Downtown San Leandro / Eventeny",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-15",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-15"
+    },
+    {
+      "id": "626-night-market-2027-vendor-program",
+      "recordType": "vendor_network",
+      "name": "626 Night Market 2027 Vendor Program",
+      "location": "Pleasanton, California (2027 location option)",
+      "size": "Large",
+      "categories": ["Night Market", "Food", "Coffee", "Outdoor"],
+      "description": "626 Night Market's 2027 vendor intake accepts food booths, pre-packaged food, food trucks, and drink booths, with Pleasanton listed as a 2027 location option.",
+      "scheduleNote": null,
+      "occurrences": [],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food booths, pre-packaged food, food trucks, and drink booths may apply; the official form lists Pleasanton among 2027 interested event locations.",
+        "applicationUrl": "https://626nightmarket.com/become-a-vendor",
+        "verification": {"status": "verified", "lastVerifiedAt": "2026-11-15", "method": "generated"}
+      },
+      "source": {
+        "officialUrl": "https://626nightmarket.com/become-a-vendor",
+        "publisher": "626 Night Market",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-15",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-15"
     }
   ]
 }

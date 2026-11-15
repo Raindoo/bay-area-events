@@ -647,6 +647,31 @@
         "verifies": "verified",
         "evidence": ["SJMADE Fest 2027", "May 22-23, 2027", "foodie market", "baked goods", "coffee & tea"]
       }
+    },
+    {
+      "eventId": "its-a-wonderful-night-san-leandro-2026",
+      "occurrenceId": "its-a-wonderful-night-san-leandro-2026@2026-12-04",
+      "url": "https://www.eventeny.com/events/vendor/?id=56617",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["FOOD VENDOR APPLICATION", "It's a Wonderful Night", "December 4th", "5:00-9:00 PM"]
+      }
+    },
+    {
+      "eventId": "626-night-market-2027-vendor-program",
+      "url": "https://626nightmarket.com/become-a-vendor",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["VENDOR APPLICATION", "accepting applications for food and retail vendors", "Food Booth", "Pleasanton, CA"]
+      }
     }
   ]
 }
