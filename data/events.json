@@ -3194,6 +3194,39 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-15"
+    },
+    {
+      "id": "bodega-bay-fishermans-festival-2027",
+      "recordType": "dated_event",
+      "name": "Bodega Bay Fisherman’s Festival 2027",
+      "location": "Westside Regional Park, Bodega Bay",
+      "size": "Medium",
+      "categories": ["Community Festival", "Food", "Outdoor"],
+      "description": "Community festival with an official food-vendor application for independent food businesses.",
+      "scheduleNote": "May 1–2, 2027.",
+      "occurrences": [{
+        "id": "bodega-bay-fishermans-festival-2027@2027-05-01",
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-02",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-11-20"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.bbfishfest.org/food-vendor-app",
+        "verification": {"status": "partial", "method": "generated", "lastVerifiedAt": "2026-11-20"}
+      },
+      "source": {
+        "officialUrl": "https://www.bbfishfest.org/downloads/",
+        "publisher": "Bodega Bay Fisherman’s Festival",
+        "status": "partial",
+        "lastVerifiedAt": "2026-11-20",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-20"
     }
   ]
 }
