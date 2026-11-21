@@ -662,6 +662,19 @@
       }
     },
     {
+      "eventId": "marin-arts-crafts-show-2027",
+      "occurrenceId": "marin-arts-crafts-show-2027@2027-02-26",
+      "url": "https://mail.marinartsandcraftsshow.com/vendor.php?show=maacs",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Marin Arts & Crafts Show", "Feb 26-28, 2027", "specialty food purveyors", "Start application"]
+      }
+    },
+    {
       "eventId": "626-night-market-2027-vendor-program",
       "url": "https://626nightmarket.com/become-a-vendor",
       "enabled": true,

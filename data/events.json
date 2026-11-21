@@ -3196,6 +3196,39 @@
       "addedAt": "2026-11-15"
     },
     {
+      "id": "marin-arts-crafts-show-2027",
+      "recordType": "dated_event",
+      "name": "Marin Arts & Crafts Show 2027",
+      "location": "Marin Center Exhibit Hall, San Rafael",
+      "size": "Medium",
+      "categories": ["Arts Festival", "Food", "Outdoor"],
+      "description": "Juried arts and crafts show that explicitly includes specialty food purveyors among eligible exhibitors and offers booth space through an online application.",
+      "scheduleNote": "February 26–28, 2027, 10 a.m.–5 p.m. daily.",
+      "occurrences": [{
+        "id": "marin-arts-crafts-show-2027@2027-02-26",
+        "startDate": "2027-02-26",
+        "endDate": "2027-02-28",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-21"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": null,
+        "fee": "$550–$900 for listed booth sizes; electricity is priced separately",
+        "eligibility": "Specialty food purveyors are included among eligible exhibitors; applications are juried for fit, category balance, product quality, and show availability.",
+        "applicationUrl": "https://mail.marinartsandcraftsshow.com/vendor.php?show=maacs",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-21"}
+      },
+      "source": {
+        "officialUrl": "https://mail.marinartsandcraftsshow.com/vendor.php?show=maacs",
+        "publisher": "Marin Arts & Crafts Show",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-21",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-21"
+    },
+    {
       "id": "bodega-bay-fishermans-festival-2027",
       "recordType": "dated_event",
       "name": "Bodega Bay Fisherman’s Festival 2027",
