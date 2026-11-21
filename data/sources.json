@@ -573,14 +573,14 @@
     {
       "eventId": "black-joy-parade-2027",
       "occurrenceId": "black-joy-parade-2027@2027-02-28",
-      "url": "https://www.eventeny.com/events/black-joy-parade-2027-35012/",
+      "url": "https://www.eventeny.com/events/vendor/?id=57389",
       "enabled": true,
       "staleAfterDays": 7,
       "parser": {
         "type": "evidence",
         "targets": ["identity", "occurrence", "opportunity"],
         "verifies": "verified",
-        "evidence": ["Black Joy Parade 2027", "Feb 28, 2027", "Specialty Beverage Vendor applications are open", "Registration is open until January 8, 2027"]
+        "evidence": ["Black Joy Parade 2027", "Feb 28, 2027", "Food Vendor applications are open to food vendor booth setups and to food trucks", "Registration is open until January 8, 2027"]
       }
     },
     {

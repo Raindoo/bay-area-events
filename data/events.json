@@ -2872,7 +2872,7 @@
         "Food",
         "Outdoor"
       ],
-      "description": "Oakland parade and community celebration with specialty beverage, dessert, and other food-vendor booth and food-truck applications.",
+      "description": "Oakland parade and community celebration with current food-vendor booth and food-truck applications.",
       "scheduleNote": "February 28, 2027, 12:00 PM–7:00 PM.",
       "occurrences": [
         {
@@ -2891,8 +2891,8 @@
         "applicationStatus": "open",
         "deadline": "2027-01-08",
         "fee": null,
-        "eligibility": "Specialty beverage vendors with coffee, tea, or similar beverage-only menus may apply as booth setups or food trucks; vendors provide their own tent and required Alameda County health permit and insurance.",
-        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=57384",
+        "eligibility": "Food vendors with mostly savory menus may apply as booth setups or food trucks; vendors provide their own tent and required Alameda County health permit and insurance.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=57389",
         "verification": {
           "status": "verified",
           "lastVerifiedAt": "2026-11-08",
@@ -2900,7 +2900,7 @@
         }
       },
       "source": {
-        "officialUrl": "https://www.eventeny.com/events/black-joy-parade-2027-35012/",
+        "officialUrl": "https://www.eventeny.com/events/vendor/?id=57389",
         "publisher": "Black Joy Parade / Eventeny",
         "status": "verified",
         "lastVerifiedAt": "2026-11-08",
