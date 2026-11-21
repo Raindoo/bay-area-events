@@ -1577,22 +1577,22 @@
       "scheduleNote": "November 1, 2026–March 31, 2027; minimum two shifts weekly if selected.",
       "occurrences": [],
       "opportunity": {
-        "applicationStatus": "open",
+        "applicationStatus": "closed",
         "deadline": "2026-08-02",
         "fee": "Tiered daily fee by asset and weekday/weekend",
         "eligibility": "Bay Area mobile food businesses using trucks, trailers, carts, or tents.",
         "applicationUrl": "https://presidio.gov/presidio-pop-up-vendor-information",
         "verification": {
-          "status": "verified",
+          "status": "partial",
           "method": "generated",
-          "lastVerifiedAt": "2026-08-12"
+          "lastVerifiedAt": "2026-11-18"
         }
       },
       "source": {
         "officialUrl": "https://presidio.gov/presidio-pop-up-vendor-information",
         "publisher": "Presidio Trust",
-        "status": "verified",
-        "lastVerifiedAt": "2026-08-12",
+        "status": "partial",
+        "lastVerifiedAt": "2026-11-18",
         "verificationMethod": "generated"
       },
       "addedAt": "2026-07-14"
