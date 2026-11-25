@@ -685,6 +685,19 @@
         "verifies": "verified",
         "evidence": ["VENDOR APPLICATION", "accepting applications for food and retail vendors", "Food Booth", "Pleasanton, CA"]
       }
+    },
+    {
+      "eventId": "bizerkeley-food-fest-2027",
+      "occurrenceId": "bizerkeley-food-fest-2027@2027-09-05",
+      "url": "https://www.eventeny.com/events/7thannualbizerkeleyfoodfest2027-35946/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "occurrence", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["7th Annual Bizerkeley Food Fest 2027", "Sep 05, 2027", "over 60 vendors including food, food trucks", "2027 Food Vendor Registration", "Deadline: Jul 01, 2027"]
+      }
     }
   ]
 }
