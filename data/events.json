@@ -3260,6 +3260,39 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-20"
+    },
+    {
+      "id": "bizerkeley-food-fest-2027",
+      "recordType": "dated_event",
+      "name": "Bizerkeley Food Fest 2027",
+      "location": "Berkeley, California",
+      "size": "Medium",
+      "categories": ["Food", "Festival", "Vegan", "Outdoor"],
+      "description": "Plant-based food festival with dedicated food and food-truck vendor applications.",
+      "scheduleNote": "September 5, 2027, 1–6 PM.",
+      "occurrences": [{
+        "id": "bizerkeley-food-fest-2027@2027-09-05",
+        "startDate": "2027-09-05",
+        "endDate": "2027-09-05",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-25"}
+      }],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "open",
+        "deadline": "2027-07-01",
+        "fee": null,
+        "eligibility": "Food and food-truck vendors may apply through the dedicated 2027 food vendor registration.",
+        "applicationUrl": "https://www.eventeny.com/events/vendor/?id=59174",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-25"}
+      },
+      "source": {
+        "officialUrl": "https://www.eventeny.com/events/7thannualbizerkeleyfoodfest2027-35946/",
+        "publisher": "Bizerkeley Food Fest / Eventeny",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-25",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-25"
     }
   ]
 }
