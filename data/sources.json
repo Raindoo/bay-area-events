@@ -698,6 +698,42 @@
         "verifies": "verified",
         "evidence": ["7th Annual Bizerkeley Food Fest 2027", "Sep 05, 2027", "over 60 vendors including food, food trucks", "2027 Food Vendor Registration", "Deadline: Jul 01, 2027"]
       }
+    },
+    {
+      "eventId": "program-dcwg-2027",
+      "url": "https://dcwgevents.com/events/2027",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Vendor applications are now open", "tentative 2027 Oakland and East Bay community events", "Food, desserts, drinks", "Vendors may submit an interest application now"]
+      }
+    },
+    {
+      "eventId": "program-cccfm",
+      "url": "https://www.cccfm.org/join-the-market/",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Want to sell your product at the Market?", "Producers are selected", "A non-refundable application fee is required"]
+      }
+    },
+    {
+      "eventId": "program-cfma-bay-area",
+      "url": "https://www.cafarmersmkts.com/sell-at-a-farmers-market",
+      "enabled": true,
+      "staleAfterDays": 7,
+      "parser": {
+        "type": "evidence",
+        "targets": ["identity", "opportunity"],
+        "verifies": "verified",
+        "evidence": ["Other Non-Agricultural Food Purveyors can apply each year from January to March", "All prepared foods must be juried", "Come to Market"]
+      }
     }
   ]
 }

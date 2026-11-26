@@ -3293,6 +3293,90 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-25"
+    },
+    {
+      "id": "program-dcwg-2027",
+      "recordType": "vendor_network",
+      "name": "DCWG Events 2027 Vendor Applications",
+      "location": "Oakland and East Bay",
+      "size": "Large",
+      "categories": ["Food Festival", "Market", "Food", "Coffee", "Outdoor"],
+      "description": "Organizer intake for tentative 2027 Oakland and East Bay food festivals, markets, cultural events, and community celebrations.",
+      "scheduleNote": "Event dates, locations, fees, and payment links will be announced by the organizer; participation is subject to final approval and vendor availability.",
+      "occurrences": [],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Food, dessert, drink, food-truck, and other vendor types are listed across the tentative event lineup; final eligibility is event-specific.",
+        "applicationUrl": "https://dcwgevents.com/events/2027",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-26"}
+      },
+      "source": {
+        "officialUrl": "https://dcwgevents.com/events/2027",
+        "publisher": "DCWG Events",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-26",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-26"
+    },
+    {
+      "id": "program-cccfm",
+      "recordType": "vendor_network",
+      "name": "Contra Costa Farmers’ Markets Vendor Program",
+      "location": "Orinda, Walnut Creek, and Pleasant Hill, Contra Costa County",
+      "size": "Large",
+      "categories": ["Farmers Market", "Food", "Bakery", "Coffee", "Recurring"],
+      "description": "Vendor intake for three Contra Costa farmers markets operated by Contra Costa Farmers’ Markets.",
+      "scheduleNote": "Placement depends on product uniqueness and market-space availability.",
+      "occurrences": [],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": "$65 non-refundable application fee; agricultural producers apply for free.",
+        "eligibility": "Producers must grow or make what they bring; resale is not permitted. Local businesses may apply to the sponsorship program, which is promotion-only and does not permit sales.",
+        "applicationUrl": "https://www.cccfm.org/join-the-market/",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-26"}
+      },
+      "source": {
+        "officialUrl": "https://www.cccfm.org/join-the-market/",
+        "publisher": "Contra Costa Farmers’ Markets",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-26",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-26"
+    },
+    {
+      "id": "program-cfma-bay-area",
+      "recordType": "vendor_network",
+      "name": "California Farmers’ Markets Association Non-Agricultural Food Purveyor Program",
+      "location": "Bay Area farmers markets",
+      "size": "Large",
+      "categories": ["Farmers Market", "Food", "Bakery", "Coffee", "Recurring"],
+      "description": "Annual application route for non-agricultural food purveyors seeking placement at California Farmers’ Markets Association markets.",
+      "scheduleNote": "Non-agricultural food purveyors may apply annually from January through March; placement is not guaranteed.",
+      "occurrences": [],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": "Prepared foods must be juried, produced in a certified commercial kitchen, and accepted by the association; space is limited.",
+        "applicationUrl": "https://www.cafarmersmkts.com/sell-at-a-farmers-market",
+        "verification": {"status": "verified", "method": "generated", "lastVerifiedAt": "2026-11-26"}
+      },
+      "source": {
+        "officialUrl": "https://www.cafarmersmkts.com/sell-at-a-farmers-market",
+        "publisher": "California Farmers’ Markets Association",
+        "status": "verified",
+        "lastVerifiedAt": "2026-11-26",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-26"
     }
   ]
 }
