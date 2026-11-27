@@ -3377,6 +3377,41 @@
         "verificationMethod": "generated"
       },
       "addedAt": "2026-11-26"
+    },
+    {
+      "id": "slavic-festival-sf-2027",
+      "recordType": "dated_event",
+      "name": "Slavic Festival 2027",
+      "location": "Russian Center, 2450 Sutter Street, San Francisco",
+      "size": "Medium",
+      "categories": ["Cultural Festival", "Food Festival", "Food"],
+      "description": "San Francisco Slavic cultural festival with food, music, and dance; a vendor registration page lists a food-vendor category.",
+      "scheduleNote": "February 27–28, 2027.",
+      "occurrences": [
+        {
+          "id": "slavic-festival-sf-2027@2027-02-27",
+          "startDate": "2027-02-27",
+          "endDate": "2027-02-28",
+          "verification": {"status": "unverified", "method": "generated", "lastVerifiedAt": "2026-11-27"}
+        }
+      ],
+      "recurrence": null,
+      "opportunity": {
+        "applicationStatus": "unknown",
+        "deadline": null,
+        "fee": null,
+        "eligibility": null,
+        "applicationUrl": "https://www.zeffy.com/en-US/ticketing/slavic-festival-2027-vendors?source=org-page",
+        "verification": {"status": "unverified", "method": "generated", "lastVerifiedAt": "2026-11-27"}
+      },
+      "source": {
+        "officialUrl": "https://www.russiancentersf.org/slavic-festival",
+        "publisher": "Russian Center of San Francisco",
+        "status": "unverified",
+        "lastVerifiedAt": "2026-11-27",
+        "verificationMethod": "generated"
+      },
+      "addedAt": "2026-11-27"
     }
   ]
 }
